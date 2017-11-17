@@ -560,6 +560,8 @@ MonoBehaviour:
   nameTag: {fileID: 102974611216299514}
   avatarMame: 
   itemPlacementDelay: 2
+  walkSpeed: 5
+  turnSpeed: 7
 --- !u!114 &114823399568204302
 MonoBehaviour:
   m_ObjectHideFlags: 1

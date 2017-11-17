@@ -20,6 +20,7 @@ namespace Team75.Shared {
         [SerializeField] float itemPlacementDelay = 2f;
         [SerializeField] float walkSpeed;
         [SerializeField] float turnSpeed;
+        [SerializeField] float smoothTime;
 
         bool isTracking = false;
         Coroutine_ walkingCoroutine = null;
@@ -96,7 +97,10 @@ namespace Team75.Shared {
 
 
         void InvokeActionChain(LinkedListNode<Action<Action>> chain, Action cont) {
-            if(chain == null) cont?.Invoke();
+            if(chain == null) {
+                Debug.LogWarning("Invoking null.");
+                cont?.Invoke();
+            }
             else chain.Value.Invoke(() => InvokeActionChain(chain.Next, cont));
         }
 
@@ -163,18 +167,16 @@ namespace Team75.Shared {
 
         IEnumerator<object> WalkToTarget(Vector3 position, Quaternion rotation, float speed, float turnSpeed, Action cont = null) {
             try {
-                //Debug.LogFormat("Walking to {0}, rotation {1}...", position, rotation.eulerAngles);
                 var path_fwd = position - transform.position;
-                //Debug.Log(path_fwd);
                 var rot = Quaternion.LookRotation(path_fwd, Vector3.up);
 
-                //Debug.Log(rot.eulerAngles);
 
                 if((Vector3.SqrMagnitude(transform.position - position) < 0.0001f) && Quaternion.Angle(rot, transform.rotation) < 5) yield break;
 
                 var initial_rotation = transform.rotation;
                 
                 // rotate towards path_fwd
+
                 var t = 0f;
                 while(Quaternion.Angle(rot, transform.rotation) > 5) {
                     t += turnSpeed * Time.deltaTime;
@@ -183,16 +185,16 @@ namespace Team75.Shared {
                 }
                 transform.rotation = rot;
 
+
                 var velocity = Vector3.zero;
                 
                 // walk towards destination
                 while(Vector3.SqrMagnitude(transform.position - position) > 0.0001f) {
-                    transform.position = Vector3.SmoothDamp(transform.position, position, ref velocity, 1f, speed, Time.deltaTime);
+                    transform.position = Vector3.SmoothDamp(transform.position, position, ref velocity, smoothTime, speed, Time.deltaTime);
                     yield return null;
                 }
 
                 transform.position = position;
-
 
                 t = 0f;
                 // rotate towards rotation
@@ -203,6 +205,7 @@ namespace Team75.Shared {
                 }
 
                 transform.rotation = rotation;
+
                 yield return null;
             } finally {
                 cont?.Invoke();

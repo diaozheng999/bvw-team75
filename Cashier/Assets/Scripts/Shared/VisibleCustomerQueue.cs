@@ -52,11 +52,9 @@ namespace Team75.Shared {
             var avatar_go = Instantiate(ItemDictionary.instance.GetCustomer(cust.CustomerId), enqueueSpawn + targets[customers.Count], queueRotation);
             var avatar = avatar_go.GetComponent<Avatar>();
             avatar.SetName(cust.Name);
-            avatar.EnqueueTo(targets[customers.Count], queueRotation, () => {
-                avatars.AddLast(avatar);
-                customers.AddLast(cust);
-            });
-
+            avatars.AddLast(avatar);
+            customers.AddLast(cust);
+            avatar.EnqueueTo(targets[customers.Count], queueRotation);
             /*
             if (shuffling) {
                 OnShuffleFinish.Enqueue(() => _enqueue(cust));
