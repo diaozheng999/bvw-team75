@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using PGT.Core;
@@ -17,9 +18,37 @@ namespace Team75.Shared {
         [SerializeField] TextMesh nameTag;
         [SerializeField] string avatarMame = "";
         [SerializeField] float itemPlacementDelay = 2f;
+        [SerializeField] float walkSpeed;
+        [SerializeField] float turnSpeed;
 
         bool isTracking = false;
         Coroutine_ walkingCoroutine = null;
+
+        LinkedList<Action<Action>> BeforeEnqueue;
+        LinkedList<Action<Action>> AfterEnqueue;
+
+        LinkedList<Action<Action>> BeforeQueueMove;
+        LinkedList<Action<Action>> AfterQueueMove;
+
+        LinkedList<Action<Action>> BeforeDequeue;
+        LinkedList<Action<Action>> AfterDequeue;
+
+        LinkedList<Action<Action>> BeforeLeave;
+        LinkedList<Action<Action>> AfterLeave;
+
+        void Start() {
+            BeforeEnqueue = new LinkedList<Action<Action>>();
+            AfterEnqueue = new LinkedList<Action<Action>>();
+
+            BeforeQueueMove = new LinkedList<Action<Action>>();
+            AfterQueueMove = new LinkedList<Action<Action>>();
+
+            BeforeDequeue = new LinkedList<Action<Action>>();
+            AfterDequeue = new LinkedList<Action<Action>>();
+
+            BeforeLeave = new LinkedList<Action<Action>>();
+            AfterLeave = new LinkedList<Action<Action>>();
+        }
 
 
         public void StartTracking() {
@@ -79,19 +108,49 @@ namespace Team75.Shared {
             }
         }
 
-        public void WalkTo(Vector3 position, Quaternion rotation, float speed, float turnSpeed) {
-            if (walkingCoroutine != null) walkingCoroutine.Interrupt();
-            walkingCoroutine = this.StartCoroutine1(WalkToTarget(position, rotation, speed, turnSpeed));
+
+        void InvokeActionChain(LinkedListNode<Action<Action>> chain, Action cont) {
+            if(chain == null) cont?.Invoke();
+            else chain.Value.Invoke(() => InvokeActionChain(chain.Next, cont));
         }
 
-        public void LeaveTo(Vector3 position, Quaternion rotation, float speed, float turnSpeed) {
-            if (walkingCoroutine != null) walkingCoroutine.Interrupt();
-            walkingCoroutine = this.StartCoroutine1(LeaveCoroutine(position, rotation, speed, turnSpeed));
+        public void EnqueueTo (Vector3 position, Quaternion rotation, Action cont = null) {
+            InvokeActionChain(BeforeEnqueue.First, () => {
+                WalkTo(position, rotation, walkSpeed, turnSpeed, () => {
+                    InvokeActionChain(AfterEnqueue.First, cont);
+                });
+            });
         }
 
-        IEnumerator<object> LeaveCoroutine(Vector3 position, Quaternion rotation, float speed, float turnSpeed) {
-            yield return this.StartCoroutine1(WalkToTarget(position, rotation, speed, turnSpeed)).GetAwaiter();
-            Destroy(gameObject);
+        public void QueueMoveTo (Vector3 position, Quaternion rotation, Action cont = null) {
+            InvokeActionChain(BeforeQueueMove.First, () => {
+                WalkTo(position, rotation, walkSpeed, turnSpeed, () => {
+                    InvokeActionChain(AfterQueueMove.First, cont);
+                });
+            });
+        }
+
+        public void DequeueTo (Vector3 position, Quaternion rotation, Action cont = null) {
+            InvokeActionChain(BeforeDequeue.First, () => {
+                WalkTo(position, rotation, walkSpeed, turnSpeed, () => {
+                    InvokeActionChain(AfterDequeue.First, cont);
+                });
+            });
+        }
+
+        public void LeaveTo(Vector3 position, Quaternion rotation) {
+            InvokeActionChain(BeforeLeave.First, () => {
+                WalkTo(position, rotation, walkSpeed, turnSpeed, () => {
+                    InvokeActionChain(AfterLeave.First, () => {
+                        Destroy(gameObject);
+                    });
+                });
+            });
+        }
+
+        public void WalkTo(Vector3 position, Quaternion rotation, float speed, float turnSpeed, Action cont = null) {
+            if (walkingCoroutine != null) walkingCoroutine.Interrupt();
+            walkingCoroutine = this.StartCoroutine1(WalkToTarget(position, rotation, speed, turnSpeed, cont));
         }
 
         public void SetName(string name) {
@@ -116,7 +175,7 @@ namespace Team75.Shared {
             return itemPlacementPosition;
         }
 
-        IEnumerator<object> WalkToTarget(Vector3 position, Quaternion rotation, float speed, float turnSpeed) {
+        IEnumerator<object> WalkToTarget(Vector3 position, Quaternion rotation, float speed, float turnSpeed, Action cont = null) {
             //Debug.LogFormat("Walking to {0}, rotation {1}...", position, rotation.eulerAngles);
             var path_fwd = position - transform.position;
             //Debug.Log(path_fwd);
@@ -157,6 +216,8 @@ namespace Team75.Shared {
             }
 
             transform.rotation = rotation;
+            yield return null;
+            cont?.Invoke();
         }
 
         public object GetAwaiter(){
