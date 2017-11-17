@@ -29,6 +29,8 @@ namespace Team75.Shared {
 
         int Count = 0;
 
+        int Shuffling = 0;
+
         void Start () {
             avatars = new LinkedList<Avatar>();
             customers = new LinkedList<Customer>();
@@ -54,7 +56,11 @@ namespace Team75.Shared {
             avatar.SetName(cust.Name);
             avatars.AddLast(avatar);
             customers.AddLast(cust);
-            avatar.EnqueueTo(targets[customers.Count], queueRotation);
+            if (Shuffling>0) {
+                avatar.EnqueueTo(enqueueSpawn + targets[customers.Count], queueRotation);
+            } else {
+                avatar.EnqueueTo(targets[customers.Count], queueRotation);
+            }
             /*
             if (shuffling) {
                 OnShuffleFinish.Enqueue(() => _enqueue(cust));
@@ -71,7 +77,11 @@ namespace Team75.Shared {
         }
 
         void Shuffle(Action cont) {
-            _shuffle(avatars.First, 0, cont);
+            Shuffling++;
+            _shuffle(avatars.First, 0, () => {
+                Shuffling--;
+                cont?.Invoke();
+            });
         }
 
         void _shuffle(LinkedListNode<Avatar> avatar, int i, Action cont) {
@@ -102,11 +112,12 @@ namespace Team75.Shared {
             customers.RemoveFirst();
 
             var currentAvatar = avatars.First;
+            /*
             if(currentAvatar != null) {
                 for (var i=0; currentAvatar.Next != null; ++i, currentAvatar = currentAvatar.Next) {
                     currentAvatar.Value.WalkTo(targets[i], queueRotation, movementSpeed, turnSpeed);
                 }
-            }
+            }*/
 
             _avatar.DequeueTo(customerPositions[playerId].position, customerPositions[playerId].rotation);
             Shuffle(Fn.noop);
@@ -117,6 +128,7 @@ namespace Team75.Shared {
             if(returnAvatar) avatar = _avatar;
             activeAvatars[playerId] = _avatar;
 
+            Count--;
             return customer;
         }
 
