@@ -34,7 +34,7 @@ namespace Team75.Shared {
             customers = new LinkedList<Customer>();
             activeAvatars = new Avatar[2];
 
-            // set destination values
+            // set destination values   
 
             targets = new Vector3[RENDER_SIZE];
             for(int i=0; i<RENDER_SIZE; ++i) {
