@@ -24,31 +24,17 @@ namespace Team75.Shared {
         bool isTracking = false;
         Coroutine_ walkingCoroutine = null;
 
-        LinkedList<Action<Action>> BeforeEnqueue;
-        LinkedList<Action<Action>> AfterEnqueue;
+        LinkedList<Action<Action>> BeforeEnqueue = new LinkedList<Action<Action>>();
+        LinkedList<Action<Action>> AfterEnqueue = new LinkedList<Action<Action>>();
 
-        LinkedList<Action<Action>> BeforeQueueMove;
-        LinkedList<Action<Action>> AfterQueueMove;
+        LinkedList<Action<Action>> BeforeQueueMove = new LinkedList<Action<Action>>();
+        LinkedList<Action<Action>> AfterQueueMove = new LinkedList<Action<Action>>();
 
-        LinkedList<Action<Action>> BeforeDequeue;
-        LinkedList<Action<Action>> AfterDequeue;
+        LinkedList<Action<Action>> BeforeDequeue = new LinkedList<Action<Action>>();
+        LinkedList<Action<Action>> AfterDequeue = new LinkedList<Action<Action>>();
 
-        LinkedList<Action<Action>> BeforeLeave;
-        LinkedList<Action<Action>> AfterLeave;
-
-        void Start() {
-            BeforeEnqueue = new LinkedList<Action<Action>>();
-            AfterEnqueue = new LinkedList<Action<Action>>();
-
-            BeforeQueueMove = new LinkedList<Action<Action>>();
-            AfterQueueMove = new LinkedList<Action<Action>>();
-
-            BeforeDequeue = new LinkedList<Action<Action>>();
-            AfterDequeue = new LinkedList<Action<Action>>();
-
-            BeforeLeave = new LinkedList<Action<Action>>();
-            AfterLeave = new LinkedList<Action<Action>>();
-        }
+        LinkedList<Action<Action>> BeforeLeave = new LinkedList<Action<Action>>();
+        LinkedList<Action<Action>> AfterLeave = new LinkedList<Action<Action>>();
 
 
         public void StartTracking() {
