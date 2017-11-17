@@ -200,10 +200,10 @@ namespace Team75.Client {
         void OnDequeueCustomer(byte[] buffer, ushort length) {
             var unpacked = Connection.UnpackCustomerDequeueInfo(buffer, 0);
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
-                GameStateManager.instance.UnsetCallable();
                 Shared.Avatar avatar = new Shared.Avatar();
                 VisibleCustomerQueue.instance.Dequeue(unpacked.Item1, ref avatar); 
                 if(unpacked.Item1 == GameStateManager.instance.GetPlayerId()) {
+                    GameStateManager.instance.UnsetCallable();
                     var itemPlacer = avatar.gameObject.AddComponent<ItemPlacer>();
                     itemPlacer.SetAvatar(avatar, unpacked.Item2);
                 }
