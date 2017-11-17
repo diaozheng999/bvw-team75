@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using PGT.Core;
+using Fn = PGT.Core.Func.Function;
 
 
 namespace Team75.Shared {
@@ -26,16 +27,12 @@ namespace Team75.Shared {
         Vector3[] targets;
         Quaternion queueRotation;
 
-        Queue<Action> OnShuffleFinish;
-        bool shuffling = false;
-
         int Count = 0;
 
         void Start () {
             avatars = new LinkedList<Avatar>();
             customers = new LinkedList<Customer>();
             activeAvatars = new Avatar[2];
-            OnShuffleFinish = new Queue<Action>();
 
             // set destination values
 
@@ -48,42 +45,35 @@ namespace Team75.Shared {
 
         }
 
-        public void Enqueue(Customer cust) {
-            lock (avatars) {
-                Count++;
-                var avatar_go = Instantiate(ItemDictionary.instance.GetCustomer(cust.CustomerId), enqueueSpawn + targets[customers.Count], queueRotation);
-                var avatar = avatar_go.GetComponent<Avatar>();
-                avatar.SetName(cust.Name);
-                avatar.EnqueueTo(targets[customers.Count], queueRotation);
 
+        public void Enqueue(Customer cust) {
+            Count++;
+
+            var avatar_go = Instantiate(ItemDictionary.instance.GetCustomer(cust.CustomerId), enqueueSpawn + targets[customers.Count], queueRotation);
+            var avatar = avatar_go.GetComponent<Avatar>();
+            avatar.SetName(cust.Name);
+            avatar.EnqueueTo(targets[customers.Count], queueRotation, () => {
                 avatars.AddLast(avatar);
                 customers.AddLast(cust);
+            });
 
-                // really make sure all the customers are going to their correct positions
-                var currentAvatar = avatars.First;
-                if(currentAvatar != null) {
-                    for (var i=0; currentAvatar.Next != null; ++i, currentAvatar = currentAvatar.Next) {
-                        if(Vector3.SqrMagnitude(currentAvatar.Value.transform.position - targets[i]) > 0.0001f)
-                            currentAvatar.Value.QueueMoveTo(targets[i], queueRotation);
-                    }
-                }
-
+            /*
+            if (shuffling) {
+                OnShuffleFinish.Enqueue(() => _enqueue(cust));
             }
+
+            // really make sure all the customers are going to their correct positions
+            var currentAvatar = avatars.First;
+            if(currentAvatar != null) {
+                for (var i=0; currentAvatar.Next != null; ++i, currentAvatar = currentAvatar.Next) {
+                    if(Vector3.SqrMagnitude(currentAvatar.Value.transform.position - targets[i]) > 0.0001f)
+                        currentAvatar.Value.QueueMoveTo(targets[i], queueRotation);
+                }
+            }*/
         }
 
         void Shuffle(Action cont) {
-            if (shuffling) {
-                OnShuffleFinish.Enqueue(() => Shuffle(cont));
-                return;
-            }
-            shuffling = true;
-            _shuffle(avatars.First, 0, () => {
-                shuffling = false;
-                cont.Invoke();
-                if (shuffling == false && OnShuffleFinish.Count > 0) {
-                    OnShuffleFinish.Dequeue().Invoke();
-                }
-            });
+            _shuffle(avatars.First, 0, cont);
         }
 
         void _shuffle(LinkedListNode<Avatar> avatar, int i, Action cont) {
@@ -96,7 +86,7 @@ namespace Team75.Shared {
 
         public bool IsEmpty() {
             lock (avatars) {
-                return Count == 0;
+                return avatars.Count == 0;
             }
         }
 
@@ -108,30 +98,28 @@ namespace Team75.Shared {
 
 
         public Customer Dequeue(int playerId, ref Avatar avatar, bool returnAvatar = true) {
-            lock (avatars) {
-                var _avatar = avatars.First.Value;
-                var customer = customers.First.Value;
-                avatars.RemoveFirst();
-                customers.RemoveFirst();
+            var _avatar = avatars.First.Value;
+            var customer = customers.First.Value;
+            avatars.RemoveFirst();
+            customers.RemoveFirst();
 
-                var currentAvatar = avatars.First;
-                if(currentAvatar != null) {
-                    for (var i=0; currentAvatar.Next != null; ++i, currentAvatar = currentAvatar.Next) {
-                        currentAvatar.Value.WalkTo(targets[i], queueRotation, movementSpeed, turnSpeed);
-                    }
+            var currentAvatar = avatars.First;
+            if(currentAvatar != null) {
+                for (var i=0; currentAvatar.Next != null; ++i, currentAvatar = currentAvatar.Next) {
+                    currentAvatar.Value.WalkTo(targets[i], queueRotation, movementSpeed, turnSpeed);
                 }
-
-                _avatar.DequeueTo(customerPositions[playerId].position, customerPositions[playerId].rotation);
-                Shuffle(PGT.Core.Func.Function.noop);
-
-                /// TODO: remove timeout
-                //_avatar.DeleteAfter(20);
-
-                if(returnAvatar) avatar = _avatar;
-                activeAvatars[playerId] = _avatar;
-
-                return customer;
             }
+
+            _avatar.DequeueTo(customerPositions[playerId].position, customerPositions[playerId].rotation);
+            Shuffle(Fn.noop);
+
+            /// TODO: remove timeout
+            //_avatar.DeleteAfter(20);
+
+            if(returnAvatar) avatar = _avatar;
+            activeAvatars[playerId] = _avatar;
+
+            return customer;
         }
 
         public Customer Dequeue(int playerId) {

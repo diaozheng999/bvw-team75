@@ -176,48 +176,51 @@ namespace Team75.Shared {
         }
 
         IEnumerator<object> WalkToTarget(Vector3 position, Quaternion rotation, float speed, float turnSpeed, Action cont = null) {
-            //Debug.LogFormat("Walking to {0}, rotation {1}...", position, rotation.eulerAngles);
-            var path_fwd = position - transform.position;
-            //Debug.Log(path_fwd);
-            var rot = Quaternion.LookRotation(path_fwd, Vector3.up);
+            try {
+                //Debug.LogFormat("Walking to {0}, rotation {1}...", position, rotation.eulerAngles);
+                var path_fwd = position - transform.position;
+                //Debug.Log(path_fwd);
+                var rot = Quaternion.LookRotation(path_fwd, Vector3.up);
 
-            //Debug.Log(rot.eulerAngles);
+                //Debug.Log(rot.eulerAngles);
 
-            if((Vector3.SqrMagnitude(transform.position - position) < 0.0001f) && Quaternion.Angle(rot, transform.rotation) < 5) yield break;
+                if((Vector3.SqrMagnitude(transform.position - position) < 0.0001f) && Quaternion.Angle(rot, transform.rotation) < 5) yield break;
 
-            var initial_rotation = transform.rotation;
-            
-            // rotate towards path_fwd
-            var t = 0f;
-            while(Quaternion.Angle(rot, transform.rotation) > 5) {
-                t += turnSpeed * Time.deltaTime;
-                transform.rotation = Quaternion.Slerp(initial_rotation, rot, t);
+                var initial_rotation = transform.rotation;
+                
+                // rotate towards path_fwd
+                var t = 0f;
+                while(Quaternion.Angle(rot, transform.rotation) > 5) {
+                    t += turnSpeed * Time.deltaTime;
+                    transform.rotation = Quaternion.Slerp(initial_rotation, rot, t);
+                    yield return null;
+                }
+                transform.rotation = rot;
+
+                var velocity = Vector3.zero;
+                
+                // walk towards destination
+                while(Vector3.SqrMagnitude(transform.position - position) > 0.0001f) {
+                    transform.position = Vector3.SmoothDamp(transform.position, position, ref velocity, 1f, speed, Time.deltaTime);
+                    yield return null;
+                }
+
+                transform.position = position;
+
+
+                t = 0f;
+                // rotate towards rotation
+                while (Quaternion.Angle(rotation, transform.rotation) > 5) {
+                    t += turnSpeed * Time.deltaTime;
+                    transform.rotation = Quaternion.Slerp(rot, rotation, t);
+                    yield return null;
+                }
+
+                transform.rotation = rotation;
                 yield return null;
+            } finally {
+                cont?.Invoke();
             }
-            transform.rotation = rot;
-
-            var velocity = Vector3.zero;
-            
-            // walk towards destination
-            while(Vector3.SqrMagnitude(transform.position - position) > 0.0001f) {
-                transform.position = Vector3.SmoothDamp(transform.position, position, ref velocity, 1f, speed, Time.deltaTime);
-                yield return null;
-            }
-
-            transform.position = position;
-
-
-            t = 0f;
-            // rotate towards rotation
-            while (Quaternion.Angle(rotation, transform.rotation) > 5) {
-                t += turnSpeed * Time.deltaTime;
-                transform.rotation = Quaternion.Slerp(rot, rotation, t);
-                yield return null;
-            }
-
-            transform.rotation = rotation;
-            yield return null;
-            cont?.Invoke();
         }
 
         public object GetAwaiter(){
