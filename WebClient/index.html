@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shopping App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="image-picker/image-picker.css" >
+    
+    <style>
+    
+        .image_picker_image {
+            width: 50px;
+            height: 50px;
+        }
+
+        .nav-bg {
+            background-color: #9E1B34;
+            background-image: none;
+            color:white;
+        }
+
+        body {
+            -webkit-overflow-scrolling: touch;
+            overflow-y: scroll;
+        }
+    
+    </style>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>    
+    <script src="js/bootstrap.js"></script>
+    <script src="image-picker/image-picker.js"></script>
+    <script src="https://use.fontawesome.com/fe115cb312.js"></script>
+    <script src="items.js"></script>
+    <script> type="text/javascript">
+
+    $(document).ready(() => {
+            let cart = {};
+            let budget = 1000;
+            
+            let renderCart = () => {
+                if($.isEmptyObject(cart)) {
+                    console.log("Cart is empty/");
+                    $('#cart-body').html("<p>Cart is empty.</p>");
+                } else {
+                    $('#cart-tbody').empty()
+                    $.each(cart, (i, v) => {
+                        let tr = $('<tr>')
+                        tr.append(`
+                            <td>${itemDictionary[i].title}</th>
+                            <td>${v}</td>
+                            <th scope="row">$${itemDictionary[i].price * v}</td>
+                        `)
+
+                        let actioncol = $('<td>')
+                        
+                        let add = $('<a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a>')
+                        add.on('click', () => {
+                            if(budget >= itemDictionary[i].price) {
+                                budget -= itemDictionary[i].price;
+                                if (i in cart) {
+                                    cart[i] ++;
+                                } else {
+                                    cart[i] = 1;
+                                }
+                                $('#budget').text(budget);
+                                renderCart();
+                            } else {
+                                let _p = $(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                Not enough money.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>`);
+
+                                $('#modal-alert-wrapper').append(_p);
+                                $('#budget').text(budget);
+                                setTimeout(() => {
+                                    _p.alert('close')
+                                }, 3000);
+                            }
+                        })
+
+                        let sub = $('<a href="#"><i class="fa fa-minus" aria-hidden="true"></i></a>')
+
+                        sub.on('click', () => {
+                            budget += +itemDictionary[i].price;
+                            cart[i]--;
+                            if(cart[i]==0) delete cart[i];
+                            $('#budget').text(budget);
+                            renderCart();
+                        })
+
+                        let del = $('<a href="#"><i class="fa fa-ban" aria-hidden="true"></i></a>')
+
+                        del.on('click', () => {
+                            budget += +itemDictionary[i].price * +v;
+                            delete cart[i];
+                            $('#budget').text(budget);
+                            renderCart();
+                        })
+
+                        actioncol.append(add);
+                        actioncol.append(sub);
+                        actioncol.append(del);
+                        tr.append(actioncol)
+                        
+                        $('#cart-tbody').append(tr);
+                    })
+                }
+            }
+            
+            $('#saveCust').on('click', () => {
+                let custName = $('#custName').val();
+                sessionStorage.setItem("custName", custName);
+                sessionStorage.setItem("custAvatar", $("#custAvatar").val());
+                $('#custGreeting').text("Welcome, "+custName+".");
+                $("#login-modal").modal('hide');
+            });
+
+            $('#submitCart').on('click', () => {
+                if($.isEmptyObject(cart)) {
+                    $('#cart-modal').modal('close');
+                    return;
+                }
+
+                let toSubmit = {
+                    "customerType" : sessionStorage.custAvatar,
+                    "customerName" : sessionStorage.custName,
+                    "items" : []
+                }
+
+                $.each(cart, (i, v) => {
+                    for(let j=0; j<v; j++) {
+                        toSubmit['items'].push(i);
+                    }
+                })
+
+                $('#submitCart button').prop('disabled', true);
+                console.log(toSubmit);
+                $.post(remoteServer, toSubmit).done(() => {
+                    $('#cart-modal').modal('hide')
+                    $('#submitCart button').prop('disabled', false);
+                    budget = 1000;
+                    let _p = $(`<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Order submitted. You may issue another order.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>`);
+
+                    $('#alert-container').append(_p);
+                    $('#budget').text(budget);
+                    setTimeout(() => {
+                        _p.alert('close')
+                    }, 3000);
+                    cart = {};
+
+                }).fail(() => {
+                    $('#cart-modal').modal('hide')
+                    $('#submitCart button').prop('disabled', false);
+                    let _p = $(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Order submission failed.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>`);
+
+                    $('#alert-container').append(_p);
+                    setTimeout(() => {
+                        _p.alert('close')
+                    }, 3000);
+                })
+            })
+
+            $('#changeCust').on('click', () => {
+                $('#login-modal').modal('show');
+            })
+
+            $('#showCart').on('click', () => {
+                renderCart();
+                $('#cart-modal').modal('show')
+            })
+
+            if (sessionStorage.custName === undefined) {
+                $('#login-modal').modal('show');
+                //alert("Hello World!");
+            } else {
+                $('#custGreeting').text('Welcome, '+sessionStorage.custName+'.');
+            }
+
+            for(let i=0; i<itemDictionary.length; ++i) {
+                $('#itemlist').append(`
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <img src="${itemDictionary[i].image}" class="rounded float-left" style="margin-right:20px;width:80px;height:80px;" />
+                    <h5 class="mb-1">${itemDictionary[i].title} ($${itemDictionary[i].price})</h5>
+                    <p class="mb-1">${itemDictionary[i].description}</p>
+                    <button id="btn-add-${itemDictionary[i].itemId}" class="btn btn-outline-success">Add to cart</button>
+                </a>
+                `);
+
+                $('#btn-add-'+itemDictionary[i].itemId).on('click', () => {
+                    if(budget >= itemDictionary[i].price) {
+                        budget -= itemDictionary[i].price;
+                        if (i in cart) {
+                            cart[i] ++;
+                        } else {
+                            cart[i] = 1;
+                        }
+
+                        let _p = $(`<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        Item added to cart.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>`);
+
+                        $('#alert-container').append(_p);
+                        $('#budget').text(budget);
+                        setTimeout(() => {
+                            _p.alert('close')
+                        }, 3000);
+                    } else {
+                        let _p = $(`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Not enough money.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>`);
+
+                        $('#alert-container').append(_p);
+                        $('#budget').text(budget);
+                        setTimeout(() => {
+                            _p.alert('close')
+                        }, 3000);
+                    }
+                });
+            }
+
+            
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <header class="navbar justify-content-between navbar-dark bg-dark">
+        <a class="navbar-brand text-white" href="#" id="custGreeting">Welcome, Customer.</a>
+        <div class="navbar-nav text-white">
+            <span class="navbar-item">Your Budget: <strong>$<span id="budget">1000</span></strong></span>
+        </div>
+        <form class="form-inline">
+            <div class="btn-group navbar-item">
+                <button type="button" class="btn btn-outline-light" id="changeCust"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-light" id="showCart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+            </div>
+        </form>
+    </header>
+
+    <div class="container">
+        <div id="alert-container" style="min-height:30px">
+
+        </div>
+
+        <h1>Select items to check out.</h1>
+        <div class="list-group" id="itemlist"></div>
+           
+    </div>
+
+    <div class="modal fade" aria-hidden="true" id="login-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Welcome, dear customer.</h5>
+            </div>
+            <form>
+            <div class="modal-body">
+                <h1>Welcome.</h1>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Please type your name so that we know what to call you.</label>
+                        <input type="text" class="form-control" id="custName" placeholder="Griva" maxlength="50">
+                        <small>Right-to-left languages, emojis and Unicode extension characters are not supported.</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Please select your in-game avatar.</label>
+                        <select class="image-picker show-html" id="custAvatar">
+                            <option data-img-src="images/avatars/0.png" data-img-class="first" value="0">  0  </option>
+                            <option data-img-src="images/avatars/1.png" value="1">  1  </option>
+                            <option data-img-src="images/avatars/2.png" value="2">  2  </option>
+                            <option data-img-src="images/avatars/3.png" value="3">  3  </option>
+                            <option data-img-src="images/avatars/4.png" value="4">  4  </option>
+                            <option data-img-src="images/avatars/5.png" value="5">  5  </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="saveCust">Save changes</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+
+
+    <div class="modal fade" aria-hidden="true" id="cart-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Your Shopping Cart.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="cart-body">
+                    <div class="container" id="modal-alert-wrapper">
+
+                    </div>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">Item</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody id="cart-tbody">
+                            
+                            </tbody>
+                        </table>
+                              
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitCart">Submit</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <script type="text/javascript">
+    $("select").imagepicker();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "socket.io": "2.0.3",
+    "express" : "4.16.2",
+    "body-parser" : "1.18.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "bvw75-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {
+    "typings": "^2.1.1"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": ""
+}

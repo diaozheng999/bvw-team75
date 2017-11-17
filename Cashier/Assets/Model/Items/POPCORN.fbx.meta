@@ -1,0 +1,223 @@
+fileFormatVersion: 2
+guid: 20427635f035a7944b1a6552012dc70d
+timeCreated: 1510613111
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: SKausar_Bush
+    100004: SKausar_Bush1
+    100006: SKausar_Bush10
+    100008: SKausar_Bush11
+    100010: SKausar_Bush12
+    100012: SKausar_Bush13
+    100014: SKausar_Bush14
+    100016: SKausar_Bush15
+    100018: SKausar_Bush16
+    100020: SKausar_Bush17
+    100022: SKausar_Bush18
+    100024: SKausar_Bush19
+    100026: SKausar_Bush2
+    100028: SKausar_Bush20
+    100030: SKausar_Bush21
+    100032: SKausar_Bush22
+    100034: SKausar_Bush23
+    100036: SKausar_Bush24
+    100038: SKausar_Bush25
+    100040: SKausar_Bush26
+    100042: SKausar_Bush3
+    100044: SKausar_Bush4
+    100046: SKausar_Bush5
+    100048: SKausar_Bush6
+    100050: SKausar_Bush7
+    100052: SKausar_Bush8
+    100054: SKausar_Bush9
+    400000: //RootNode
+    400002: SKausar_Bush
+    400004: SKausar_Bush1
+    400006: SKausar_Bush10
+    400008: SKausar_Bush11
+    400010: SKausar_Bush12
+    400012: SKausar_Bush13
+    400014: SKausar_Bush14
+    400016: SKausar_Bush15
+    400018: SKausar_Bush16
+    400020: SKausar_Bush17
+    400022: SKausar_Bush18
+    400024: SKausar_Bush19
+    400026: SKausar_Bush2
+    400028: SKausar_Bush20
+    400030: SKausar_Bush21
+    400032: SKausar_Bush22
+    400034: SKausar_Bush23
+    400036: SKausar_Bush24
+    400038: SKausar_Bush25
+    400040: SKausar_Bush26
+    400042: SKausar_Bush3
+    400044: SKausar_Bush4
+    400046: SKausar_Bush5
+    400048: SKausar_Bush6
+    400050: SKausar_Bush7
+    400052: SKausar_Bush8
+    400054: SKausar_Bush9
+    2300000: //RootNode
+    2300002: SKausar_Bush
+    2300004: SKausar_Bush1
+    2300006: SKausar_Bush10
+    2300008: SKausar_Bush11
+    2300010: SKausar_Bush12
+    2300012: SKausar_Bush13
+    2300014: SKausar_Bush14
+    2300016: SKausar_Bush15
+    2300018: SKausar_Bush16
+    2300020: SKausar_Bush17
+    2300022: SKausar_Bush18
+    2300024: SKausar_Bush19
+    2300026: SKausar_Bush2
+    2300028: SKausar_Bush20
+    2300030: SKausar_Bush21
+    2300032: SKausar_Bush22
+    2300034: SKausar_Bush23
+    2300036: SKausar_Bush24
+    2300038: SKausar_Bush25
+    2300040: SKausar_Bush26
+    2300042: SKausar_Bush3
+    2300044: SKausar_Bush4
+    2300046: SKausar_Bush5
+    2300048: SKausar_Bush6
+    2300050: SKausar_Bush7
+    2300052: SKausar_Bush8
+    2300054: SKausar_Bush9
+    3300000: //RootNode
+    3300002: SKausar_Bush
+    3300004: SKausar_Bush1
+    3300006: SKausar_Bush10
+    3300008: SKausar_Bush11
+    3300010: SKausar_Bush12
+    3300012: SKausar_Bush13
+    3300014: SKausar_Bush14
+    3300016: SKausar_Bush15
+    3300018: SKausar_Bush16
+    3300020: SKausar_Bush17
+    3300022: SKausar_Bush18
+    3300024: SKausar_Bush19
+    3300026: SKausar_Bush2
+    3300028: SKausar_Bush20
+    3300030: SKausar_Bush21
+    3300032: SKausar_Bush22
+    3300034: SKausar_Bush23
+    3300036: SKausar_Bush24
+    3300038: SKausar_Bush25
+    3300040: SKausar_Bush26
+    3300042: SKausar_Bush3
+    3300044: SKausar_Bush4
+    3300046: SKausar_Bush5
+    3300048: SKausar_Bush6
+    3300050: SKausar_Bush7
+    3300052: SKausar_Bush8
+    3300054: SKausar_Bush9
+    4300000: pCube1
+    4300002: SKausar_Bush2
+    4300004: SKausar_Bush3
+    4300006: SKausar_Bush4
+    4300008: SKausar_Bush5
+    4300010: SKausar_Bush6
+    4300012: SKausar_Bush7
+    4300014: SKausar_Bush8
+    4300016: SKausar_Bush9
+    4300018: SKausar_Bush10
+    4300020: SKausar_Bush11
+    4300022: SKausar_Bush12
+    4300024: SKausar_Bush13
+    4300026: SKausar_Bush14
+    4300028: SKausar_Bush15
+    4300030: SKausar_Bush16
+    4300032: SKausar_Bush17
+    4300034: SKausar_Bush18
+    4300036: SKausar_Bush19
+    4300038: SKausar_Bush20
+    4300040: SKausar_Bush21
+    4300042: SKausar_Bush22
+    4300044: SKausar_Bush23
+    4300046: SKausar_Bush24
+    4300048: SKausar_Bush25
+    4300050: SKausar_Bush26
+    4300052: SKausar_Bush1
+    4300054: SKausar_Bush
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
