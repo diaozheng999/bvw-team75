@@ -1380,6 +1380,8 @@ MonoBehaviour:
   customerPositions: []
   totalTime: 180
   countDown: {fileID: 626026131}
+  ring0: {fileID: 0}
+  ring1: {fileID: 0}
 --- !u!4 &1543692884
 Transform:
   m_ObjectHideFlags: 0
