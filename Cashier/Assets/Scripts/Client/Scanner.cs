@@ -134,9 +134,9 @@ namespace Team75.Client
 		}
 
 
-		private void OnCollisionEnter(Collision other)
+		private void OnTriggerEnter(Collider other)
 		{
-			var ring = other.gameObject.GetComponent<Ring>();
+			var ring = other.GetComponent<Ring>();
 			if (ring != null)
 			{
 				ring.GetHit();

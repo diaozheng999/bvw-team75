@@ -10,6 +10,8 @@ namespace PGT.Core.Networking {
     public class NetworkStreamPipe : Pipe {
         NetworkStream stream;
 
+        bool connected = false;
+
         public NetworkStreamPipe() : base() {
             stream = null;
             verbose = true;
@@ -17,11 +19,13 @@ namespace PGT.Core.Networking {
 
         public NetworkStreamPipe(NetworkStream _stream) {
             stream = _stream;
+            connected = true;
             BeginListening();
         }
 
         public void SetNetworkStream(NetworkStream _stream) {
             stream = _stream;
+            connected = true;
             BeginListening(); 
         }
 
@@ -40,10 +44,18 @@ namespace PGT.Core.Networking {
         }
 
         protected override void Write(byte[] payload, ushort size, uint offset){
+            if (!connected) {
+                if(verbose) Debug.LogWarningFormat("{0}: Sending to unconnected destination.", this);
+                return;
+            }
             stream.Write(payload, (int)offset, size);
         }
 
         protected override void Flush() {
+            if (!connected) {
+                if(verbose) Debug.LogWarningFormat("{0}: Sending to unconnected destination.", this);
+                return;
+            }
             if(verbose)Debug.LogFormat("{0}: Flush called.", this);
             stream.Flush();
         }
