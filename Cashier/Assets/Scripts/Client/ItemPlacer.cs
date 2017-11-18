@@ -29,6 +29,11 @@ namespace Team75.Client {
             items = new Transform[customer.Items.Length];
             placed = new bool[customer.Items.Length];
             
+            avatar.AddSpecialEffect(SpecialEffect.ExecutionFlag.AFTER_DEQUEUE, null, null, null, null, null, StartPlacing, null, null, null);
+        }
+
+        public void StartPlacing(System.Action cont) {
+            cont();
             placeCoroutine = this.StartCoroutine1(PlaceObjects());
         }
 
@@ -48,7 +53,7 @@ namespace Team75.Client {
         }
 
         IEnumerator<object> PlaceObjects(){
-            yield return avatar.GetAwaiter();
+            //yield return avatar.GetAwaiter();
             if(cleanedUp) yield break;
             var wfs = new WaitForSeconds(itemPlacementDelay);
             var len = customer.Items.Length;
@@ -68,7 +73,7 @@ namespace Team75.Client {
 
             GameStateManager.instance.SetCallable();
             avatar.OnAfterItems();
-            
+
         }
 
         public void PlaceItem(int i) {
