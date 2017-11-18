@@ -120,6 +120,10 @@ namespace Team75.Client {
             return myPlayerId;
         }
 
+        public int GetOpponentPlayerId() {
+            return 1-myPlayerId;
+        }
+
         
     }
     

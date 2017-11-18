@@ -162,6 +162,13 @@ namespace Team75.Server {
             });
         };
 
+        Action<byte[], ushort> OnCustomerFinishItems(int playerId) => (byte[] buffer, ushort len) => {
+            servers[1-playerId].SendMessageInBackground(Connection.CUSTOMER_FINISH_ITEMS, new byte[0]{});
+            UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                VisibleCustomerQueue.instance.GetActiveCustomer(playerId).OnAfterItems();
+            });
+        };
+
         
         //----------INSERT-23:58,11-16-------------------
         Action<byte[], ushort> UpdateButton(int playerID) => (byte[] buffer, ushort len) =>
