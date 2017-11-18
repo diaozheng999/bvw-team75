@@ -37,6 +37,30 @@ namespace Team75.Shared {
         LinkedList<Action<Action>> BeforeLeave = new LinkedList<Action<Action>>();
         LinkedList<Action<Action>> AfterLeave = new LinkedList<Action<Action>>();
 
+        LinkedList<Action<Action>> AfterItems = new LinkedList<Action<Action>>();
+
+        public void AddSpecialEffect(SpecialEffect.ExecutionFlag flags,
+            Action<Action> be,
+            Action<Action> ae,
+            Action<Action> bqm,
+            Action<Action> aqm,
+            Action<Action> bd,
+            Action<Action> ad,
+            Action<Action> bl,
+            Action<Action> al,
+            Action<Action> ai
+        ) {
+            if((flags & SpecialEffect.ExecutionFlag.BEFORE_ENQUEUE) > 0) BeforeEnqueue.AddLast(be);
+            if((flags & SpecialEffect.ExecutionFlag.AFTER_ENQUEUE) > 0) AfterEnqueue.AddLast(ae);
+            if((flags & SpecialEffect.ExecutionFlag.BEFORE_QUEUE_MOVE) > 0) BeforeQueueMove.AddLast(bqm);
+            if((flags & SpecialEffect.ExecutionFlag.AFTER_QUEUE_MOVE) > 0) AfterQueueMove.AddLast(aqm);
+            if((flags & SpecialEffect.ExecutionFlag.BEFORE_DEQUEUE) > 0) BeforeDequeue.AddLast(bd);
+            if((flags & SpecialEffect.ExecutionFlag.AFTER_DEQUEUE) > 0) AfterDequeue.AddLast(ad);
+            if((flags & SpecialEffect.ExecutionFlag.BEFORE_LEAVE) > 0) BeforeLeave.AddLast(bl);
+            if((flags & SpecialEffect.ExecutionFlag.AFTER_LEAVE) > 0) AfterLeave.AddLast(al);
+            if((flags & SpecialEffect.ExecutionFlag.AFTER_ITEMS) > 0) AfterItems.AddLast(ai);
+        }
+
 
         public void StartTracking() {
             if (isTracking) {
@@ -98,7 +122,6 @@ namespace Team75.Shared {
 
         void InvokeActionChain(LinkedListNode<Action<Action>> chain, Action cont) {
             if(chain == null) {
-                Debug.LogWarning("Invoking null.");
                 cont?.Invoke();
             }
             else chain.Value.Invoke(() => InvokeActionChain(chain.Next, cont));
@@ -136,6 +159,10 @@ namespace Team75.Shared {
                     });
                 });
             });
+        }
+
+        public void OnAfterItems() {
+            InvokeActionChain(AfterItems.First, PGT.Core.Func.Function.noop);
         }
 
         public void WalkTo(Vector3 position, Quaternion rotation, float speed, float turnSpeed, Action cont = null) {

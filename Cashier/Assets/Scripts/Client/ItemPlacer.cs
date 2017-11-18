@@ -67,6 +67,8 @@ namespace Team75.Client {
             }
 
             GameStateManager.instance.SetCallable();
+            avatar.OnAfterItems();
+            
         }
 
         public void PlaceItem(int i) {

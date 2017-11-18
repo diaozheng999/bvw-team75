@@ -47,6 +47,16 @@ namespace Team75.Server {
             return cust;
         }
 
+        public static Customer GetSpecific(int customer, int budget = 400) {
+            var cust = new Customer();
+            cust.CustomerId = customer;
+            cust.Name = " ";
+            cust.Items = ItemDictionary.instance.GetItemsWithBudget(budget);
+
+            return cust;
+        }
+
+
         public void AddSpecialCustomer(ulong after, Customer cust) {
             if(specialCustomers == null) specialCustomers = new Heap<ulong, Customer>();
             specialCustomers.Insert(cust, after);
