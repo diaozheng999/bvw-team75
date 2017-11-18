@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 95709637295852504}
   - component: {fileID: 114301722583871896}
   m_Layer: 0
-  m_Name: 9_STEELER
+  m_Name: 6_STEELER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 0
-  CustID: 9
+  CustID: 6
   leftHand: {fileID: 4332001227539816}
   rightHand: {fileID: 4679669024994440}
   head: {fileID: 4052443342951888}

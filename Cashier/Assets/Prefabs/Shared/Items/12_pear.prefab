@@ -369,6 +369,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barcode: {fileID: 102130250719796540}
+  exp: 1
+  ItemID: 12
 --- !u!135 &135312273810389022
 SphereCollider:
   m_ObjectHideFlags: 1

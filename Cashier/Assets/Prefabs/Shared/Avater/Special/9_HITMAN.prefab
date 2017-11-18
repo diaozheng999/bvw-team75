@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 95265329923187348}
   - component: {fileID: 114547708308499626}
   m_Layer: 0
-  m_Name: 6_HITMAN
+  m_Name: 9_HITMAN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -551,6 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 0
+  CustID: 9
   leftHand: {fileID: 4351549206993182}
   rightHand: {fileID: 4412780183347938}
   head: {fileID: 4543436952215832}

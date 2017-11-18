@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 75425903451836274}
   - component: {fileID: 114470158688569140}
   m_Layer: 0
-  m_Name: BALLOON 2
+  m_Name: 15_BALLOON 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barcode: {fileID: 102415282286000552}
   exp: 1
+  ItemID: 15
 --- !u!135 &135764689378594042
 SphereCollider:
   m_ObjectHideFlags: 1

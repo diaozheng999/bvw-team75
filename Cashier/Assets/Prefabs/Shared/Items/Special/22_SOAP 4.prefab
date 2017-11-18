@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 114093469801304962}
   - component: {fileID: 114830844185908946}
   m_Layer: 0
-  m_Name: SOAP 4
+  m_Name: 22_SOAP 4
   m_TagString: Soap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,3 +254,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barcode: {fileID: 102250201916383330}
   exp: 1
+  ItemID: 22

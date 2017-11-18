@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 65779631045071432}
   - component: {fileID: 114705656259963734}
   m_Layer: 0
-  m_Name: POPCORN
+  m_Name: 10_POPCORN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2678,6 +2678,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barcode: {fileID: 102723256427796982}
+  exp: 1
+  ItemID: 10
 --- !u!114 &114965788403256756
 MonoBehaviour:
   m_ObjectHideFlags: 1

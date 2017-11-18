@@ -564,6 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 0
+  CustID: 3
   leftHand: {fileID: 4047668157833344}
   rightHand: {fileID: 4634506134750992}
   head: {fileID: 4830779692995460}

@@ -238,3 +238,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barcode: {fileID: 102102724741977606}
+  exp: 1
+  ItemID: 1

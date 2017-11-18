@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114790037905079736}
   - component: {fileID: 114624350506210398}
   m_Layer: 0
-  m_Name: Joker
+  m_Name: 10_JOKER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -661,6 +661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 0
+  CustID: 10
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   head: {fileID: 0}

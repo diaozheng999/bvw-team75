@@ -209,6 +209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barcode: {fileID: 102249084922051192}
+  exp: 1
+  ItemID: 8
 --- !u!114 &114583437690539792
 MonoBehaviour:
   m_ObjectHideFlags: 1

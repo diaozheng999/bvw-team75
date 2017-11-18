@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 95234843382534514}
   - component: {fileID: 114061664125403336}
   m_Layer: 0
-  m_Name: EGGS
+  m_Name: 6_EGGS
   m_TagString: Egg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1054,6 +1054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barcode: {fileID: 102486444957956740, guid: 80138c2942935ac4389ebccbe53a5a69, type: 2}
   exp: 2
+  ItemID: 6
 --- !u!114 &114114096641169832
 MonoBehaviour:
   m_ObjectHideFlags: 1
