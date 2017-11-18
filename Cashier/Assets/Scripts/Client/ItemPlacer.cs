@@ -72,6 +72,7 @@ namespace Team75.Client {
             }
 
             GameStateManager.instance.SetCallable();
+            NetworkManager.instance.SendCustomerFinishItems();
             avatar.OnAfterItems();
 
         }
