@@ -33,9 +33,7 @@ namespace Team75.Client
 
 
 		private bool gamestarted=false;
-		private bool triggerdown = false;
-		private bool time_triggerdown;
-		private OVRInput.Axis1D trigger;
+		
 
 		// Use this for initialization
 		public void StartGame(int playerID)
@@ -44,16 +42,12 @@ namespace Team75.Client
 			Distribution_Customer_Exist = new int[kinds_merchandise];
 			Distribution_Merchandise_Exist = new int[kinds_customer];
 			Distribution_Merchandise_Scanned = new int[kinds_merchandise];
-			trigger=playerID==0?
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
-			if (gamestarted && !triggerdown && )
-			{
-				
-			}
+			
 		}
 
 		public void GenerateItem(int index)
