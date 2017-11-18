@@ -55,10 +55,12 @@ namespace Team75.Client {
 
             var itemPlacement = avatar.GetItemPlacementTransform();
 
-            for(int i=0; i<len; ++i) {
+            for(int i=0; i<len; ++i)
+            {
                 var _go = Instantiate(
                     ItemDictionary.instance.GetItem(customer.Items[i]), itemPlacement.position, itemPlacement.rotation
                 );
+                Statics.instance.GenerateItem(customer.Items[i]);
                 var _it = _go.AddComponent<Item>();
                 _it.RequestTrackingId(customer.Items[i], this, i);
                 items[i] = _go.transform;
