@@ -206,6 +206,10 @@ namespace Team75.Client {
                     GameStateManager.instance.UnsetCallable();
                     var itemPlacer = avatar.gameObject.AddComponent<ItemPlacer>();
                     itemPlacer.SetAvatar(avatar, unpacked.Item2);
+
+                    if(avatar.IsScannable()) {
+                        var sa = avatar.gameObject.AddComponent<ScannableAvatar>();
+                    }
                 }
             });
         }

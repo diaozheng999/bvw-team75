@@ -20,7 +20,6 @@ namespace Team75.Shared.SpecialEffects {
         }
 
         protected override void AfterDequeue(Action cont){
-            Debug.Log("hi!");
             anim.SetTrigger("Aim");
             StartCoroutine(_afterDequeue(cont));
         }

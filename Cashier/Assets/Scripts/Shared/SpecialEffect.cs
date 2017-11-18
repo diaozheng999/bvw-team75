@@ -5,7 +5,7 @@ using System;
 namespace Team75.Shared {
 
     [RequireComponent(typeof(Avatar))]
-    public class SpecialEffect : MonoBehaviour {
+    public class SpecialEffect : MonoBehaviour, IBarcodeProvider {
 
         [Flags]
         public enum ExecutionFlag {
@@ -18,6 +18,7 @@ namespace Team75.Shared {
         }
 
         [SerializeField] TextMesh scannable;
+        [SerializeField] int scannedValue;
         protected ExecutionFlag executionFlag = ExecutionFlag.NONE;
 
         protected virtual void BeforeEnqueue(Action cont) => cont();
@@ -47,6 +48,14 @@ namespace Team75.Shared {
                 AfterLeave,
                 AfterItems
             );
+
+            if(scannable != null) {
+                _avatar.SetScannable(scannedValue);
+            }
+        }
+
+        public Transform GetBarcodeLocation() {
+            return scannable.transform;
         }
 
     }

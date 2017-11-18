@@ -39,6 +39,9 @@ namespace Team75.Shared {
 
         LinkedList<Action<Action>> AfterItems = new LinkedList<Action<Action>>();
 
+        bool isScannable = false;
+        int scannedValue = 0;
+
         public void AddSpecialEffect(SpecialEffect.ExecutionFlag flags,
             Action<Action> be,
             Action<Action> ae,
@@ -60,6 +63,15 @@ namespace Team75.Shared {
             if((flags & SpecialEffect.ExecutionFlag.AFTER_LEAVE) > 0) AfterLeave.AddLast(al);
             if((flags & SpecialEffect.ExecutionFlag.AFTER_ITEMS) > 0) AfterItems.AddLast(ai);
         }
+
+        public void SetScannable(int value) {
+            scannedValue = value;
+            isScannable = true;
+        }
+
+        public bool IsScannable () => isScannable;
+
+        public int GetScannedValue () => scannedValue;
 
 
         public void StartTracking() {
