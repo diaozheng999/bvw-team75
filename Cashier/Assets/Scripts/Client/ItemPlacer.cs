@@ -88,7 +88,7 @@ namespace Team75.Client {
             foreach(var p in placed) {
                 if(!p) return;
             }
-
+            Statics.instance.CustomerComplete(VisibleCustomerQueue.instance.GetActiveCustomer(GameStateManager.instance.GetPlayerId()).GetID());
             var pid = GameStateManager.instance.GetPlayerId();
             NetworkManager.instance.SendCustomerLeave(pid);
             VisibleCustomerQueue.instance.CustomerLeave(pid);

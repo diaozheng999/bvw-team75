@@ -53,31 +53,31 @@ namespace Team75.Client
 			
 		}
 
-		public void GenerateItem(int index) //called
+		public void GenerateItem(int index) 
 		{
 			Item_Exist++;
 			Distribution_Merchandise_Exist[index]++;
 
 		}
 
-		public void GenerateCustomer(int index) // called 
+		public void GenerateCustomer(int index)  
 		{
 			Customer_Exist++;
 			Distribution_Customer_Exist[index]++;
 		}
 
-		public void ScanItem(int index) //
+		public void ScanItem(int index) // called
 		{
 			Item_Scanned++;
 			Distribution_Merchandise_Scanned[index]++;
 		}
 
-		public void CustomerComplete(int index)
+		public void CustomerComplete(int index) 
 		{
 			Customer_Completed++;
 		}
 
-		public void TriggerDown()
+		public void TriggerDown() 
 		{
 			if (!triggerdown)
 			{

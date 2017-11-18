@@ -11,6 +11,8 @@ namespace Team75.Client{
 		[SerializeField] HandEnum hand;
 		[SerializeField] GameObject sprite;
 		[SerializeField] GameObject scanner;
+
+		private bool triggerdown_scanner=false;
 		
 		Scanner mbScanner;
 
@@ -83,6 +85,11 @@ namespace Team75.Client{
 				Scanner.instance.SetTriggerState(t);
 				if (t > 0.7f)
 				{
+					if (!triggerdown_scanner)
+					{
+						triggerdown_scanner = true;
+						Statics.instance.TriggerDown();
+					}
 					var item = Scanner.instance.Scan();
 					if (item != null)
 					{
@@ -104,6 +111,11 @@ namespace Team75.Client{
 				}
 				else
 				{
+					if (triggerdown_scanner)
+					{
+						triggerdown_scanner = false;
+						Statics.instance.TriggerUp();
+					}
 					Scanner.instance.NotScan();
 				}
 			}
