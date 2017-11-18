@@ -597,7 +597,7 @@ MonoBehaviour:
   head: {fileID: 0}
   neck: {fileID: 0}
   body: {fileID: 0}
-  itemPlacementPosition: {fileID: 0}
+  itemPlacementPosition: {fileID: 4326074363158382}
   nameTag: {fileID: 102475998890186508}
   avatarMame: 
   itemPlacementDelay: 0.2
