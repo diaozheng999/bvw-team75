@@ -24,7 +24,7 @@ namespace Team75.Client
 
 		private int Customer_Completed = 0;
 
-		private int Percentage_Complete_Customer;
+		private float Percentage_Complete_Customer;
 
 		private int[] Distribution_Merchandise_Exist;
 		private int[] Distribution_Merchandise_Scanned;
@@ -33,6 +33,9 @@ namespace Team75.Client
 
 
 		private bool gamestarted=false;
+		private float time_triggerdown;
+		private bool triggerdown;
+		
 		
 
 		// Use this for initialization
@@ -50,7 +53,7 @@ namespace Team75.Client
 			
 		}
 
-		public void GenerateItem(int index)
+		public void GenerateItem(int index) //called
 		{
 			Item_Exist++;
 			Distribution_Merchandise_Exist[index]++;
@@ -72,6 +75,29 @@ namespace Team75.Client
 		public void CustomerComplete(int index)
 		{
 			Customer_Completed++;
+		}
+
+		public void TriggerDown()
+		{
+			if (!triggerdown)
+			{
+				time_triggerdown = Time.time;
+				triggerdown = true;
+			}
+		}
+
+		public void TriggerUp()
+		{
+			if (triggerdown)
+			{
+				triggerdown = false;
+				Time_Scanning += Time.time - time_triggerdown;
+			}
+		}
+
+		public void ShowResult()
+		{
+			Percentage_Complete_Customer = (float) Customer_Completed / Customer_Exist * 100;
 		}
 
 

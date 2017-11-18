@@ -101,6 +101,7 @@ namespace Team75.Client {
                 var _ip = _avatar.GetComponent<ItemPlacer>();
                 _ip.Cleanup();
                 VisibleCustomerQueue.instance.CustomerLeave(myPlayerId);
+                
             } 
             NetworkManager.instance.RequestCustomer();
         }

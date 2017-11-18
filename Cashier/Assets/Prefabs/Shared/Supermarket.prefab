@@ -20290,6 +20290,9 @@ MonoBehaviour:
   - {fileID: 1676430069226522, guid: e78f7cb1807a7734481608a3d0b34596, type: 2}
   - {fileID: 1801458963388690, guid: 92aa4993f9a74834d92d3a3406a180c4, type: 2}
   - {fileID: 1414909723877008, guid: 7d393431772c08f4692f8e9e9f64446b, type: 2}
+  - {fileID: 1848867411032224, guid: de0dd03ac23ee074fae1211da07067e1, type: 2}
+  - {fileID: 1450771723211422, guid: 8b2185d59a9e0f9438c51a06388bcfc5, type: 2}
+  - {fileID: 1894304198498866, guid: c8e4cd87a9f0cb049a3a0c84d04cd7dd, type: 2}
   - {fileID: 1231801363603882, guid: 07dc58ec8568a774b925d53eaf683951, type: 2}
   - {fileID: 1080758026782542, guid: 8ea5ad24cf5865b479db5ead9c602e4a, type: 2}
   items:
@@ -20343,7 +20346,7 @@ MonoBehaviour:
   - 0.2
   - 0.2
   itemValues: 0a000000140000001e00000028000000320000003c00000046000000500000005a000000640000006e00000078000000820000008c00000096000000a0000000aa000000b4000000be000000c8000000d2000000dc000000e6000000f0000000
-  specialCustomers: 6
+  specialCustomers: 9
 --- !u!114 &114626462587436666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20472,6 +20475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 1
+  CustID: 0
   leftHand: {fileID: 4298864808106816}
   rightHand: {fileID: 4977699560964776}
   head: {fileID: 4493042971341362}
@@ -20671,6 +20675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 0
+  CustID: 0
   leftHand: {fileID: 4816995730872072}
   rightHand: {fileID: 4953815312066302}
   head: {fileID: 4705130777339766}

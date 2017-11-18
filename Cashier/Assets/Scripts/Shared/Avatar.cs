@@ -9,6 +9,7 @@ namespace Team75.Shared {
     public class Avatar : MonoBehaviour {
 
         [SerializeField] int PlayerId;
+        [SerializeField] private int CustID;
         [SerializeField] Transform leftHand;
         [SerializeField] Transform rightHand;
         [SerializeField] Transform head;
