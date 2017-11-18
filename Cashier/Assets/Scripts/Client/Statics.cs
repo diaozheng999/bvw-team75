@@ -14,22 +14,22 @@ namespace Team75.Client
 
 		[SerializeField] private int kinds_customer;
 
-		private int Item_Exist = 0;
+		public int Item_Exist = 0;
 
-		private int Item_Scanned = 0;
+		public int Item_Scanned = 0;
 
-		private float Time_Scanning = 0;
+		public float Time_Scanning = 0;
 
-		private int Customer_Exist = 0;
+		public int Customer_Exist = 0;
 
-		private int Customer_Completed = 0;
+		public int Customer_Completed = 0;
 
 		private float Percentage_Complete_Customer;
 
-		private int[] Distribution_Merchandise_Exist;
-		private int[] Distribution_Merchandise_Scanned;
+		public int[] Distribution_Merchandise_Exist;
+		public int[] Distribution_Merchandise_Scanned;
 
-		private int[] Distribution_Customer_Exist;
+		public int[] Distribution_Customer_Exist;
 
 
 		private bool gamestarted=false;
