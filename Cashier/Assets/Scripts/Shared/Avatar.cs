@@ -245,6 +245,11 @@ namespace Team75.Shared {
             return walkingCoroutine.GetAwaiter();
         }
 
+        public int GetID()
+        {
+            return CustID;
+        }
+
         void OnDisable() {
             StopTracking();
         }

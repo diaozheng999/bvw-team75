@@ -9,6 +9,7 @@ namespace Team75.Shared {
 
         private Rigidbody[] rigs;
         [SerializeField] private int exp=1;
+        [SerializeField] private int ItemID;
 
         private void Start()
         {
@@ -44,6 +45,11 @@ namespace Team75.Shared {
             }
             //Destroy(gameObject);
                 
+        }
+
+        public int GetID()
+        {
+            return ItemID;
         }
     }
 

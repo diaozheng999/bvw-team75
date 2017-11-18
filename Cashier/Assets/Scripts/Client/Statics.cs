@@ -60,13 +60,13 @@ namespace Team75.Client
 
 		}
 
-		public void GenerateCustomer(int index)
+		public void GenerateCustomer(int index) // called 
 		{
 			Customer_Exist++;
 			Distribution_Customer_Exist[index]++;
 		}
 
-		public void ScanItem(int index)
+		public void ScanItem(int index) //
 		{
 			Item_Scanned++;
 			Distribution_Merchandise_Scanned[index]++;
