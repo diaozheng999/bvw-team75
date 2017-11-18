@@ -65,7 +65,7 @@ namespace Team75.Server {
             }
 
             if(Input.GetKeyUp(KeyCode.H)) {
-                CustomerQueue.instance.Enqueue(CustomerQueue.GetSpecific(6)); //hitman
+                CustomerQueue.instance.Enqueue(CustomerQueue.GetSpecific(6, 2000)); //hitman
             }
 
             if(Input.GetKeyUp(KeyCode.LeftArrow)) {

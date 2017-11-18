@@ -51,6 +51,7 @@ namespace Team75.Server {
                 servers[i].AddParser(Connection.TRACKING_ID_DESTROY, ReleaseTrackingId(i), "TRACKING_ID_DESTROY");
                 servers[i].AddParser(Connection.TRACKING_ID_PURGED, PurgeTrackingId, "TRACKING_ID_PURGED");
                 servers[i].AddParser(Connection.CUSTOMER_LEAVE, CustomerLeave(i), "CUSTOMER_LEAVE");
+                servers[i].AddParser(Connection.CUSTOMER_FINISH_ITEMS, OnCustomerFinishItems(i), "CUSTOMER_FINISH_ITEMS");
                 servers[i].AddParser(Connection.SCORE_ADD_ITEM, AddLineItem(i), "SCORE_ADD_ITEM");
                 servers[i].AddParser(Connection.UPDATE_BUTTON, UpdateButton(i), "UPDATE_BUTTON");
                 AddDisposable(servers[i]);
