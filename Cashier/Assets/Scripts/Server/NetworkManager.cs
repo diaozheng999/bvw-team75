@@ -32,6 +32,11 @@ namespace Team75.Server {
             servers[1] = new TcpServer(Connection.TCP_SERVER_PORT_2, OnConnect(1));
 
             remoteAddress = new IPAddress[NUM_PLAYERS];
+
+            for(int i=0; i<NUM_PLAYERS; ++i) {
+                remoteAddress[i] = IPAddress.Parse("127.0.0.1");
+            }
+
             
             foreach(var ip in servers[0].GetLocalAddresses()) {
                 ListeningIps.text += string.Format("\n{0}", ip);
@@ -59,6 +64,7 @@ namespace Team75.Server {
             AwaitingCanvas.SetActive(false);
             remoteClient = new TcpClient(IPAddress.Parse(webSocketAddress.text), Connection.WEB_SERVER_PORT);
             remoteClient.AddParser(Connection.REMOTE_CUSTOMER, OnRemoteCustomer, "REMOTE_CUSTOMER");
+            OnComplete();
             AddDisposable(remoteClient);
         }
 
@@ -81,7 +87,7 @@ namespace Team75.Server {
                 GameStateManager.instance.StartTracking(playerId);
                 ScoreManager.instance.Reset();
                 if(connected_players >= 2) {
-                    OnComplete();
+                    //OnComplete();
                 }
             });
         };
