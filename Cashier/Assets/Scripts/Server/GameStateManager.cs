@@ -60,6 +60,10 @@ namespace Team75.Server {
                 CustomerQueue.instance.Enqueue(CustomerQueue.GenerateRandom());
             }
 
+            if(Input.GetKeyUp(KeyCode.J)) {
+                CustomerQueue.instance.Enqueue(CustomerQueue.GetSpecific(7)); //joker
+            }
+
             if(Input.GetKeyUp(KeyCode.LeftArrow)) {
                 CustomerQueue.instance.Dequeue(0);
             }
