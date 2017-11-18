@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Team75.Client;
 using UnityEngine;
 
@@ -22,6 +23,14 @@ namespace Team75.Shared.SpecialEffects {
         protected override void AfterItems(Action cont){
             cont();
             anim.SetTrigger("turnback");
+        }
+
+        protected override void BeforeLeave(Action cont) => StartCoroutine(BeforeLeaveCoroutine(cont));
+
+        IEnumerator BeforeLeaveCoroutine(Action cont) {
+            anim.SetTrigger("turnforward");
+            yield return new WaitForSeconds(1.042f);
+            cont();
         }
 
     }
