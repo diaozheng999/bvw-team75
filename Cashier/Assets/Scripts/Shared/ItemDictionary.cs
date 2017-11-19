@@ -9,7 +9,7 @@ namespace Team75.Shared {
         [SerializeField] GameObject[] customers;
         [SerializeField] GameObject[] items;
         [SerializeField] private float[] possibilities;
-        private static float[] insections;
+        private float[] insections;
         private float possi_total;
 
         [SerializeField] int[] itemValues;
@@ -22,7 +22,7 @@ namespace Team75.Shared {
             insections = new float[Mathf.Max(0,items.Length-1)];
             if (insections.Length > 0)
             {
-                insections[0] = possibilities[0] - 0.5f;
+                insections[0] = possibilities[0];
                 for (int i = 1; i < insections.Length; i++)
                 {
                     insections[i] = insections[i - 1] + possibilities[i];

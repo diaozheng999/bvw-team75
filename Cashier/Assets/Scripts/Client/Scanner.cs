@@ -109,7 +109,7 @@ namespace Team75.Client
 
 				// passed all checks.
 				//---------------INSERT-----------------
-				Statics.instance.ScanItem(client_item.gameObject.GetComponent<Shared.Item>().GetID());
+				Statics.instance.ScanItem(client_item.GetId());
 				GetComponent<AudioSource>().clip = (playerId == 0) ? clip0 : clip1;
 				GetComponent<AudioSource>().Play();
 				//-------------------END--------------

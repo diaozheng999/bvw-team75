@@ -111,5 +111,7 @@ namespace Team75.Client {
             if(_rb!=null) _rb.velocity = speed;
             DestroyIfScanned();
         }
+
+        public override int GetId() => GetComponent<Shared.Item>().GetID();
     }
 }

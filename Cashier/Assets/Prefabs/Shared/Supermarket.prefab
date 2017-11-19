@@ -19770,6 +19770,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -19806,6 +19820,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -19842,6 +19870,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -19878,6 +19920,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -20302,11 +20358,11 @@ MonoBehaviour:
   - {fileID: 1887651658928508, guid: 57d6116d31928ad4181872b0c0699331, type: 2}
   - {fileID: 1647386874547230, guid: 195aa45b5b4a7bf479c882dd0223f153, type: 2}
   - {fileID: 1564974296896844, guid: 60f115a7981429f40b1f5a3a2c7aad91, type: 2}
-  - {fileID: 1765526798865934, guid: 7bcdf51f3a003c6419bac268d3d2c2ee, type: 2}
+  - {fileID: 1750037091283610, guid: fda4281002cbb914ca5e131131f6f2ab, type: 2}
   - {fileID: 1323670006752830, guid: 3ddbe2ad16ffdce449f2d3b3ab024885, type: 2}
   - {fileID: 1307517931057664, guid: 49435bfd20eb0da46ae8325b336e0fe0, type: 2}
   - {fileID: 1997658510340524, guid: e461987896d3a6d4dabf6d6a26fe0f03, type: 2}
-  - {fileID: 1523621441304336, guid: 74f1fd52f2e08464a99d5e3c7e9d29eb, type: 2}
+  - {fileID: 0}
   - {fileID: 1730984717130432, guid: 80d31d9aa5e4cd140a321d2aad646d4a, type: 2}
   - {fileID: 1893262975847492, guid: a42594260a7c0524287f716712299368, type: 2}
   - {fileID: 1571499882493646, guid: ef2548b6fb492c340b6293223106a6f8, type: 2}
@@ -20331,6 +20387,7 @@ MonoBehaviour:
   - 0.2
   - 0.2
   - 0.2
+  - 0
   - 0.2
   - 0.2
   - 0.2
@@ -20341,8 +20398,7 @@ MonoBehaviour:
   - 0.2
   - 0.2
   - 0.2
-  - 0.2
-  itemValues: 0a000000140000001e00000028000000320000003c00000046000000500000005a000000640000006e00000078000000820000008c00000096000000a0000000aa000000b4000000be000000c8000000d2000000dc000000e6000000f0000000
+  itemValues: 0a000000140000001e00000028000000320000003c00000046000000500000005a000000640000006e0000007800000082000000e803000096000000a0000000aa000000b4000000be000000c8000000d2000000dc000000e6000000f0000000
   specialCustomers: 6
 --- !u!114 &114626462587436666
 MonoBehaviour:
@@ -20472,6 +20528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 1
+  CustID: 0
   leftHand: {fileID: 4298864808106816}
   rightHand: {fileID: 4977699560964776}
   head: {fileID: 4493042971341362}
@@ -20671,6 +20728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 0
+  CustID: 0
   leftHand: {fileID: 4816995730872072}
   rightHand: {fileID: 4953815312066302}
   head: {fileID: 4705130777339766}

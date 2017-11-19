@@ -19,10 +19,17 @@ namespace Team75.Client {
 
         public override void SetScanned(bool _scanned) {
             scanned = _scanned;
+
+            var val = ItemDictionary.instance.GetItemValue(ScannedValue);
             // Update score
-            ScoreManager.instance.AddLine((uint)ScannedValue);
-            NetworkManager.instance.SendScoreUpdateMessage((uint)ScannedValue);
+            ScoreManager.instance.AddLine((uint)val);
+            NetworkManager.instance.SendScoreUpdateMessage((uint)val);
             Scanner.instance.RemoveItem(this);
+        }
+
+        public override int GetId()
+        {
+            return ScannedValue;
         }
 
         void OnDestroy() {
