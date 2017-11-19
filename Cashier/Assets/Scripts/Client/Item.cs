@@ -13,7 +13,7 @@ namespace Team75.Client {
 
 
 
-        volatile byte TrackingId;
+        volatile ushort TrackingId;
         short type;
         volatile bool tracking = false;        
         ItemPlacer placer;
@@ -60,7 +60,7 @@ namespace Team75.Client {
             }
         }
 
-        void OnGetTrackingId(byte id) {
+        void OnGetTrackingId(ushort id) {
             TrackingId  = id;
             tracking = true;
             UnityExecutionThread.instance.ExecuteInMainThread(() => {

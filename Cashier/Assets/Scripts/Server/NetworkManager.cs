@@ -125,7 +125,7 @@ namespace Team75.Server {
 
         Action<byte[], ushort> RequestTrackingId(int playerId) => (byte[] buffer, ushort len) => {
             var id = TrackingIdManager.instance.GetUnusedId();
-            servers[playerId].SendMessageInBackground(Connection.TRACKING_ID_RESPONSE, new byte[1]{id});
+            servers[playerId].SendMessageInBackground(Connection.TRACKING_ID_RESPONSE, Connection.PackTrackingId(id));
         };
 
         Action<byte[], ushort> SpawnObject(int playerId) => (byte[] buffer, ushort len) => {
@@ -149,9 +149,9 @@ namespace Team75.Server {
         };
         
         Action<byte[], ushort> ReleaseTrackingId(int playerId) => (byte[] buffer, ushort len) => {
-            var id = buffer[0];
+            var id = Connection.UnpackTrackingId(buffer, 0);
             TrackableItemPlacer.instance.RemoveTrackable(id, () => TrackingIdManager.instance.FreeId(id));
-            servers[(playerId+1)%2].SendMessageInBackground(Connection.TRACKING_ID_PURGE, new byte[1]{id});
+            servers[(playerId+1)%2].SendMessageInBackground(Connection.TRACKING_ID_PURGE, Connection.PackTrackingId(id));
         };
 
         Action<byte[], ushort> AddLineItem(int playerId) => (byte[] buffer, ushort len) => {
@@ -193,7 +193,7 @@ namespace Team75.Server {
         //----------------END-----------------
 
         void PurgeTrackingId(byte[] buffer, ushort len) {
-            var id = buffer[0];
+            var id = Connection.UnpackTrackingId(buffer, 0);
             TrackingIdManager.instance.FreeId(id);
         }
         

@@ -8,8 +8,8 @@ using PGT.Core.Func;
 using PGT.Core.DataStructures;
 
 // A primitive way of using typedef. Update this if you want a larger ID size.
-// also, ParseObjectId function will need to be changed.
-using object_id_t = System.Byte;
+// also, ParseObjectId and PackObjectId functions will need to be changed.
+using object_id_t = System.UInt16;
 
 namespace PGT.Core.Networking {
 
@@ -129,7 +129,8 @@ namespace PGT.Core.Networking {
         }
 
         object_id_t ParseObjectId(byte[] buffer, int start) {
-            return buffer[start];
+            return BitConverter.ToUInt16(buffer, start);
+            //return buffer[start];
         }
 
         Quaternion GetRotation(Matrix4x4 mat) {
@@ -214,7 +215,8 @@ namespace PGT.Core.Networking {
 
         
         void PackObjectId(object_id_t item, byte[] buffer, int start) {
-            buffer[start] = item;
+            Array.Copy(BitConverter.GetBytes(item), 0, buffer, start, 2);
+            //buffer[start] = item;
         }
 
         byte[] PackPositionMessage(Sequence<Func.Tuple<object_id_t, Vector3>> item){
