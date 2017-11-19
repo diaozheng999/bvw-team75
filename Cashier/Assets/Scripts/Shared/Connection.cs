@@ -84,6 +84,14 @@ namespace Team75.Shared {
             return new Tuple<byte, Customer>(buffer[offset], UnpackCustomer(buffer, offset+1));
         }
 
+        public static byte[] PackTrackingId(ushort trackingId) {
+            return BitConverter.GetBytes(trackingId);
+        }
+
+        public static ushort UnpackTrackingId(byte[] buffer, int offset) {
+            return BitConverter.ToUInt16(buffer, offset);
+        }
+
         public static byte[] PackCustomer(Customer cust) {
             // packing this way:
             // cust_id (4)
@@ -132,9 +140,10 @@ namespace Team75.Shared {
             
         }
 
-        public static byte[] PackTrackableItem(byte id, short type, Vector3 pos, Quaternion rot) {
+        public static byte[] PackTrackableItem(ushort id, short type, Vector3 pos, Quaternion rot) {
             var buffer = new byte[32];
-            buffer[0] = id;
+            //buffer[0] = id;
+            Array.Copy(BitConverter.GetBytes(id), 0, buffer, 0, 2);
             Array.Copy(BitConverter.GetBytes(type), 0, buffer, 2, 2);
             Array.Copy(BitConverter.GetBytes(pos.x), 0, buffer, 4, 4);
             Array.Copy(BitConverter.GetBytes(pos.y), 0, buffer, 8, 4);
@@ -146,8 +155,9 @@ namespace Team75.Shared {
             return buffer;
         }
 
-        public static Tuple<byte, short, Vector3, Quaternion> UnpackTrackableItem(byte[] buffer, int offset) {
-            var id = buffer[offset];
+        public static Tuple<ushort, short, Vector3, Quaternion> UnpackTrackableItem(byte[] buffer, int offset) {
+            //var id = buffer[offset];
+            var id = BitConverter.ToUInt16(buffer, offset);
             var type = BitConverter.ToInt16(buffer, offset+2);
             var pos_x = BitConverter.ToSingle(buffer, offset+4);
             var pos_y = BitConverter.ToSingle(buffer, offset+8);
@@ -158,7 +168,7 @@ namespace Team75.Shared {
             var rot_z = BitConverter.ToSingle(buffer, offset+24);
             var rot_w = BitConverter.ToSingle(buffer, offset+28);
             var rot = new Quaternion(rot_x, rot_y, rot_z, rot_w);
-            return new Tuple<byte, short, Vector3, Quaternion>(id, type, pos, rot);
+            return new Tuple<ushort, short, Vector3, Quaternion>(id, type, pos, rot);
         }
 
         public static byte[] PackScore(byte playerId, uint score) {

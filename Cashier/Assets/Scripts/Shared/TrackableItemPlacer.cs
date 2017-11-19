@@ -7,13 +7,13 @@ namespace Team75.Shared {
 
     public class TrackableItemPlacer : Singleton<TrackableItemPlacer> {
 
-        Dictionary<byte, Transform> trackableItems;
+        Dictionary<ushort, Transform> trackableItems;
 
         void Start() {
-            trackableItems = new Dictionary<byte, Transform>();
+            trackableItems = new Dictionary<ushort, Transform>();
         }
 
-        public void AddTrackable (byte id, short type, Vector3 pos, Quaternion rot) {
+        public void AddTrackable (ushort id, short type, Vector3 pos, Quaternion rot) {
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
                 var _go = Instantiate(ItemDictionary.instance.GetItem(type), pos, rot);
                 var tf = _go.transform;
@@ -22,7 +22,7 @@ namespace Team75.Shared {
             });
         }
 
-        public void RemoveTrackable (byte id, System.Action cont = null) {
+        public void RemoveTrackable (ushort id, System.Action cont = null) {
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
                 NetworkPositionManager.instance.RemoveTrackableTransform(id);
                 Destroy(trackableItems[id].gameObject);

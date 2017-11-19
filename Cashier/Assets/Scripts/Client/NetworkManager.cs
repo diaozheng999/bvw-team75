@@ -21,7 +21,7 @@ namespace Team75.Client {
 
         IPAddress server_address;
 
-        ConcurrentQueue<System.Action<byte>> trackingIdRequests;
+        ConcurrentQueue<System.Action<ushort>> trackingIdRequests;
 
         void Start() {
             connectP1.onClick.AddListener(() => {
@@ -34,7 +34,7 @@ namespace Team75.Client {
                 Connect(server_address, Connection.TCP_SERVER_PORT_2);
             });
             StartCoroutine(StartGame());
-            trackingIdRequests = new ConcurrentQueue<System.Action<byte>>();
+            trackingIdRequests = new ConcurrentQueue<System.Action<ushort>>();
         }
 
         IEnumerator StartGame() {
@@ -154,12 +154,12 @@ namespace Team75.Client {
             });
         }
 
-        public void RequestTrackingId(System.Action<byte> response) {
+        public void RequestTrackingId(System.Action<ushort> response) {
             trackingIdRequests.Enqueue(response);
             client.SendMessageInBackground(Connection.TRACKING_ID_REQUEST, new byte[0]{});
         }
 
-        public void AddTrackableItem(byte id, short type, Vector3 position, Quaternion rotation) {
+        public void AddTrackableItem(ushort id, short type, Vector3 position, Quaternion rotation) {
             client.SendMessageInBackground(
                 Connection.SPAWN_ITEM,
                 Connection.PackTrackableItem(id, type, position, rotation)
@@ -175,15 +175,15 @@ namespace Team75.Client {
             });
         }
 
-        public void ReleaseTrackingId(byte id) {
-            client.SendMessageInBackground(Connection.TRACKING_ID_DESTROY, new byte[1]{id});
+        public void ReleaseTrackingId(ushort id) {
+            client.SendMessageInBackground(Connection.TRACKING_ID_DESTROY, Connection.PackTrackingId(id));
         }
 
         void OnReceiveTrackingId(byte[] buffer, ushort length) {
-            // don't need to unpack. Tracking ID is a byte!
-            System.Action<byte> cont;
+            var trackingId = Connection.UnpackTrackingId(buffer, 0);
+            System.Action<ushort> cont;
             if (trackingIdRequests.TryDequeue(out cont)) {
-                cont(buffer[0]);
+                cont(trackingId);
             } else {
                 Debug.LogError("NetworkManager: Receiving more tracking ID responses than requests. Error?");
             }

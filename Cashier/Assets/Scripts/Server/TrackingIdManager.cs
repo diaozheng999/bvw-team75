@@ -8,7 +8,7 @@ namespace Team75.Server {
     
     public class TrackingIdManager : Singleton<TrackingIdManager> {
 
-        public const int MAX_TRACKABLE_OBJECT = 128;
+        public const int MAX_TRACKABLE_OBJECT = 1024;
 
         volatile byte[] ids;
 
@@ -29,19 +29,19 @@ namespace Team75.Server {
             ids[Connection.PLAYER_TWO_SCANNER] = 2;
         }
 
-        public byte GetUnusedId() {
+        public ushort GetUnusedId() {
             lock(ids) {
                 for(int i=0; i<MAX_TRACKABLE_OBJECT; ++i) {
                     if(ids[i]==0) {
                         ids[i] = 2;
-                        return (byte)i;
+                        return (ushort)i;
                     }
                 }
             }
-            return (byte)255;
+            return (ushort)65535;
         }
 
-        public void FreeId(byte id) {
+        public void FreeId(ushort id) {
             lock(ids) {
                 if (ids[id] > 0)
                     ids[id]--;
