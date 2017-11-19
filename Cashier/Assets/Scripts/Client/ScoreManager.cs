@@ -13,6 +13,7 @@ namespace Team75.Client {
         [SerializeField] Text lineItemsDisplay;
         [SerializeField] int maxLineItems;
         [SerializeField] Text timerDisplay;
+        
 
         LinkedList<string> lineItems;
 
@@ -62,10 +63,16 @@ namespace Team75.Client {
         void Update() {
             time = Mathf.Max(0, time - Time.deltaTime);
             timerDisplay.text = ParseTime();
+            
+        }
+
+        public float GetTime()
+        {
+            return time;
         }
 
         
-        string ParseTime() {
+        public string ParseTime() {
             var mins = Mathf.FloorToInt(time / 60);
             var secs = Mathf.FloorToInt(time % 60);
             return string.Format("{0}:{1}", mins.ToString("D2"), secs.ToString("D2"));

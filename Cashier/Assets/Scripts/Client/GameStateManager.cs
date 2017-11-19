@@ -23,6 +23,8 @@ namespace Team75.Client {
 
         [SerializeField] private Ring ring0;
         [SerializeField] private Ring ring1;
+
+        [SerializeField] private Timer _timer;
         
         
 
@@ -41,6 +43,8 @@ namespace Team75.Client {
             Debug.Log("GameStateManager: starting game as player "+playerId);
 
             Statics.instance.StartGame(playerId);
+            _timer.StartGame(playerId);
+            
             myPlayerId = playerId;
             ring = playerId == 0 ? ring0 :  ring1;
 
