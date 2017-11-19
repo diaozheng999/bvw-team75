@@ -52,7 +52,7 @@ namespace Team75.Client {
             }
         }
 
-        IEnumerator<object> PlaceObjects(){
+        protected virtual IEnumerator<object> PlaceObjects(){
             //yield return avatar.GetAwaiter();
             if(cleanedUp) yield break;
             var wfs = new WaitForSeconds(itemPlacementDelay);

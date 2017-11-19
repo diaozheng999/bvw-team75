@@ -1,6 +1,10 @@
+using System;
 using PGT.Core;
+using PGT.Core.Func;
+using PGT.Core.DataStructures;
 using System.Collections.Generic;
 using UnityEngine;
+using URandom = UnityEngine.Random;
 
 namespace Team75.Shared {
     public class ItemDictionary : Singleton<ItemDictionary> {
@@ -9,8 +13,11 @@ namespace Team75.Shared {
         [SerializeField] GameObject[] customers;
         [SerializeField] GameObject[] items;
         [SerializeField] private float[] possibilities;
-        private float[] insections;
+        [SerializeField] float[] frenzyLikelihood;
+        [SerializeField] private float[] insections;
+        float[] frenzyCDF;
         private float possi_total;
+
 
         [SerializeField] int[] itemValues;
 
@@ -19,6 +26,9 @@ namespace Team75.Shared {
         protected override void Awake()
         {
             base.Awake();
+            insections = BuildCDF(possibilities);
+            //frenzyCDF = BuildCDF(frenzyLikelihood);
+            /*
             insections = new float[Mathf.Max(0,items.Length-1)];
             if (insections.Length > 0)
             {
@@ -33,6 +43,14 @@ namespace Team75.Shared {
             {
                 possi_total += possibilities[i];
             }
+            */
+        }
+
+        float[] BuildCDF(float[] likelihood) {
+            var _likelihood = Sequence.Array(likelihood);
+            var total = _likelihood.Reduce(Function.fadd, 0);
+            var pdf = _likelihood.Map((float v)=> v/total);
+            return pdf.ScanIncl(Function.fadd, 0).ToArray();
         }
 
         public GameObject GetItem(int id) {
@@ -52,7 +70,7 @@ namespace Team75.Shared {
         }
 
         public int GetRandomNormalCustomer(){
-            return Random.Range(0, specialCustomers);
+            return URandom.Range(0, specialCustomers);
         }
         
         public short[] GetItemsWithBudget(int budget) {
@@ -71,16 +89,19 @@ namespace Team75.Shared {
             return list.ToArray();
         }
         
+        public short GenerateRandomItem(float[] CDF) {
+            var result = Array.BinarySearch<float>(CDF, URandom.value);
+            if(result < 0) {
+                var result_ = ~result;
+                if(result_ == CDF.Length) return (short)(result_ - 1);
+                return (short)result_;
+            }
+            return (short)result;
+        }
+
         public short generaterandomitem()
         {
-            float seed = Random.Range(0f, possi_total);
-            short result = 0;
-            foreach (float f in insections)
-            {
-                if (f < seed) result++;
-                else break;
-            }
-            return result;
+            return GenerateRandomItem(insections);
         }
 
     }

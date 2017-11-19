@@ -45,6 +45,7 @@ namespace Team75.Shared {
         public const byte START_GAME = 0xFF;
         public const byte END_GAME = 0xFE;
         public const byte TIMER_SYNC = 0xFD;
+        public const byte FRENZY_START = 0xFC;
 
         public const byte SCORE_ADD_ITEM = 0x30;
         public const byte SCORE_SET = 0x31;
