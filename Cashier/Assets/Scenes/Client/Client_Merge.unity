@@ -854,7 +854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kinds_merchandise: 24
-  kinds_customer: 8
+  kinds_customer: 11
   Item_Exist: 0
   Item_Scanned: 0
   Time_Scanning: 0
@@ -2769,11 +2769,6 @@ Transform:
   m_Father: {fileID: 592778213}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &896257154 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4500006020187086, guid: fa958adbf8f2b664fa313a914401f029,
-    type: 2}
-  m_PrefabInternal: {fileID: 1708826457}
 --- !u!1 &926141718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3475,7 +3470,7 @@ MonoBehaviour:
   - {fileID: 216562324}
   - {fileID: 789478030}
   ScorePlacements:
-  - {fileID: 896257154}
+  - {fileID: 0}
   - {fileID: 2123079257}
   ring0: {fileID: 1883540954}
   ring1: {fileID: 1883540953}
