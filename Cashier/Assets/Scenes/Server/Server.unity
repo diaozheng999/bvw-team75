@@ -635,7 +635,7 @@ Prefab:
     - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
         type: 2}
       propertyPath: possibilities.Array.data[29]
-      value: 100
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
         type: 2}
