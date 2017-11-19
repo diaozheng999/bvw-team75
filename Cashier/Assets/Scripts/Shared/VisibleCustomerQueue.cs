@@ -14,6 +14,9 @@ namespace Team75.Shared {
         [SerializeField] Vector3 enqueueSpawn;
         [SerializeField] float movementSpeed;
         [SerializeField] float turnSpeed;
+        
+        
+        [SerializeField] private Door door;
 
         [SerializeField] Transform[] customerPositions;
         [SerializeField] Transform[] customerLeavePositions;
@@ -59,6 +62,9 @@ namespace Team75.Shared {
             Count++;
 
             var avatar_go = Instantiate(ItemDictionary.instance.GetCustomer(cust.CustomerId), enqueueSpawn + targets[customers.Count], queueRotation);
+            var opendoor = avatar_go.AddComponent<TrackablebyDoor>();
+            opendoor.door = door;
+            
             var avatar = avatar_go.GetComponent<Avatar>();
             avatar.SetName(cust.Name);
             if (Shuffling>0) {

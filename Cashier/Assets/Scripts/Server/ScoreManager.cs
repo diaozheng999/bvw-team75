@@ -45,7 +45,7 @@ namespace Team75.Server {
             newscore.transform.parent = transform;
             newscore.transform.localPosition=new Vector3(0,0,0);
             newscore.transform.localScale=new Vector3(1,1,1);
-            smallscore.GetComponent<Text>().text = "$ " + score.ToString();
+            
             
             //scoreDisplays[playerId].text = "$ " + scores[playerId];
             StartCoroutine(falltoadd(newscore, score, playerId));
@@ -54,6 +54,7 @@ namespace Team75.Server {
 
         private IEnumerator falltoadd(GameObject addscore, uint score, int id)
         {
+            addscore.GetComponent<Text>().text = "$ " + score.ToString();
             addscore.GetComponent<RectTransform>().anchoredPosition = positions[id];
 
             while (addscore.GetComponent<RectTransform>().anchoredPosition.y > y_min)
