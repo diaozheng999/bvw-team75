@@ -550,6 +550,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
+        type: 2}
+      propertyPath: items.Array.data[9]
+      value: 
+      objectReference: {fileID: 1750037091283610, guid: fda4281002cbb914ca5e131131f6f2ab,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
   m_IsPrefabParent: 0
@@ -680,7 +686,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 128.2.237.82
 --- !u!222 &307198226
 CanvasRenderer:
   m_ObjectHideFlags: 0

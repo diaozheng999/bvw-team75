@@ -1027,7 +1027,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1082693813878194}
-  m_Text: zhazhazhaer
+  m_Text: BAHBAHBAH
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -1052,7 +1052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc2e917091f4ff469dcd7b01c1fcdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barcode: {fileID: 102486444957956740, guid: 80138c2942935ac4389ebccbe53a5a69, type: 2}
+  barcode: {fileID: 102067521783404040}
   exp: 2
   ItemID: 6
 --- !u!114 &114114096641169832
