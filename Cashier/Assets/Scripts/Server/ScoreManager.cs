@@ -47,7 +47,7 @@ namespace Team75.Server {
             newscore.transform.localScale=new Vector3(1,1,1);
             smallscore.GetComponent<Text>().text = "$ " + score.ToString();
             
-            scoreDisplays[playerId].text = "$ " + scores[playerId];
+            //scoreDisplays[playerId].text = "$ " + scores[playerId];
             StartCoroutine(falltoadd(newscore, score, playerId));
             return scores[playerId];
         }
