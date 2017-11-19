@@ -3587,7 +3587,7 @@ MonoBehaviour:
   - {fileID: 2123079257}
   ring0: {fileID: 1883540954}
   ring1: {fileID: 1883540953}
-  _timer: {fileID: 0}
+  _timer: {fileID: 269270932}
   gameStarted: 0
 --- !u!4 &1187160126
 Transform:
