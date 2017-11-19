@@ -46,8 +46,9 @@ namespace Team75.Client
 			if (started)
 			{
 				_text.text = ScoreManager.instance.ParseTime();
-				_image.GetComponent<RectTransform>().sizeDelta = new Vector2(width_max * ScoreManager.instance.GetTime() / 180,200);
-				
+				_image.GetComponent<RectTransform>().sizeDelta =
+					new Vector2(width_max * ScoreManager.instance.GetTime() / 180, 200);
+
 				if (ScoreManager.instance.GetTime() < 20)
 				{
 					_text.color = Color.red;
@@ -58,6 +59,11 @@ namespace Team75.Client
 					_text.color = Color.green;
 					_image.color = Color.green;
 				}
+			}
+			else if(GameStateManager.instance.gameStarted)
+			{
+				started = true;
+				StartGame(GameStateManager.instance.GetPlayerId());
 			}
 			
 			
