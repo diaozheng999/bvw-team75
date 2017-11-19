@@ -96,6 +96,7 @@ namespace Team75.Client {
 
         public void RequestCustomer() {
             if(!gameStarted || !callable) return;
+            UnsetCallable();
             if(VisibleCustomerQueue.instance.HasActiveCustomer(myPlayerId)) {
                 NetworkManager.instance.SendCustomerLeave(myPlayerId);
                 var _avatar = VisibleCustomerQueue.instance.GetActiveCustomer(myPlayerId);
