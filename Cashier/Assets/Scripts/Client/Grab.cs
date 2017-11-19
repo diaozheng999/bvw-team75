@@ -54,7 +54,7 @@ namespace Team75.Client{
 
 		void OnTriggerEnter(Collider other) {
 			var item = other.GetComponent<Item>();
-			if(item != null && heldItem == null) {
+			if((item != null) && heldItem == null) {
 				intersectedInstanceId = item.GetInstanceID();
 				intersectedItem = item;
 				//intersect[item.GetInstanceID()] = item;

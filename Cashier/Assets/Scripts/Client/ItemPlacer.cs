@@ -62,6 +62,7 @@ namespace Team75.Client {
 
             for(int i=0; i<len; ++i)
             {
+                yield return wfs;
                 var _go = Instantiate(
                     ItemDictionary.instance.GetItem(customer.Items[i]), itemPlacement.position, itemPlacement.rotation
                 );
@@ -70,7 +71,6 @@ namespace Team75.Client {
                 _it.RequestTrackingId(customer.Items[i], this, i);
                 items[i] = _go.transform;
                 Scanner.instance.AddItem(_it);
-                yield return wfs;
             }
 
             GameStateManager.instance.SetCallable();
@@ -89,10 +89,14 @@ namespace Team75.Client {
             foreach(var p in placed) {
                 if(!p) return;
             }
+
             Statics.instance.CustomerComplete(VisibleCustomerQueue.instance.GetActiveCustomer(GameStateManager.instance.GetPlayerId()).GetID());
             var pid = GameStateManager.instance.GetPlayerId();
             NetworkManager.instance.SendCustomerLeave(pid);
-            VisibleCustomerQueue.instance.CustomerLeave(pid, ScoreManager.instance.ResetLines);
+            VisibleCustomerQueue.instance.CustomerLeave(pid, () => {
+                ScoreManager.instance.ResetLines();
+                GameStateManager.instance.SetCallable();
+            });
         }
 
     }

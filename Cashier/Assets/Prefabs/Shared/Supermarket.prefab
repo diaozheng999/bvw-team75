@@ -1116,24 +1116,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1226973500459714
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4345032138452592}
-  - component: {fileID: 33746482012814610}
-  - component: {fileID: 65526597988370106}
-  - component: {fileID: 23215551311468168}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1231331246467054
 GameObject:
   m_ObjectHideFlags: 1
@@ -6322,19 +6304,6 @@ Transform:
   m_Father: {fileID: 4699883851174304}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!4 &4345032138452592
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1226973500459714}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.65, z: -2.76}
-  m_LocalScale: {x: 0.24, y: 0.7, z: 2.27}
-  m_Children: []
-  m_Father: {fileID: 4699883851174304}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4347205541146128
 Transform:
   m_ObjectHideFlags: 1
@@ -7943,7 +7912,6 @@ Transform:
   - {fileID: 4155427506326216}
   - {fileID: 4893163107221980}
   - {fileID: 4555859239199250}
-  - {fileID: 4345032138452592}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10765,38 +10733,6 @@ MeshRenderer:
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!23 &23215551311468168
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1226973500459714}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 032bb6a82c7088f46b36558abc9db5f8, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_SelectedEditorRenderState: 3
@@ -18623,13 +18559,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1241310751734874}
   m_Mesh: {fileID: 4300034, guid: b878f0271dd45794a99fcd2743c9db88, type: 3}
---- !u!33 &33746482012814610
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1226973500459714}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33756631528960654
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -19251,18 +19180,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100.00004, y: 100, z: 100.00002}
   m_Center: {x: 0.000061035156, y: 0.00048828125, z: 0}
---- !u!65 &65526597988370106
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1226973500459714}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65534744188650690
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -20385,7 +20302,7 @@ MonoBehaviour:
   - {fileID: 1887651658928508, guid: 57d6116d31928ad4181872b0c0699331, type: 2}
   - {fileID: 1647386874547230, guid: 195aa45b5b4a7bf479c882dd0223f153, type: 2}
   - {fileID: 1564974296896844, guid: 60f115a7981429f40b1f5a3a2c7aad91, type: 2}
-  - {fileID: 1750037091283610, guid: fda4281002cbb914ca5e131131f6f2ab, type: 2}
+  - {fileID: 1523621441304336, guid: 74f1fd52f2e08464a99d5e3c7e9d29eb, type: 2}
   - {fileID: 1323670006752830, guid: 3ddbe2ad16ffdce449f2d3b3ab024885, type: 2}
   - {fileID: 1307517931057664, guid: 49435bfd20eb0da46ae8325b336e0fe0, type: 2}
   - {fileID: 1997658510340524, guid: e461987896d3a6d4dabf6d6a26fe0f03, type: 2}
@@ -20425,7 +20342,7 @@ MonoBehaviour:
   - 0.2
   - 0.2
   - 0.2
-  itemValues: 0a000000140000001e00000028000000320000003c00000046000000500000005a000000640000006e00000078000000820000008c00000096000000a0000000aa000000b4000000be000000c8000000d2000000dc000000e6000000f0000000
+  itemValues: 0a000000140000001e00000028000000320000003c00000046000000500000005a000000640000006e0000007800000082000000e803000096000000a0000000aa000000b4000000be000000c8000000d2000000dc000000e6000000f0000000
   specialCustomers: 6
 --- !u!114 &114626462587436666
 MonoBehaviour:

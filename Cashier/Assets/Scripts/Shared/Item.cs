@@ -13,7 +13,7 @@ namespace Team75.Shared {
 
         private void Start()
         {
-            Debug.LogError("Shared Set");
+//            Debug.LogError("Shared Set");
             rigs = GetComponentsInChildren<Rigidbody>();
             for (int i=exp;i<rigs.Length;i++)
             {
