@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Team75.Shared {
 
-    public class Item :  MonoBehaviour {
+    public class Item :  MonoBehaviour, IBarcodeProvider {
         [SerializeField] TextMesh barcode;
 
         private Rigidbody[] rigs;

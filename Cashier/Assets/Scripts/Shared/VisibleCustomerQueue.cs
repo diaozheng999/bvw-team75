@@ -54,13 +54,13 @@ namespace Team75.Shared {
             var avatar_go = Instantiate(ItemDictionary.instance.GetCustomer(cust.CustomerId), enqueueSpawn + targets[customers.Count], queueRotation);
             var avatar = avatar_go.GetComponent<Avatar>();
             avatar.SetName(cust.Name);
-            avatars.AddLast(avatar);
-            customers.AddLast(cust);
             if (Shuffling>0) {
                 avatar.EnqueueTo(enqueueSpawn + targets[customers.Count], queueRotation);
             } else {
                 avatar.EnqueueTo(targets[customers.Count], queueRotation);
             }
+            avatars.AddLast(avatar);
+            customers.AddLast(cust);
             /*
             if (shuffling) {
                 OnShuffleFinish.Enqueue(() => _enqueue(cust));
@@ -137,8 +137,8 @@ namespace Team75.Shared {
             return Dequeue(playerId, ref flag, false);
         }
 
-        public void CustomerLeave(int playerId) {
-            activeAvatars[playerId].LeaveTo(customerLeavePositions[playerId].position, customerLeavePositions[playerId].rotation);
+        public void CustomerLeave(int playerId, Action onBeforeLeave) {
+            activeAvatars[playerId].LeaveTo(customerLeavePositions[playerId].position, customerLeavePositions[playerId].rotation, onBeforeLeave);
             activeAvatars[playerId] = null;
         }
 

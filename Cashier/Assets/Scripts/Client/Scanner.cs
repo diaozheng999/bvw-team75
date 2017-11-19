@@ -40,13 +40,13 @@ namespace Team75.Client
 		//-------------END---------------
 
 
-		Dictionary<int, Tuple<Item, Transform>> items;
+		Dictionary<int, Tuple<Scannable, Transform>> items;
 		
 		// Use this for initialization
 		void Start()
 		{
 			enabled = false;
-			items = new Dictionary<int, Tuple<Item, Transform>>();
+			items = new Dictionary<int, Tuple<Scannable, Transform>>();
 		}
 
 		public void StartBroadcasting() {
@@ -54,12 +54,12 @@ namespace Team75.Client
 			NetworkPositionManager.instance.AddBroadcastTransform(transform, (playerId == 0) ? Connection.PLAYER_ONE_SCANNER : Connection.PLAYER_TWO_SCANNER);
 		}
 
-		public void AddItem(Item item) {
-			var barcodeTransform = item.GetComponent<Shared.Item>().GetBarcodeLocation();
-			items[item.GetInstanceID()] = new Tuple<Item, Transform>(item, barcodeTransform);
+		public void AddItem(Scannable item) {
+			var barcodeTransform = item.GetComponent<IBarcodeProvider>().GetBarcodeLocation();
+			items[item.GetInstanceID()] = new Tuple<Scannable, Transform>(item, barcodeTransform);
 		}
 
-        public void RemoveItem(Item item)
+        public void RemoveItem(Scannable item)
         {
             var itemid = item.GetInstanceID();
             if (items.ContainsKey(itemid))
@@ -79,7 +79,7 @@ namespace Team75.Client
 			base.OnDestroy();
 		}
 
-		public Item Scan()
+		public Scannable Scan()
 		{
 			light.SetActive(true);
 			

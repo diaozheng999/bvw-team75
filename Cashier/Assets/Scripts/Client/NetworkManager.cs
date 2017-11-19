@@ -61,6 +61,7 @@ namespace Team75.Client {
             client.AddParser(Connection.TRACKING_ID_PURGE, OnPurgeTrackingId, "TRACKING_ID_PURGE");
             client.AddParser(Connection.SPAWN_ITEM, OnAddTrackableItem, "SPAWN_ITEM");
             client.AddParser(Connection.CUSTOMER_LEAVE, OnCustomerLeave, "CUSTOMER_LEAVE");
+            client.AddParser(Connection.CUSTOMER_FINISH_ITEMS, OnCustomerFinishItems, "CUSTOMER_FINISH_ITEMS");
             client.AddParser(Connection.SCORE_SET, OnSetScore, "SCORE_SET");
             client.AddParser(Connection.START_GAME, OnStartGame, "START_GAME");
             client.AddParser(Connection.END_GAME, OnStopGame, "END_GAME");
@@ -109,6 +110,12 @@ namespace Team75.Client {
             });
         }
 
+        void OnCustomerFinishItems(byte[] buffer, ushort length) {
+            UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                VisibleCustomerQueue.instance.GetActiveCustomer(GameStateManager.instance.GetOpponentPlayerId()).OnAfterItems();
+            });
+        }
+
         public void SendScoreUpdateMessage(uint delta) {
             var buffer = Connection.PackScore((byte)GameStateManager.instance.GetPlayerId(), delta);
             client.SendMessageInBackground(Connection.SCORE_ADD_ITEM, buffer);
@@ -116,6 +123,10 @@ namespace Team75.Client {
 
         public void RequestCustomer() {
             client.SendMessageInBackground(Connection.CUSTOMER_REQUEST, new byte[0]{});
+        }
+
+        public void SendCustomerFinishItems() {
+            client.SendMessageInBackground(Connection.CUSTOMER_FINISH_ITEMS, new byte[0]{});
         }
 
         //---------INSERT---------------
@@ -139,7 +150,7 @@ namespace Team75.Client {
         public void OnCustomerLeave(byte[] buffer, ushort length) {
             var playerId = (int) buffer[0];
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
-                VisibleCustomerQueue.instance.CustomerLeave(playerId);
+                VisibleCustomerQueue.instance.CustomerLeave(playerId, () => {});
             });
         }
 
@@ -206,7 +217,13 @@ namespace Team75.Client {
                     GameStateManager.instance.UnsetCallable();
                     var itemPlacer = avatar.gameObject.AddComponent<ItemPlacer>();
                     itemPlacer.SetAvatar(avatar, unpacked.Item2);
+
                     Statics.instance.GenerateCustomer(avatar.GetID());
+
+
+                    if(avatar.IsScannable()) {
+                        var sa = avatar.gameObject.AddComponent<ScannableAvatar>();
+                    }
                 }
             });
         }

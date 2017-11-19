@@ -41,6 +41,7 @@ namespace Team75.Shared {
         public const byte ENQUEUE_CUSTOMER = 0x25;
         public const byte CUSTOMER_LEAVE = 0x26;
         public const byte REMOTE_CUSTOMER = 0x27;
+        public const byte CUSTOMER_FINISH_ITEMS = 0x28;
         public const byte START_GAME = 0xFF;
         public const byte END_GAME = 0xFE;
         public const byte TIMER_SYNC = 0xFD;

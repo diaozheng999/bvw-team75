@@ -51,6 +51,7 @@ namespace Team75.Server {
                 servers[i].AddParser(Connection.TRACKING_ID_DESTROY, ReleaseTrackingId(i), "TRACKING_ID_DESTROY");
                 servers[i].AddParser(Connection.TRACKING_ID_PURGED, PurgeTrackingId, "TRACKING_ID_PURGED");
                 servers[i].AddParser(Connection.CUSTOMER_LEAVE, CustomerLeave(i), "CUSTOMER_LEAVE");
+                servers[i].AddParser(Connection.CUSTOMER_FINISH_ITEMS, OnCustomerFinishItems(i), "CUSTOMER_FINISH_ITEMS");
                 servers[i].AddParser(Connection.SCORE_ADD_ITEM, AddLineItem(i), "SCORE_ADD_ITEM");
                 servers[i].AddParser(Connection.UPDATE_BUTTON, UpdateButton(i), "UPDATE_BUTTON");
                 AddDisposable(servers[i]);
@@ -142,7 +143,7 @@ namespace Team75.Server {
         Action<byte[], ushort> CustomerLeave(int playerId) => (byte[] buffer, ushort len) => {
             var targetPlayerId = buffer[0];
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
-                VisibleCustomerQueue.instance.CustomerLeave(targetPlayerId);
+                VisibleCustomerQueue.instance.CustomerLeave(targetPlayerId, () => {});
                 servers[(playerId+1)%2].SendMessageInBackground(Connection.CUSTOMER_LEAVE, new byte[1]{targetPlayerId});
             });
         };
@@ -159,6 +160,13 @@ namespace Team75.Server {
                 GameStateManager.instance.PlayBeep(playerId);
                 var n_score = ScoreManager.instance.AddValue(scoreDelta.Item1, scoreDelta.Item2);
                 servers[(playerId+1)%2].SendMessageInBackground(Connection.SCORE_SET, Connection.PackScore(scoreDelta.Item1, n_score));
+            });
+        };
+
+        Action<byte[], ushort> OnCustomerFinishItems(int playerId) => (byte[] buffer, ushort len) => {
+            servers[1-playerId].SendMessageInBackground(Connection.CUSTOMER_FINISH_ITEMS, new byte[0]{});
+            UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                VisibleCustomerQueue.instance.GetActiveCustomer(playerId).OnAfterItems();
             });
         };
 

@@ -74,6 +74,7 @@ namespace Team75.Client {
             }
 
             GameStateManager.instance.SetCallable();
+            NetworkManager.instance.SendCustomerFinishItems();
             avatar.OnAfterItems();
 
         }
@@ -91,8 +92,7 @@ namespace Team75.Client {
             Statics.instance.CustomerComplete(VisibleCustomerQueue.instance.GetActiveCustomer(GameStateManager.instance.GetPlayerId()).GetID());
             var pid = GameStateManager.instance.GetPlayerId();
             NetworkManager.instance.SendCustomerLeave(pid);
-            VisibleCustomerQueue.instance.CustomerLeave(pid);
-            ScoreManager.instance.ResetLines();
+            VisibleCustomerQueue.instance.CustomerLeave(pid, ScoreManager.instance.ResetLines);
         }
 
     }
