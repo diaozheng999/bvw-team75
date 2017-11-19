@@ -20,9 +20,9 @@ namespace Team75.Shared
 		private int state;
 		private int num_tracking;
 
-		private float speeds_goal;
+		public float speeds_goal;
 
-		private float speeds_real; // positive: go left; negative: go right
+		public float speeds_real; // positive: go left; negative: go right
 		// 0 for closed; 1 for opening; 2 for opened; 3 closing
 
 		// Use this for initialization
@@ -51,8 +51,15 @@ namespace Team75.Shared
 			{
 				setState(0);
 			}
-			
-			//if(Input.GetKeyDown(KeyCode.LeftArrow))
+
+			if (Input.GetKeyDown(KeyCode.UpArrow))
+			{
+				setState(1);
+			}
+			if (Input.GetKeyDown(KeyCode.DownArrow))
+			{
+				setState(3);
+			}
 
 		}
 
@@ -109,7 +116,7 @@ namespace Team75.Shared
 
 		private float accelerate(float real, float goal,float deltatime)
 		{
-			if (Mathf.Abs(real - goal) < 0.01) return goal;
+			if (Mathf.Abs(real - goal) < 0.0001) return goal;
 			else
 			{
 				return real + Mathf.Sign(goal - real) * acceleration * deltatime;
