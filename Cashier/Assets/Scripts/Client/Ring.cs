@@ -44,6 +44,7 @@ public class Ring : MonoBehaviour
 
 	public void GetHit()
 	{
+		transform.parent.GetComponent<Animator>().SetTrigger("PLAY");
 		GameStateManager.instance.RequestCustomer();
 	}
 }
