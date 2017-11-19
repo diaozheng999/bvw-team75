@@ -163,8 +163,9 @@ namespace Team75.Shared {
             });
         }
 
-        public void LeaveTo(Vector3 position, Quaternion rotation) {
+        public void LeaveTo(Vector3 position, Quaternion rotation, Action OnBeforeLeave = null) {
             InvokeActionChain(BeforeLeave.First, () => {
+                OnBeforeLeave?.Invoke();
                 WalkTo(position, rotation, walkSpeed, turnSpeed, () => {
                     InvokeActionChain(AfterLeave.First, () => {
                         Destroy(gameObject);

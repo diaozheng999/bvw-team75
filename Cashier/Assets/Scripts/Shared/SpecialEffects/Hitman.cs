@@ -20,7 +20,7 @@ namespace Team75.Shared.SpecialEffects {
             executionFlag = ExecutionFlag.AFTER_ITEMS | ExecutionFlag.BEFORE_LEAVE;
         }
 
-        protected override void AfterItems(Action cont){
+        protected override void AfterItems(Action cont) {
             cont();
             anim.SetTrigger("turnback");
         }

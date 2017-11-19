@@ -137,8 +137,8 @@ namespace Team75.Shared {
             return Dequeue(playerId, ref flag, false);
         }
 
-        public void CustomerLeave(int playerId) {
-            activeAvatars[playerId].LeaveTo(customerLeavePositions[playerId].position, customerLeavePositions[playerId].rotation);
+        public void CustomerLeave(int playerId, Action onBeforeLeave) {
+            activeAvatars[playerId].LeaveTo(customerLeavePositions[playerId].position, customerLeavePositions[playerId].rotation, onBeforeLeave);
             activeAvatars[playerId] = null;
         }
 
