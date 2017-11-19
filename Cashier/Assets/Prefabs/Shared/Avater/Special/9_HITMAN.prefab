@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 0
-  CustID: 0
+  CustID: 9
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   head: {fileID: 0}
