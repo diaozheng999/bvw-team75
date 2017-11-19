@@ -905,6 +905,11 @@ Transform:
   m_Father: {fileID: 1363821690}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 6.5046, y: -86.1427, z: 0.0002}
+--- !u!4 &250447655 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4975875108237128, guid: fa958adbf8f2b664fa313a914401f029,
+    type: 2}
+  m_PrefabInternal: {fileID: 1708826457}
 --- !u!1 &251169157
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,7 +3489,7 @@ MonoBehaviour:
   - {fileID: 216562324}
   - {fileID: 789478030}
   ScorePlacements:
-  - {fileID: 0}
+  - {fileID: 250447655}
   - {fileID: 2123079257}
   ring0: {fileID: 1883540954}
   ring1: {fileID: 1883540953}
