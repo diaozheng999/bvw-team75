@@ -85,7 +85,7 @@ namespace Team75.Shared {
         }
 
         void _shuffle(LinkedListNode<Avatar> avatar, int i, Action cont) {
-            if (avatar == null) cont?.Invoke();
+            if (avatar == null || i >= targets.Length) cont?.Invoke();
             else avatar.Value.QueueMoveTo(targets[i], queueRotation, () => {
                 _shuffle(avatar.Next, i+1, cont);
             });
