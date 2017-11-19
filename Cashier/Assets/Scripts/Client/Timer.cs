@@ -47,17 +47,19 @@ namespace Team75.Client
 			{
 				_text.text = ScoreManager.instance.ParseTime();
 				_image.GetComponent<RectTransform>().sizeDelta = new Vector2(width_max * ScoreManager.instance.GetTime() / 180,200);
+				
+				if (ScoreManager.instance.GetTime() < 20)
+				{
+					_text.color = Color.red;
+					_image.color = Color.red;
+				}
+				else
+				{
+					_text.color = Color.green;
+					_image.color = Color.green;
+				}
 			}
-			if (ScoreManager.instance.GetTime() < 20)
-			{
-				_text.color = Color.red;
-				_image.color = Color.red;
-			}
-			else
-			{
-				_text.color = Color.green;
-				_image.color = Color.green;
-			}
+			
 			
 			
 		}
