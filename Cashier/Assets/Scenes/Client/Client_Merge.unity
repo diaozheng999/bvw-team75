@@ -1121,7 +1121,6 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 90155072}
   m_Enabled: 1
-<<<<<<< HEAD
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -1149,24 +1148,6 @@ MeshRenderer:
   m_SortingOrder: 0
 --- !u!33 &90155075
 MeshFilter:
-=======
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26807a7ad5d17bf49942aa9d9def6a70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kinds_merchandise: 30
-  kinds_customer: 8
-  Item_Exist: 0
-  Item_Scanned: 0
-  Time_Scanning: 0
-  Customer_Exist: 0
-  Customer_Completed: 0
-  Distribution_Merchandise_Exist: 
-  Distribution_Merchandise_Scanned: 
-  Distribution_Customer_Exist: 
---- !u!4 &243127919
-Transform:
->>>>>>> master
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 33781641732537456, guid: fa958adbf8f2b664fa313a914401f029,
     type: 2}
