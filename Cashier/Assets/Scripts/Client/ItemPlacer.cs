@@ -90,8 +90,7 @@ namespace Team75.Client {
 
             var pid = GameStateManager.instance.GetPlayerId();
             NetworkManager.instance.SendCustomerLeave(pid);
-            VisibleCustomerQueue.instance.CustomerLeave(pid);
-            ScoreManager.instance.ResetLines();
+            VisibleCustomerQueue.instance.CustomerLeave(pid, ScoreManager.instance.ResetLines);
         }
 
     }

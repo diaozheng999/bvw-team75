@@ -143,7 +143,7 @@ namespace Team75.Server {
         Action<byte[], ushort> CustomerLeave(int playerId) => (byte[] buffer, ushort len) => {
             var targetPlayerId = buffer[0];
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
-                VisibleCustomerQueue.instance.CustomerLeave(targetPlayerId);
+                VisibleCustomerQueue.instance.CustomerLeave(targetPlayerId, () => {});
                 servers[(playerId+1)%2].SendMessageInBackground(Connection.CUSTOMER_LEAVE, new byte[1]{targetPlayerId});
             });
         };

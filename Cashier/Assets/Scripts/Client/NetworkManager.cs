@@ -150,7 +150,7 @@ namespace Team75.Client {
         public void OnCustomerLeave(byte[] buffer, ushort length) {
             var playerId = (int) buffer[0];
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
-                VisibleCustomerQueue.instance.CustomerLeave(playerId);
+                VisibleCustomerQueue.instance.CustomerLeave(playerId, () => {});
             });
         }
 
