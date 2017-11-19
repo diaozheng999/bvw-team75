@@ -1561,7 +1561,7 @@ MonoBehaviour:
   customerId: 6
   items: 
   generateRandom: 1
-  groceryBudget: 2000
+  groceryBudget: 20000
   generateAfter: 10
 --- !u!114 &1543692888
 MonoBehaviour:
@@ -1577,7 +1577,7 @@ MonoBehaviour:
   customerId: 6
   items: 
   generateRandom: 1
-  groceryBudget: 2000
+  groceryBudget: 20000
   generateAfter: 12
 --- !u!1 &1702712708
 GameObject:
