@@ -42,8 +42,8 @@ namespace Team75.Client
 		public void StartGame(int playerID)
 		{
 			gamestarted = true;
-			Distribution_Customer_Exist = new int[kinds_merchandise];
-			Distribution_Merchandise_Exist = new int[kinds_customer];
+			Distribution_Customer_Exist = new int[kinds_customer];
+			Distribution_Merchandise_Exist = new int[kinds_merchandise];
 			Distribution_Merchandise_Scanned = new int[kinds_merchandise];
 		}
 
