@@ -45,7 +45,7 @@ namespace Team75.Client
 		{
 			if (started)
 			{
-				var currTime = ScoreManager.instance.GetTime() / maxTime;
+				var currTime = Mathf.Clamp01(ScoreManager.instance.GetTime() / maxTime);
 
 				_text.text = ScoreManager.instance.ParseTime();
 				_image.GetComponent<RectTransform>().sizeDelta =
