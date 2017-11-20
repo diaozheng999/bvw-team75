@@ -11,7 +11,7 @@ namespace Team75.Shared {
 
         bool startTracking = false;
 
-        byte GetTrackingId() => (playerId == 0) ? Connection.PLAYER_ONE_SCANNER : Connection.PLAYER_TWO_SCANNER;
+        ushort GetTrackingId() => (playerId == 0) ? Connection.PLAYER_ONE_SCANNER : Connection.PLAYER_TWO_SCANNER;
 
         public void StartTracking() {
             startTracking = true;

@@ -17,14 +17,14 @@ namespace Team75.Shared {
         public const int WEB_SERVER_PORT = 47505;
 
         // trackable object ids
-        public const byte PLAYER_ONE_CENTER_EYE = 0;
-        public const byte PLAYER_ONE_LEFT_HAND = 1;
-        public const byte PLAYER_ONE_RIGHT_HAND = 2;
-        public const byte PLAYER_ONE_SCANNER = 6;
-        public const byte PLAYER_TWO_CENTER_EYE = 3;
-        public const byte PLAYER_TWO_LEFT_HAND = 4;
-        public const byte PLAYER_TWO_RIGHT_HAND = 5;
-        public const byte PLAYER_TWO_SCANNER = 7;
+        public const ushort PLAYER_ONE_CENTER_EYE = 0;
+        public const ushort PLAYER_ONE_LEFT_HAND = 1;
+        public const ushort PLAYER_ONE_RIGHT_HAND = 2;
+        public const ushort PLAYER_ONE_SCANNER = 6;
+        public const ushort PLAYER_TWO_CENTER_EYE = 3;
+        public const ushort PLAYER_TWO_LEFT_HAND = 4;
+        public const ushort PLAYER_TWO_RIGHT_HAND = 5;
+        public const ushort PLAYER_TWO_SCANNER = 7;
 
         // messages
         public const byte SET_PLAYER_ID = 0xA0;
