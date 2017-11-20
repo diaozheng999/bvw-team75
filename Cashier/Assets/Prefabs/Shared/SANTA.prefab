@@ -624,9 +624,9 @@ MonoBehaviour:
   neck: {fileID: 0}
   body: {fileID: 0}
   itemPlacementPosition: {fileID: 0}
-  nameTag: {fileID: 0}
-  avatarMame: 
-  itemPlacementDelay: 2
-  walkSpeed: 0
-  turnSpeed: 0
-  smoothTime: 0
+  nameTag: {fileID: 102048940490534266}
+  avatarMame: Santa
+  itemPlacementDelay: 0.35
+  walkSpeed: 10
+  turnSpeed: 7
+  smoothTime: 0.7
