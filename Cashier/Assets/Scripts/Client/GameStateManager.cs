@@ -38,7 +38,7 @@ namespace Team75.Client {
 
         public bool gameStarted = false;
 
-        bool callable = true;
+        [SerializeField] bool callable = true;
 
         FrenzyItemPlacer fip;
 
