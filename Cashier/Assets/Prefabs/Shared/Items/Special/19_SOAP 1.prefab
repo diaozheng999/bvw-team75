@@ -254,4 +254,4 @@ MonoBehaviour:
   depth: 0
   grabscript: {fileID: 0}
   speed_jump: 1.3
-  force: 0.96
+  force: 0.9
