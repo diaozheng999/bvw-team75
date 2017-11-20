@@ -24,7 +24,7 @@ namespace Team75.Client {
         [SerializeField] private Ring ring0;
         [SerializeField] private Ring ring1;
 
-        [SerializeField] private Timer _timer;
+      
         
         
 
