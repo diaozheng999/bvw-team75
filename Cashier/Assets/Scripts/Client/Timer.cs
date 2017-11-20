@@ -27,8 +27,8 @@ namespace Team75.Client
 		public void StartGame(int playerID)
 		{
 			started = true;
-			_text = GetComponent<Text>();
-			_image = GetComponent<Image>();
+			_text = GetComponentInChildren<Text>();
+			_image = GetComponentInChildren<Image>();
 			_text.color = Color.green;
 			_image.color = Color.green;
 			if (playerID != 0)
