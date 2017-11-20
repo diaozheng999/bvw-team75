@@ -25,6 +25,9 @@ namespace Team75.Client {
         [SerializeField] private Ring ring1;
 
         [SerializeField] private Timer _timer;
+
+        [SerializeField] float FrenzySkewTolerance;
+        [SerializeField] float FrenzyFaceTolerance;
         
         
 
@@ -149,6 +152,8 @@ namespace Team75.Client {
             var santa = VisibleCustomerQueue.instance.SpawnSanta();
             fip = santa.gameObject.AddComponent<FrenzyItemPlacer>();
             fip.SetAvatar(santa, myPlayerId);
+
+            Scanner.instance.FrenzyTolerance(FrenzyFaceTolerance, FrenzySkewTolerance);
         }
 
         public void StopFrenzy() {

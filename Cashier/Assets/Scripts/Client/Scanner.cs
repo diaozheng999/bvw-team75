@@ -144,6 +144,12 @@ namespace Team75.Client
 			}
 		}
 
+        public void FrenzyTolerance(float _faceTol, float _skewTol)
+        {
+            skewTolerance = _skewTol;
+            faceTolerance = _faceTol;
+        }
+
 		//---------INPUT-------------
 		//public Transform position_raycast1;
 
