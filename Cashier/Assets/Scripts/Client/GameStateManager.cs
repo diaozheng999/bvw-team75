@@ -156,7 +156,9 @@ namespace Team75.Client {
             fip.SetAvatar(santa, myPlayerId);
 
             Scanner.instance.FrenzyTolerance(FrenzyFaceTolerance, FrenzySkewTolerance);
-            Timer.instance.SetMaxTime(20f); // TODO: stop hardcoding frenzy times 
+            // TODO: stop hardcoding frenzy times, but frankly I don't care :)
+            ScoreManager.instance.SetTime(20f);
+            Timer.instance.SetMaxTime(20f); 
         }
 
         public void StopFrenzy() {
