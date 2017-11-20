@@ -17,6 +17,7 @@ namespace Team75.Shared
 		[SerializeField] private float acceleration;
 		[SerializeField] private float thresh_close;
 		[SerializeField] private float thresh_open;
+		[SerializeField] private float close;
 		private int state;
 		private int num_tracking;
 
@@ -52,6 +53,10 @@ namespace Team75.Shared
 				setState(0);
 			}
 
+			else if (state == 0 && leftdoor.transform.localPosition.x <= close)
+			{
+				speeds_real = 0;
+			}
 			if (Input.GetKeyDown(KeyCode.UpArrow))
 			{
 				setState(1);
