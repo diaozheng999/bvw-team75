@@ -9,6 +9,9 @@ namespace Team75.Client {
 
         public const int MAX_FRENZY_ITEMS = 300;
 
+        public const float RADIUS = 0.5f;
+
+
         int playerId;
 
         public void SetAvatar(Shared.Avatar _avatar, int _playerId) {
@@ -18,6 +21,13 @@ namespace Team75.Client {
             playerId = _playerId;
 
             SetAvatar(_avatar, cust);
+        }
+
+        protected override Vector3 Jitter() {
+            var r = Random.Range(0, RADIUS);
+            var theta = Random.Range(-Mathf.PI, Mathf.PI); 
+
+            return new Vector3(r * Mathf.Cos(theta), 0, r * Mathf.Sin(theta));
         }
 
         protected override Transform GetItemPlacementTransform() {
