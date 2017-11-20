@@ -949,7 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kinds_merchandise: 31
-  kinds_customer: 11
+  kinds_customer: 15
   Item_Exist: 0
   Item_Scanned: 0
   Time_Scanning: 0

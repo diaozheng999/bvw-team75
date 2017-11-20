@@ -1171,7 +1171,7 @@ GameObject:
   m_PrefabParentObject: {fileID: 1636330593755168, guid: fa958adbf8f2b664fa313a914401f029,
     type: 2}
   m_PrefabInternal: {fileID: 799776538}
---- !u!64 &694906727
+--- !u!64 &694906730
 MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1283,6 +1283,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
+        type: 2}
+      propertyPath: customers.Array.size
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4699883851174304, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1383,6 +1388,59 @@ Prefab:
     - target: {fileID: 1934214186331106, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
+        type: 2}
+      propertyPath: customers.Array.data[8]
+      value: 
+      objectReference: {fileID: 1303798970847426, guid: e018aed581faf334a85ea3bebf8fb213,
+        type: 2}
+    - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
+        type: 2}
+      propertyPath: customers.Array.data[9]
+      value: 
+      objectReference: {fileID: 1066710839228812, guid: 82334a8ebf3a9f046937c3b7ac34cedf,
+        type: 2}
+    - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
+        type: 2}
+      propertyPath: customers.Array.data[10]
+      value: 
+      objectReference: {fileID: 1485896341693338, guid: 4b78a75ef5bea264ebc2eebc86e73a1d,
+        type: 2}
+    - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
+        type: 2}
+      propertyPath: customers.Array.data[11]
+      value: 
+      objectReference: {fileID: 1418974378673902, guid: 90be6e34d10661543b8baec50ac77daa,
+        type: 2}
+    - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
+        type: 2}
+      propertyPath: customers.Array.data[12]
+      value: 
+      objectReference: {fileID: 1108125432692960, guid: bce601e116bd35e478b7818c215ddfd8,
+        type: 2}
+    - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
+        type: 2}
+      propertyPath: customers.Array.data[6]
+      value: 
+      objectReference: {fileID: 1976562608058594, guid: 8dcf4d7d3062fd846ad294a2e798e9d1,
+        type: 2}
+    - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
+        type: 2}
+      propertyPath: customers.Array.data[7]
+      value: 
+      objectReference: {fileID: 1142431022366712, guid: 7932eaa0d8c8c0f4e8427d5889239b77,
+        type: 2}
+    - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
+        type: 2}
+      propertyPath: customers.Array.data[13]
+      value: 
+      objectReference: {fileID: 1080758026782542, guid: 8ea5ad24cf5865b479db5ead9c602e4a,
+        type: 2}
+    - target: {fileID: 114601192814216318, guid: fa958adbf8f2b664fa313a914401f029,
+        type: 2}
+      propertyPath: specialCustomers
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
@@ -1607,7 +1665,7 @@ GameObject:
   m_PrefabParentObject: {fileID: 1934214186331106, guid: fa958adbf8f2b664fa313a914401f029,
     type: 2}
   m_PrefabInternal: {fileID: 799776538}
---- !u!64 &1356627131
+--- !u!64 &1356627134
 MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1957,6 +2015,9 @@ GameObject:
   - component: {fileID: 1543692886}
   - component: {fileID: 1543692887}
   - component: {fileID: 1543692888}
+  - component: {fileID: 1543692890}
+  - component: {fileID: 1543692889}
+  - component: {fileID: 1543692891}
   m_Layer: 0
   m_Name: GameStateManager
   m_TagString: Untagged
@@ -2036,11 +2097,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b97d356ad784b4b847b28439ff0be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerId: 6
-  items: 
-  generateRandom: 1
+  customerId: 10
+  items: 14001600150017001500170014001600
+  generateRandom: 0
   groceryBudget: 2000
-  generateAfter: 10
+  generateAfter: 6
 --- !u!114 &1543692888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,11 +2113,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b97d356ad784b4b847b28439ff0be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerId: 6
+  customerId: 11
+  items: 1c001c001c001c001c001c001c001c00
+  generateRandom: 0
+  groceryBudget: 2000
+  generateAfter: 9
+--- !u!114 &1543692889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543692882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b97d356ad784b4b847b28439ff0be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerId: 12
   items: 
   generateRandom: 1
   groceryBudget: 2000
+  generateAfter: 15
+--- !u!114 &1543692890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543692882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b97d356ad784b4b847b28439ff0be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerId: 13
+  items: 
+  generateRandom: 1
+  groceryBudget: 1000
   generateAfter: 12
+--- !u!114 &1543692891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543692882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b97d356ad784b4b847b28439ff0be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerId: 12
+  items: 
+  generateRandom: 1
+  groceryBudget: 2000
+  generateAfter: 16
 --- !u!1 &1620123649 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1995553612824258, guid: fa958adbf8f2b664fa313a914401f029,

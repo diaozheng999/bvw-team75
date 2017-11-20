@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 0
-  CustID: 5
+  CustID: 6
   leftHand: {fileID: 4020266947999920}
   rightHand: {fileID: 4831586130283758}
   head: {fileID: 4122639076985572}
@@ -658,7 +658,7 @@ MonoBehaviour:
   itemPlacementPosition: {fileID: 4056502353636620}
   nameTag: {fileID: 102943473831109532}
   avatarMame: 
-  itemPlacementDelay: 2
+  itemPlacementDelay: 1.5
   walkSpeed: 5
   turnSpeed: 7
   smoothTime: 0.5
