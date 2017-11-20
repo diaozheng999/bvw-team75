@@ -131,7 +131,23 @@ namespace Team75.Client {
             return 1-myPlayerId;
         }
 
-        
+        public void StartFrenzy() {
+            UnsetCallable(); // make sure it's never callable
+            
+            // cleanup customers
+            VisibleCustomerQueue.instance.CustomerLeaveIfActive(GetOpponentPlayerId());
+            if(VisibleCustomerQueue.instance.HasActiveCustomer(myPlayerId)) {
+                var _avatar = VisibleCustomerQueue.instance.GetActiveCustomer(myPlayerId);
+                var _ip = _avatar.GetComponent<ItemPlacer>();
+                _ip.Cleanup();
+                VisibleCustomerQueue.instance.CustomerLeave(myPlayerId, () => {});
+            }
+
+            // spawn santa
+            var santa = VisibleCustomerQueue.instance.SpawnSanta();
+            var itemPlacer = santa.gameObject.AddComponent<FrenzyItemPlacer>();
+            itemPlacer.SetAvatar(santa, myPlayerId);
+        }
     }
     
     

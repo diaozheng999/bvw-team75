@@ -1089,8 +1089,7 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: -0.4715571
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114083131867641452, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &856332763
@@ -1407,7 +1406,8 @@ MonoBehaviour:
   - {fileID: 1712432277}
   - {fileID: 1111423223}
   customerPositions: []
-  totalTime: 180
+  totalTime: 120
+  frenzyTime: 20
   countDown: {fileID: 626026131}
   ring0: {fileID: 222335002}
   ring1: {fileID: 222335001}

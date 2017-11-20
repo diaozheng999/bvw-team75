@@ -117,16 +117,17 @@ namespace Team75.Shared {
             }
         }
 
-        public void SpawnSanta(int playerId) {
-            CustomerLeave(0, Fn.noop);
-            CustomerLeave(1, Fn.noop);
+        public Avatar SpawnSanta() {
             foreach(var cust in avatars) {
-                cust.LeaveTo(customerLeavePositions[playerId].position, customerLeavePositions[playerId].rotation, Fn.noop);
+                cust.LeaveTo(customerLeavePositions[2].position, customerLeavePositions[2].rotation, Fn.noop);
             }
             var _santa = Instantiate(santa, santaSpawnPosition.position, santaSpawnPosition.rotation);
 
             santaAvatar = _santa.GetComponent<Avatar>();
+            Debug.Log("Hello?");
             santaAvatar.DequeueTo(santaDestinationPosition.position, santaDestinationPosition.rotation);
+            Debug.Log("Hello!");
+            return santaAvatar;
         }
 
         public void SantaLeave(Action onBeforeLeave) {
@@ -177,6 +178,14 @@ namespace Team75.Shared {
 
         public Avatar GetActiveCustomer(int playerId) {
             return activeAvatars[playerId];
+        }
+
+        public Transform GetFrenzySpawnPosition(int playerId) {
+            return frenzySpawnPositions[playerId];
+        }
+
+        public void CustomerLeaveIfActive(int playerId) {
+            if(activeAvatars[playerId]!=null) CustomerLeave(playerId, Fn.noop);
         }
 
     }

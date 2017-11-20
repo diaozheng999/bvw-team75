@@ -67,7 +67,7 @@ namespace Team75.Client {
             client.AddParser(Connection.END_GAME, OnStopGame, "END_GAME");
             client.AddParser(Connection.TIMER_SYNC, OnTimerSync, "TIMER_SYNC");
             client.AddParser(Connection.SYNC_BUTTON, OnSetButton, "SET_BUTTON");
-            
+            client.AddParser(Connection.FRENZY_START, OnFrenzyStart, "FRENZY_START");
             AddDisposable(client);
         }
 
@@ -246,6 +246,12 @@ namespace Team75.Client {
             var timer = System.BitConverter.ToSingle(buffer, 0);
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
                 ScoreManager.instance.SetTime(timer);
+            });
+        }
+
+        void OnFrenzyStart(byte[] buffer, ushort length) {
+            UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                GameStateManager.instance.StartFrenzy();
             });
         }
 

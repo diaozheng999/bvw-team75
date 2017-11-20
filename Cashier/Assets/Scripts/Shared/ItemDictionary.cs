@@ -14,7 +14,7 @@ namespace Team75.Shared {
         [SerializeField] GameObject[] items;
         [SerializeField] private float[] possibilities;
         [SerializeField] float[] frenzyLikelihood;
-        [SerializeField] private float[] insections;
+        float[] insections;
         float[] frenzyCDF;
         private float possi_total;
 
@@ -27,7 +27,7 @@ namespace Team75.Shared {
         {
             base.Awake();
             insections = BuildCDF(possibilities);
-            //frenzyCDF = BuildCDF(frenzyLikelihood);
+            frenzyCDF = BuildCDF(frenzyLikelihood);
             /*
             insections = new float[Mathf.Max(0,items.Length-1)];
             if (insections.Length > 0)
@@ -89,7 +89,7 @@ namespace Team75.Shared {
             return list.ToArray();
         }
         
-        public short GenerateRandomItem(float[] CDF) {
+        short GenerateRandomItem(float[] CDF) {
             var result = Array.BinarySearch<float>(CDF, URandom.value);
             if(result < 0) {
                 var result_ = ~result;
@@ -97,6 +97,10 @@ namespace Team75.Shared {
                 return (short)result_;
             }
             return (short)result;
+        }
+
+        public short GenerateRandomItemFrenzy() {
+            return GenerateRandomItem(frenzyCDF);
         }
 
         public short generaterandomitem()

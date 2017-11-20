@@ -56,6 +56,11 @@ namespace Team75.Server {
             return cust;
         }
 
+        public void StopCustomerSpawns() {
+            if(generationCoroutine != null && !generationCoroutine.Completed)
+                generationCoroutine.Interrupt();
+        }
+
 
         public void AddSpecialCustomer(ulong after, Customer cust) {
             if(specialCustomers == null) specialCustomers = new Heap<ulong, Customer>();

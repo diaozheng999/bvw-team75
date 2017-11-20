@@ -607,6 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 0
+  CustID: 0
   leftHand: {fileID: 4345194065442368}
   rightHand: {fileID: 4870545006502392}
   head: {fileID: 4993314346037680}
@@ -616,6 +617,9 @@ MonoBehaviour:
   nameTag: {fileID: 102952645018346330}
   avatarMame: 
   itemPlacementDelay: 2
+  walkSpeed: 10
+  turnSpeed: 7
+  smoothTime: 0.7
 --- !u!114 &114413974138197744
 MonoBehaviour:
   m_ObjectHideFlags: 1
