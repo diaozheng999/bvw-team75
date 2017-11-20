@@ -366,6 +366,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 105112629}
   m_Script: {fileID: 11500000, guid: 74f5d724e44d97446b6cfe0529cf0b3f, type: 3}
+--- !u!4 &94899325 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4004768234610236, guid: fa958adbf8f2b664fa313a914401f029,
+    type: 2}
+  m_PrefabInternal: {fileID: 105112629}
 --- !u!1001 &105112629
 Prefab:
   m_ObjectHideFlags: 0
@@ -452,6 +457,14 @@ Prefab:
     - target: {fileID: 4591823553054754, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
       propertyPath: m_LocalRotation.w
       value: -0.47155717
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776659048379708, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
+      propertyPath: m_Name
+      value: ScreenAnchor0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1890320596931432, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
+      propertyPath: m_Name
+      value: ScreenAnchor1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
@@ -995,11 +1008,6 @@ Transform:
   m_Father: {fileID: 1363821690}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 6.5046, y: -86.1427, z: 0.0002}
---- !u!4 &250447655 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4975875108237128, guid: fa958adbf8f2b664fa313a914401f029,
-    type: 2}
-  m_PrefabInternal: {fileID: 105112629}
 --- !u!1 &251169157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,6 +2623,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -3883,8 +3905,8 @@ MonoBehaviour:
   - {fileID: 216562324}
   - {fileID: 789478030}
   ScorePlacements:
-  - {fileID: 250447655}
-  - {fileID: 2123079257}
+  - {fileID: 1480118082}
+  - {fileID: 94899325}
   ring0: {fileID: 2036154886}
   ring1: {fileID: 607091709}
   FrenzySkewTolerance: 90
@@ -4549,6 +4571,11 @@ Transform:
   m_Father: {fileID: 1007986506}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1480118082 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4108838858096538, guid: fa958adbf8f2b664fa313a914401f029,
+    type: 2}
+  m_PrefabInternal: {fileID: 105112629}
 --- !u!1 &1498698039
 GameObject:
   m_ObjectHideFlags: 0
@@ -6129,11 +6156,6 @@ Transform:
   m_Father: {fileID: 1219162537}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2123079257 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4479987929275840, guid: fa958adbf8f2b664fa313a914401f029,
-    type: 2}
-  m_PrefabInternal: {fileID: 105112629}
 --- !u!1001 &2142127487
 Prefab:
   m_ObjectHideFlags: 0
