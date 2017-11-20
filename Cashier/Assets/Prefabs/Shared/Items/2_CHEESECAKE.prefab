@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23240903532553344}
   - component: {fileID: 102705326852143056}
   - component: {fileID: 114834442660719326}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114915357342823366}
   - component: {fileID: 64567605160443736}
   - component: {fileID: 114818975274218138}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 2_CHEESECAKE
   m_TagString: Untagged
   m_Icon: {fileID: 0}

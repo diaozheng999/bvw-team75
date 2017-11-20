@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23935338793777870}
   - component: {fileID: 102548326117062076}
   - component: {fileID: 114666744431459844}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 64236730035838876}
   - component: {fileID: 114782905153818784}
   - component: {fileID: 54934431014416886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 7_VINEGAR
   m_TagString: Untagged
   m_Icon: {fileID: 0}

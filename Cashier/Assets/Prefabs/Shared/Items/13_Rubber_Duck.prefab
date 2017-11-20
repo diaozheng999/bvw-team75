@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23153830254424352}
   - component: {fileID: 102264593329170268}
   - component: {fileID: 114777861933813518}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 135957521596293818}
   - component: {fileID: 54614598340285436}
   - component: {fileID: 114446448753719664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 13_Rubber_Duck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

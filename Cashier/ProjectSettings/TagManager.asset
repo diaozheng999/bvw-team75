@@ -10,6 +10,8 @@ TagManager:
   - Barcode2
   - ScannerBox
   - Scanner
+  - Soap
+  - Egg
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Item
   - Barcode
   - Grabable
-  - 
+  - Player
   - 
   - 
   - 

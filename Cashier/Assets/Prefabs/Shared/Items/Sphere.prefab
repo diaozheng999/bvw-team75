@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23965978719698646}
   - component: {fileID: 54026254362937396}
   - component: {fileID: 114857829504236554}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23632659699670948}
   - component: {fileID: 102388661060362306}
   - component: {fileID: 114667414525677794}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,6 +206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barcode: {fileID: 102388661060362306}
+  exp: 1
+  ItemID: 0
 --- !u!135 &135781658051129820
 SphereCollider:
   m_ObjectHideFlags: 1

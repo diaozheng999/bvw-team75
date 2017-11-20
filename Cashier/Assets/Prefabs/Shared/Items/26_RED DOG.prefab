@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 65850590532616246}
   - component: {fileID: 54169590249939542}
   - component: {fileID: 114798260207179436}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 26_RED DOG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 23957164992854010}
   - component: {fileID: 102843498942727300}
   - component: {fileID: 114258403015483988}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

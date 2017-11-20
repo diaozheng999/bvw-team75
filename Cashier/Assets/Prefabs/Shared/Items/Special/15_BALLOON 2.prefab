@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 65255803650863196}
   - component: {fileID: 75425903451836274}
   - component: {fileID: 114470158688569140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 15_BALLOON 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 23990809709925764}
   - component: {fileID: 102415282286000552}
   - component: {fileID: 114149757628747778}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 4486710478285770}
   - component: {fileID: 33758792080139786}
   - component: {fileID: 23866103837616428}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

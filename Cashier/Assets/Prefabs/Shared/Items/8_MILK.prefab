@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23425794510916694}
   - component: {fileID: 102249084922051192}
   - component: {fileID: 114583437690539792}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114239033029082746}
   - component: {fileID: 64879199747997364}
   - component: {fileID: 54242865830047930}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 8_MILK
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4406712398040018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4351993947223966}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 54090821514079272}
   - component: {fileID: 135312273810389022}
   - component: {fileID: 114847921152955614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 12_pear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4502304867361568}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 23759024460026124}
   - component: {fileID: 102130250719796540}
   - component: {fileID: 114829223969310570}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4138815260428630}
   - component: {fileID: 33846619692895052}
   - component: {fileID: 23033584997723050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pPlatonic7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4862541302379880}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pPlatonic1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

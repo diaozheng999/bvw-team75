@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23047349034655390}
   - component: {fileID: 102514578017964606}
   - component: {fileID: 114346639989669456}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 65970475679363520}
   - component: {fileID: 114283555773093480}
   - component: {fileID: 114723377770141034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 20_SOAP 2
   m_TagString: Soap
   m_Icon: {fileID: 0}

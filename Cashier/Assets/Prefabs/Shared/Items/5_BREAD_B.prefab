@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114557979698573002}
   - component: {fileID: 54514159266067414}
   - component: {fileID: 136438559081907628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 5_BREAD_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23110809841119524}
   - component: {fileID: 102620670003527342}
   - component: {fileID: 114491886306134056}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1953461994187990}
-  m_LocalRotation: {x: -0.26821476, y: 0.77563655, z: 0.32261857, w: -0.47155717}
+  m_LocalRotation: {x: -0.26821473, y: 0.77563643, z: 0.32261854, w: -0.4715571}
   m_LocalPosition: {x: 0.0065400004, y: 0.0008299971, z: 0.0018799942}
   m_LocalScale: {x: 0.00020000029, y: 0.00050000026, z: 0.000094000134}
   m_Children: []

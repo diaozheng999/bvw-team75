@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114916653210435988}
   - component: {fileID: 64052767376163692}
   - component: {fileID: 54693419762886004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 0_MOONSHINE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 23266030876849214}
   - component: {fileID: 102257272987585100}
   - component: {fileID: 114974644525266162}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,6 +227,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barcode: {fileID: 102257272987585100}
+  exp: 1
+  ItemID: 0
 --- !u!114 &114974644525266162
 MonoBehaviour:
   m_ObjectHideFlags: 1

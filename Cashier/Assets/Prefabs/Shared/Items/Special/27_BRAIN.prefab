@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23128328202730612}
   - component: {fileID: 102412932898670108}
   - component: {fileID: 114282483651741272}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 64133502600649766}
   - component: {fileID: 114262046310106144}
   - component: {fileID: 54713067542943414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 27_BRAIN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
