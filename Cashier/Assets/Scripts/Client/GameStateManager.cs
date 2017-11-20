@@ -24,11 +24,9 @@ namespace Team75.Client {
         [SerializeField] private Ring ring0;
         [SerializeField] private Ring ring1;
 
-        [SerializeField] private Timer _timer;
 
         [SerializeField] float FrenzySkewTolerance;
         [SerializeField] float FrenzyFaceTolerance;
-        
         
 
         private Ring ring;
@@ -158,7 +156,7 @@ namespace Team75.Client {
             Scanner.instance.FrenzyTolerance(FrenzyFaceTolerance, FrenzySkewTolerance);
             // TODO: stop hardcoding frenzy times, but frankly I don't care :)
             ScoreManager.instance.SetTime(20f);
-            Timer.instance.SetMaxTime(20f); 
+            TimeBar.instance.SetMaxTime(20f); 
         }
 
         public void StopFrenzy() {

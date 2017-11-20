@@ -421,6 +421,38 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: -0.47155717
       objectReference: {fileID: 0}
+    - target: {fileID: 4460440910822158, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.26821473
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460440910822158, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.77563643
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460440910822158, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.32261854
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460440910822158, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.4715571
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591823553054754, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.26821476
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591823553054754, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.77563655
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591823553054754, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.32261857
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591823553054754, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.47155717
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa958adbf8f2b664fa313a914401f029, type: 2}
   m_IsPrefabParent: 0
@@ -911,7 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26807a7ad5d17bf49942aa9d9def6a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kinds_merchandise: 30
+  kinds_merchandise: 31
   kinds_customer: 11
   Item_Exist: 0
   Item_Scanned: 0
@@ -3855,7 +3887,6 @@ MonoBehaviour:
   - {fileID: 2123079257}
   ring0: {fileID: 2036154886}
   ring1: {fileID: 607091709}
-  _timer: {fileID: 269270932}
   FrenzySkewTolerance: 90
   FrenzyFaceTolerance: 60
   gameStarted: 0
