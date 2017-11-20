@@ -93,7 +93,9 @@ namespace Team75.Server {
             });
         };
 
-
+        public void SendMessage(int player, byte message, byte[] payload) {
+            servers[player].SendMessageInBackground(message, payload);
+        }
 
         public void SendMessageToBoth(byte message, byte[] payload) {
             if(UnityEngine.Random.value < 0.5f){

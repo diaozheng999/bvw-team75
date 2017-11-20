@@ -68,6 +68,7 @@ namespace Team75.Client {
             client.AddParser(Connection.TIMER_SYNC, OnTimerSync, "TIMER_SYNC");
             client.AddParser(Connection.SYNC_BUTTON, OnSetButton, "SET_BUTTON");
             client.AddParser(Connection.FRENZY_START, OnFrenzyStart, "FRENZY_START");
+            client.AddParser(Connection.CUSTOMER_QUEUE_EMPTY, OnCustQueueEmpty, "CUSTOMER_QUEUE_EMPTY");
             AddDisposable(client);
         }
 
@@ -225,6 +226,12 @@ namespace Team75.Client {
                         var sa = avatar.gameObject.AddComponent<ScannableAvatar>();
                     }
                 }
+            });
+        }
+
+        void OnCustQueueEmpty(byte[] buffer, ushort length) {
+            UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                GameStateManager.instance.SetCallable();
             });
         }
 
