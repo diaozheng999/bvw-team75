@@ -10,14 +10,15 @@ namespace Team75.Client {
         Shared.Avatar avatar;
         Customer customer;
 
-        float itemPlacementDelay;
+        protected float itemPlacementDelay;
         
-        Transform[] items;
-        bool[] placed;
+        protected Transform[] items;
+        protected bool[] placed;
 
         Coroutine_ placeCoroutine = null;
 
         bool cleanedUp = false;
+        
 
 
         public void SetAvatar(Shared.Avatar _avatar, Customer _customer) {
@@ -52,13 +53,17 @@ namespace Team75.Client {
             }
         }
 
+        protected virtual Transform GetItemPlacementTransform () {
+            return avatar.GetItemPlacementTransform();
+        }
+
         IEnumerator<object> PlaceObjects(){
             //yield return avatar.GetAwaiter();
             if(cleanedUp) yield break;
             var wfs = new WaitForSeconds(itemPlacementDelay);
             var len = customer.Items.Length;
 
-            var itemPlacement = avatar.GetItemPlacementTransform();
+            var itemPlacement = GetItemPlacementTransform();
 
             for(int i=0; i<len; ++i)
             {

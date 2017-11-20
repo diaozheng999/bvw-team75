@@ -24,8 +24,9 @@ namespace Team75.Client {
         [SerializeField] private Ring ring0;
         [SerializeField] private Ring ring1;
 
-      
-        
+
+        [SerializeField] float FrenzySkewTolerance;
+        [SerializeField] float FrenzyFaceTolerance;
         
 
         private Ring ring;
@@ -38,6 +39,8 @@ namespace Team75.Client {
         public bool gameStarted = false;
 
         bool callable = true;
+
+        FrenzyItemPlacer fip;
 
         public void StartGame(int playerId) {
             Debug.Log("GameStateManager: starting game as player "+playerId);
@@ -70,6 +73,8 @@ namespace Team75.Client {
 
             Scanner.instance.StartBroadcasting();
             
+
+
             ring.SetAble(callable);
         }
 
@@ -131,7 +136,35 @@ namespace Team75.Client {
             return 1-myPlayerId;
         }
 
-        
+        public void StartFrenzy() {
+            UnsetCallable(); // make sure it's never callable
+            
+            // cleanup customers
+            VisibleCustomerQueue.instance.CustomerLeaveIfActive(GetOpponentPlayerId());
+            if(VisibleCustomerQueue.instance.HasActiveCustomer(myPlayerId)) {
+                var _avatar = VisibleCustomerQueue.instance.GetActiveCustomer(myPlayerId);
+                var _ip = _avatar.GetComponent<ItemPlacer>();
+                _ip.Cleanup();
+                VisibleCustomerQueue.instance.CustomerLeave(myPlayerId, () => {});
+            }
+
+            // spawn santa
+            var santa = VisibleCustomerQueue.instance.SpawnSanta();
+            fip = santa.gameObject.AddComponent<FrenzyItemPlacer>();
+            fip.SetAvatar(santa, myPlayerId);
+
+            Scanner.instance.FrenzyTolerance(FrenzyFaceTolerance, FrenzySkewTolerance);
+            // TODO: stop hardcoding frenzy times, but frankly I don't care :)
+            ScoreManager.instance.SetTime(20f);
+            TimeBar.instance.SetMaxTime(20f); 
+        }
+
+        public void StopFrenzy() {
+            fip.Cleanup();
+            VisibleCustomerQueue.instance.SantaLeave(() => {
+                BackgroundMusic.instance.StopGame();
+            });
+        }
     }
     
     

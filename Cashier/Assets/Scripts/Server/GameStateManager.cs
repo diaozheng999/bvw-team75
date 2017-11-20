@@ -16,6 +16,7 @@ namespace Team75.Server {
         [SerializeField] Transform[] customerPositions;
 
         [SerializeField] float totalTime;
+        [SerializeField] float frenzyTime;
 
         [SerializeField] Text countDown;
 
@@ -24,6 +25,7 @@ namespace Team75.Server {
         [SerializeField] private Ring ring1;
 
         bool started = false;
+        bool frenzy = false;
         bool ended = false;
 
         public void StartTracking(int player) {
@@ -68,6 +70,10 @@ namespace Team75.Server {
                 CustomerQueue.instance.Enqueue(CustomerQueue.GetSpecific(6, 2000)); //hitman
             }
 
+            if(Input.GetKeyUp(KeyCode.F)) {
+                totalTime = 0;
+            }
+
             if(Input.GetKeyUp(KeyCode.LeftArrow)) {
                 CustomerQueue.instance.Dequeue(0);
             }
@@ -80,9 +86,24 @@ namespace Team75.Server {
 
             totalTime -= Time.deltaTime;
             if(totalTime <= 0 && !ended) {
-                totalTime = 0;
-                BackgroundMusic.instance.StopGame();
-                NetworkManager.instance.SendMessageToBoth(Connection.END_GAME, new byte[0]{});
+
+                if (!frenzy) {
+                    totalTime = frenzyTime;
+                    NetworkManager.instance.SendMessageToBoth(Connection.FRENZY_START, new byte[0]{});
+                    CustomerQueue.instance.StopCustomerSpawns();
+                    VisibleCustomerQueue.instance.CustomerLeaveIfActive(0);
+                    VisibleCustomerQueue.instance.CustomerLeaveIfActive(1);
+                    VisibleCustomerQueue.instance.SpawnSanta();
+                    frenzy = true;
+                    
+                } else {
+                    totalTime = 0;
+                    ended = true;
+                    NetworkManager.instance.SendMessageToBoth(Connection.END_GAME, new byte[0]{});
+                    VisibleCustomerQueue.instance.SantaLeave(() => {
+                        BackgroundMusic.instance.StopGame();
+                    });
+                }
             }
             countDown.text = ParseTime();
         }

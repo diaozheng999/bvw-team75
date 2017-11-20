@@ -21,9 +21,16 @@ namespace Team75.Shared {
         [SerializeField] Transform[] customerPositions;
         [SerializeField] Transform[] customerLeavePositions;
 
+        [SerializeField] GameObject santa;
+        [SerializeField] Transform santaSpawnPosition;
+        [SerializeField] Transform santaDestinationPosition;
+        [SerializeField] Transform santaLeavePosition;
+        [SerializeField] Transform[] frenzySpawnPositions;
+
         public const int RENDER_SIZE = 12;
         
         Avatar[] activeAvatars;
+        Avatar santaAvatar;
 
         LinkedList<Customer> customers;
         LinkedList<Avatar> avatars;
@@ -110,6 +117,25 @@ namespace Team75.Shared {
             }
         }
 
+        public Avatar SpawnSanta() {
+            foreach(var cust in avatars) {
+                cust.LeaveTo(customerLeavePositions[2].position, customerLeavePositions[2].rotation, Fn.noop);
+            }
+            var _santa = Instantiate(santa, santaSpawnPosition.position, santaSpawnPosition.rotation);
+
+            santaAvatar = _santa.GetComponent<Avatar>();
+            Debug.Log("Hello?");
+            santaAvatar.DequeueTo(santaDestinationPosition.position, santaDestinationPosition.rotation);
+            Debug.Log("Hello!");
+            return santaAvatar;
+        }
+
+        public void SantaLeave(Action onBeforeLeave) {
+            if(santaAvatar == null) Debug.LogError("Santa avatar is inactive or Santa has left.");
+            santaAvatar.LeaveTo(santaLeavePosition.position, santaLeavePosition.rotation, onBeforeLeave);
+            santaAvatar = null;
+        }
+
 
         public Customer Dequeue(int playerId, ref Avatar avatar, bool returnAvatar = true) {
             var _avatar = avatars.First.Value;
@@ -128,8 +154,6 @@ namespace Team75.Shared {
             _avatar.DequeueTo(customerPositions[playerId].position, customerPositions[playerId].rotation);
             Shuffle(Fn.noop);
 
-            /// TODO: remove timeout
-            //_avatar.DeleteAfter(20);
 
             if(returnAvatar) avatar = _avatar;
             activeAvatars[playerId] = _avatar;
@@ -154,6 +178,14 @@ namespace Team75.Shared {
 
         public Avatar GetActiveCustomer(int playerId) {
             return activeAvatars[playerId];
+        }
+
+        public Transform GetFrenzySpawnPosition(int playerId) {
+            return frenzySpawnPositions[playerId];
+        }
+
+        public void CustomerLeaveIfActive(int playerId) {
+            if(activeAvatars[playerId]!=null) CustomerLeave(playerId, Fn.noop);
         }
 
     }
