@@ -40,32 +40,35 @@ namespace Team75.Server {
 
         public uint AddValue(byte playerId, uint score)
         {
+            Debug.LogError("Executing this.");
+
             scores[playerId] += score;
-            GameObject newscore = Instantiate(smallscore);
-            newscore.transform.parent = transform;
-            newscore.transform.localPosition=new Vector3(0,0,0);
-            newscore.transform.localScale=new Vector3(1,1,1);
-            
-            
+            Debug.LogError("Executing this too.");
             //scoreDisplays[playerId].text = "$ " + scores[playerId];
-            StartCoroutine(falltoadd(newscore, score, playerId));
+            StartCoroutine(falltoadd(null, score, playerId));
+            Debug.LogError("Heya~~~");
             return scores[playerId];
         }
 
         private IEnumerator falltoadd(GameObject addscore, uint score, int id)
         {
-            addscore.GetComponent<Text>().text = "$ " + score.ToString();
-            addscore.GetComponent<RectTransform>().anchoredPosition = positions[id];
+            GameObject newscore = Instantiate(smallscore);
+            newscore.transform.parent = transform;
+            newscore.transform.localPosition=new Vector3(0,0,0);
+            newscore.transform.localScale=new Vector3(1,1,1);
 
-            while (addscore.GetComponent<RectTransform>().anchoredPosition.y > y_min)
+            newscore.GetComponent<Text>().text = "$ " + score.ToString();
+            newscore.GetComponent<RectTransform>().anchoredPosition = positions[id];
+
+            while (newscore.GetComponent<RectTransform>().anchoredPosition.y > y_min)
             {
                 yield return new WaitForSecondsRealtime(0.05f);
-                addscore.GetComponent<RectTransform>().anchoredPosition -= new Vector2(0,0.05f * speed);
+                newscore.GetComponent<RectTransform>().anchoredPosition -= new Vector2(0,0.05f * speed);
             }
-            yield return 0;
+            yield return null;
             scores_delayed[id] += score;
             scoreDisplays[id].text = "$ "+scores_delayed[id];
-            Destroy(addscore);
+            Destroy(newscore);
         }
 
         void Update()

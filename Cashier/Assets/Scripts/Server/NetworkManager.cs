@@ -156,8 +156,11 @@ namespace Team75.Server {
 
         Action<byte[], ushort> AddLineItem(int playerId) => (byte[] buffer, ushort len) => {
             var scoreDelta = Connection.UnpackScore(buffer, 0);
+            Debug.LogError("Here!~");
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                Debug.LogError("Heya!");
                 GameStateManager.instance.PlayBeep(playerId);
+                Debug.LogError("Boo!!!!");
                 var n_score = ScoreManager.instance.AddValue(scoreDelta.Item1, scoreDelta.Item2);
                 servers[(playerId+1)%2].SendMessageInBackground(Connection.SCORE_SET, Connection.PackScore(scoreDelta.Item1, n_score));
             });
