@@ -37,7 +37,7 @@ namespace Team75.Server {
             NetworkManager.instance.SendStartGameMessage();
             CustomerQueue.instance.StartAccepting();
             started = true;
-            BackgroundMusic.instance.StartGame();
+            BackgroundMusic.instance.StartGame(() => countDown.gameObject.SetActive(true));
             StartCoroutine(SendSyncMessages());
             NetworkManager.instance.StartGame();
         }
@@ -95,6 +95,7 @@ namespace Team75.Server {
                     VisibleCustomerQueue.instance.CustomerLeaveIfActive(1);
                     VisibleCustomerQueue.instance.SpawnSanta();
                     frenzy = true;
+                    BackgroundMusic.instance.StartFrenzy();
                     
                 } else {
                     totalTime = 0;
