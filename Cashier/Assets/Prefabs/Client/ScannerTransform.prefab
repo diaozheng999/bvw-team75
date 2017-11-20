@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 64770782187131692}
   - component: {fileID: 114650403117265984}
   - component: {fileID: 82341925693605256}
+  - component: {fileID: 65820917795581926}
   m_Layer: 0
   m_Name: Scanner (1)
   m_TagString: Untagged
@@ -170,7 +171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1188242566492188
 GameObject:
   m_ObjectHideFlags: 1
@@ -706,14 +707,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1050643423892960}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.16613024, w: 0.9861039}
+  m_LocalPosition: {x: 0.010992698, y: 0.06504985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4970681816996458}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.126001}
 --- !u!4 &4417726461655092
 Transform:
   m_ObjectHideFlags: 1
@@ -2008,6 +2009,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 0cd5d3b884431ed40a95b9fd8e1fadad, type: 3}
+--- !u!65 &65820917795581926
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064570585370012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08521995, y: 0.17665438, z: 0.09864574}
+  m_Center: {x: -0.00004347928, y: 0.08856775, z: 0.012633124}
 --- !u!82 &82341925693605256
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2411,8 +2424,8 @@ MonoBehaviour:
   startBroadcasting: 0
   minClip: 0.01
   maxClip: 0.5
-  faceTolerance: 10
-  skewTolerance: 10
+  faceTolerance: 20
+  skewTolerance: 35
   laser_origin: {fileID: 4916221603241896}
   trigger: {fileID: 4364002468008304}
   triggerMinRotationX: 0

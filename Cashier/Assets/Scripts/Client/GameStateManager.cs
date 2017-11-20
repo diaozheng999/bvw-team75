@@ -75,6 +75,8 @@ namespace Team75.Client {
 
             Scanner.instance.StartBroadcasting();
             
+
+
             ring.SetAble(callable);
         }
 
@@ -154,6 +156,7 @@ namespace Team75.Client {
             fip.SetAvatar(santa, myPlayerId);
 
             Scanner.instance.FrenzyTolerance(FrenzyFaceTolerance, FrenzySkewTolerance);
+            Timer.instance.SetMaxTime(20f); // TODO: stop hardcoding frenzy times 
         }
 
         public void StopFrenzy() {

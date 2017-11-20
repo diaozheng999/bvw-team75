@@ -2583,20 +2583,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -3995,6 +3981,16 @@ Prefab:
     - target: {fileID: 4970681816996458, guid: 4d8d01c40a695a7459ac79b4bb2e8a1b, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114650403117265984, guid: 4d8d01c40a695a7459ac79b4bb2e8a1b,
+        type: 2}
+      propertyPath: faceTolerance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114650403117265984, guid: 4d8d01c40a695a7459ac79b4bb2e8a1b,
+        type: 2}
+      propertyPath: skewTolerance
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d8d01c40a695a7459ac79b4bb2e8a1b, type: 2}

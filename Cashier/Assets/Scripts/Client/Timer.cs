@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PGT.Core;
 
 namespace Team75.Client
 {
@@ -9,20 +10,16 @@ namespace Team75.Client
 
 
 
-	public class Timer : MonoBehaviour
+	public class Timer : Singleton<Timer>
 	{
 		private Text _text;
 		private Image _image;
 		
 		private const float width_max=1500f;
 		private bool started = false;
-		
 
-		// Use this for initialization
-		void Start()
-		{
-			
-		}
+		float maxTime = 120f;
+		
 
 		public void StartGame(int playerID)
 		{
@@ -37,7 +34,10 @@ namespace Team75.Client
 				GetComponent<RectTransform>().localRotation = Quaternion.Euler(0, -90, 0);
 			}
 			
-				
+		}
+
+		public void SetMaxTime(float _maxTime) {
+			maxTime = _maxTime;
 		}
 
 		// Update is called once per frame
@@ -45,11 +45,13 @@ namespace Team75.Client
 		{
 			if (started)
 			{
+				var currTime = ScoreManager.instance.GetTime() / maxTime;
+
 				_text.text = ScoreManager.instance.ParseTime();
 				_image.GetComponent<RectTransform>().sizeDelta =
-					new Vector2(width_max * ScoreManager.instance.GetTime() / 180, 200);
+					new Vector2(width_max * currTime, 200);
 
-				if (ScoreManager.instance.GetTime() < 20)
+				if (currTime < 0.2f)
 				{
 					_text.color = Color.red;
 					_image.color = Color.red;
