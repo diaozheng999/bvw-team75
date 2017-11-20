@@ -153,6 +153,8 @@ namespace Team75.Client {
             fip = santa.gameObject.AddComponent<FrenzyItemPlacer>();
             fip.SetAvatar(santa, myPlayerId);
 
+            BackgroundMusic.instance.StartFrenzy();
+
             Scanner.instance.FrenzyTolerance(FrenzyFaceTolerance, FrenzySkewTolerance);
             // TODO: stop hardcoding frenzy times, but frankly I don't care :)
             ScoreManager.instance.SetTime(20f);

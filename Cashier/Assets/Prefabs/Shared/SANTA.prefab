@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 4131941080398934}
   - component: {fileID: 95686001359667192}
   - component: {fileID: 114848681154762262}
+  - component: {fileID: 114989987694215910}
   m_Layer: 0
   m_Name: SANTA
   m_TagString: Untagged
@@ -630,3 +631,19 @@ MonoBehaviour:
   walkSpeed: 10
   turnSpeed: 7
   smoothTime: 0.7
+--- !u!114 &114989987694215910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794049224647090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df66027795a35ef4f841e3ac26a0dbec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scannable: {fileID: 0}
+  scannedValue: 0
+  angularVelocity: 90
+  angularAcceleration: 30
+  spin: 0

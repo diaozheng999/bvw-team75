@@ -134,3 +134,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 8300000, guid: 274d080ed8756a84bbcddab626188143, type: 3}
   inGame: {fileID: 8300000, guid: 6da3670b59708a147855433b9ee79850, type: 3}
+  frenzy: {fileID: 8300000, guid: 030ebdca3b2f1514a942ca678e171277, type: 3}
