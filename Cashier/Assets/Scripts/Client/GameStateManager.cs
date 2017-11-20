@@ -39,6 +39,8 @@ namespace Team75.Client {
 
         bool callable = true;
 
+        FrenzyItemPlacer fip;
+
         public void StartGame(int playerId) {
             Debug.Log("GameStateManager: starting game as player "+playerId);
 
@@ -145,8 +147,15 @@ namespace Team75.Client {
 
             // spawn santa
             var santa = VisibleCustomerQueue.instance.SpawnSanta();
-            var itemPlacer = santa.gameObject.AddComponent<FrenzyItemPlacer>();
-            itemPlacer.SetAvatar(santa, myPlayerId);
+            fip = santa.gameObject.AddComponent<FrenzyItemPlacer>();
+            fip.SetAvatar(santa, myPlayerId);
+        }
+
+        public void StopFrenzy() {
+            fip.Cleanup();
+            VisibleCustomerQueue.instance.SantaLeave(() => {
+                BackgroundMusic.instance.StopGame();
+            });
         }
     }
     

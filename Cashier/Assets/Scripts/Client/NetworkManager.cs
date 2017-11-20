@@ -238,7 +238,7 @@ namespace Team75.Client {
         void OnStopGame(byte[] buffer, ushort length) {
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
                 GameStateManager.instance.gameStarted = false;
-                BackgroundMusic.instance.StopGame();
+                GameStateManager.instance.StopFrenzy();
             });
         }
 
