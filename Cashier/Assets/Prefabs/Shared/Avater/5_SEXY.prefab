@@ -647,9 +647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scannable: {fileID: 0}
   scannedValue: 0
-  AudioClip1: {fileID: 0}
-  AudioClip2: {fileID: 0}
-  AudioClip3: {fileID: 0}
+  AudioClip1: {fileID: 8300000, guid: d6450e62cf067ee42ad3d72fd42e8e60, type: 3}
+  AudioClip2: {fileID: 8300000, guid: daa76db809ef84245a1086fffd0acc0f, type: 3}
+  AudioClip3: {fileID: 8300000, guid: 730ce6888ce170d40b8324cff0ad5045, type: 3}
 --- !u!114 &114488809930621614
 MonoBehaviour:
   m_ObjectHideFlags: 1
