@@ -4157,7 +4157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1255084191}
   - component: {fileID: 1255084192}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Umbrella
   m_TagString: Untagged
   m_Icon: {fileID: 0}
