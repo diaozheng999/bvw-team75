@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114863693227473472}
   - component: {fileID: 114047083190546270}
   - component: {fileID: 82313479695206512}
+  - component: {fileID: 114267907704574738}
   m_Layer: 8
   m_Name: 19_SOAP 1
   m_TagString: Soap
@@ -309,6 +310,23 @@ MonoBehaviour:
   barcode: {fileID: 102298165039615372}
   exp: 1
   ItemID: 19
+--- !u!114 &114267907704574738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1443660988957492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f52da0d191ca84da2ca21de8f87505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: ad71d4e183fa0434694406d48d95f976, type: 3}
+  - {fileID: 8300000, guid: 18cc39c4567bbff419bdd0d6ebcf8098, type: 3}
+  - {fileID: 0}
+  loop: 00000000
 --- !u!114 &114356608511548160
 MonoBehaviour:
   m_ObjectHideFlags: 1

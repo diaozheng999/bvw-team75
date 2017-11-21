@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 75419154422955056}
   - component: {fileID: 114498486769280136}
   - component: {fileID: 82544925695344552}
+  - component: {fileID: 114112271017728442}
   m_Layer: 8
   m_Name: 18_BALLOON 5
   m_TagString: Untagged
@@ -377,6 +378,23 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &114112271017728442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859558698578458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f52da0d191ca84da2ca21de8f87505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 6bb059ce7ac39e940bac6555687a5188, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  loop: 00000000
 --- !u!114 &114498486769280136
 MonoBehaviour:
   m_ObjectHideFlags: 1

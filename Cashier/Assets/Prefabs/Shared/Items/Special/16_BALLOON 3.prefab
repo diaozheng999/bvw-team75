@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 75761488996084014}
   - component: {fileID: 114610592164733176}
   - component: {fileID: 82127683369127178}
+  - component: {fileID: 114896875315363266}
   m_Layer: 8
   m_Name: 16_BALLOON 3
   m_TagString: Untagged
@@ -391,6 +392,23 @@ MonoBehaviour:
   barcode: {fileID: 102934731631485678}
   exp: 1
   ItemID: 16
+--- !u!114 &114896875315363266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1227907828115818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f52da0d191ca84da2ca21de8f87505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 6bb059ce7ac39e940bac6555687a5188, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  loop: 00000000
 --- !u!114 &114999071631571378
 MonoBehaviour:
   m_ObjectHideFlags: 1

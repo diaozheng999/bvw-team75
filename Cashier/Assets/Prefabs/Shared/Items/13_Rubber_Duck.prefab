@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 54614598340285436}
   - component: {fileID: 114446448753719664}
   - component: {fileID: 82902091625156926}
+  - component: {fileID: 114283978302495260}
   m_Layer: 8
   m_Name: 13_Rubber_Duck
   m_TagString: Untagged
@@ -173,7 +174,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0a133bf896cd69040991930d1fbd5f17, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -282,6 +283,23 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &114283978302495260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1997658510340524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f52da0d191ca84da2ca21de8f87505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 8300000, guid: 0a133bf896cd69040991930d1fbd5f17, type: 3}
+  - {fileID: 8300000, guid: 0a133bf896cd69040991930d1fbd5f17, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 0a133bf896cd69040991930d1fbd5f17, type: 3}
+  loop: 00000000
 --- !u!114 &114446448753719664
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -59,6 +59,11 @@ public class Soap : MonoBehaviour
 
     public void Jump()
     {
+	    var source = GetComponent<ItemSound>();
+	    if (source != null)
+	    {
+		    source.PlaySound(2);
+	    }
         GetComponent<Rigidbody>().velocity = speed_move +
                     new Vector3(0, speed_jump, 0);
     }
