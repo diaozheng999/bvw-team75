@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 114093469801304962}
   - component: {fileID: 114830844185908946}
   - component: {fileID: 82625797937897828}
+  - component: {fileID: 114391431494076634}
   m_Layer: 8
   m_Name: 22_SOAP 4
   m_TagString: Soap
@@ -311,6 +312,23 @@ MonoBehaviour:
   grabscript: {fileID: 0}
   speed_jump: 1.3
   force: 0.97
+--- !u!114 &114391431494076634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1895948467302848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f52da0d191ca84da2ca21de8f87505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: ad71d4e183fa0434694406d48d95f976, type: 3}
+  - {fileID: 8300000, guid: 18cc39c4567bbff419bdd0d6ebcf8098, type: 3}
+  - {fileID: 0}
+  loop: 00000000
 --- !u!114 &114494847413207414
 MonoBehaviour:
   m_ObjectHideFlags: 1

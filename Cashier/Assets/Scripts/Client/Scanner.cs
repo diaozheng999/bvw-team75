@@ -112,6 +112,11 @@ namespace Team75.Client
 				Statics.instance.ScanItem(client_item.GetId());
 				GetComponent<AudioSource>().clip = (playerId == 0) ? clip0 : clip1;
 				GetComponent<AudioSource>().Play();
+				var source = client_item.gameObject.GetComponent<ItemSound>();
+				if (source != null)
+				{
+					source.PlaySound(3);
+				}
 				//-------------------END--------------
 				items.Remove(client_item.GetInstanceID());
 				return client_item;

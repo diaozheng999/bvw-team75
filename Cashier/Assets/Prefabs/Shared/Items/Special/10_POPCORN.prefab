@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 65125353516204950}
   - component: {fileID: 65779631045071432}
   - component: {fileID: 114705656259963734}
+  - component: {fileID: 114231142346183704}
   - component: {fileID: 82076954503982616}
   m_Layer: 8
   m_Name: 10_POPCORN
@@ -2747,6 +2748,23 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &114231142346183704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1730984717130432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f52da0d191ca84da2ca21de8f87505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: ef6be23ad452d0f4c91d71c312a5253b, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  loop: 00000000
 --- !u!114 &114705656259963734
 MonoBehaviour:
   m_ObjectHideFlags: 1

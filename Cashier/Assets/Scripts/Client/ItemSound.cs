@@ -13,6 +13,10 @@ public class ItemSound : MonoBehaviour
 	void Start ()
 	{
 		audioSource = GetComponent<AudioSource>();
+		if (audioSource == null)
+		{
+			Destroy(this);
+		}
 	}
 	
 	// Update is called once per frame

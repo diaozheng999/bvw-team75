@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114262046310106144}
   - component: {fileID: 54713067542943414}
   - component: {fileID: 82155484065934784}
+  - component: {fileID: 114055155166040558}
   m_Layer: 8
   m_Name: 27_BRAIN
   m_TagString: Untagged
@@ -187,7 +188,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 949537a4ddaa50249b7f4c1c5970977f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -296,6 +297,23 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &114055155166040558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1993697510616044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f52da0d191ca84da2ca21de8f87505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 8300000, guid: 949537a4ddaa50249b7f4c1c5970977f, type: 3}
+  - {fileID: 8300000, guid: 949537a4ddaa50249b7f4c1c5970977f, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  loop: 00000000
 --- !u!114 &114262046310106144
 MonoBehaviour:
   m_ObjectHideFlags: 1
