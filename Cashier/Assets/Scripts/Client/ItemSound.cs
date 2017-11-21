@@ -20,11 +20,14 @@ public class ItemSound : MonoBehaviour
 		
 	}
 
-	// 0: generation; 1: grab; 2: release; 3: scan
+	// 0: generation; 
+	// 1: grab;  done
+	// 2: release; 
+	// 3: scan
 	public void PlaySound(int index)
 	{
 		audioSource.Stop();
-		if (audios[index] != null)
+		if (audios.Length>index && loop.Length>index &&  audios[index] != null)
 		{
 			audioSource.clip = audios[index];
 			audioSource.loop = loop[index];
