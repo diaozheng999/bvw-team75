@@ -24,6 +24,7 @@ namespace Team75.Client {
         ConcurrentQueue<System.Action<ushort>> trackingIdRequests;
 
         void Start() {
+            DontDestroyOnLoad(this);
             connectP1.onClick.AddListener(() => {
                 DisableInteractions();
                 Connect(server_address, Connection.TCP_SERVER_PORT_1);

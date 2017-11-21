@@ -133,11 +133,22 @@ namespace Team75.Server {
         public void SetGameStat(int playerId, GameStat stat) {
             stats[playerId] = stat;
             statsSet++;
+            Debug.LogError(statsSet);
+
             if(statsSet == 2) {
-                Messenger.SendMessage<GameStat[]>("stats", stats);
-                SceneManager.LoadScene("Tally");
+                StartCoroutine(NextSceneCoroutine());
             }
         }
+
+
+        IEnumerator NextSceneCoroutine() {
+            yield return new WaitForSeconds(0.5f);
+            Debug.LogError("HELLO!!!");
+            Messenger.SendMessage<GameStat[]>("stats", stats);
+            Debug.LogError("MovingScene!!!!!!!");
+            SceneManager.LoadScene("Tally");
+        }
+        
 
     }
 

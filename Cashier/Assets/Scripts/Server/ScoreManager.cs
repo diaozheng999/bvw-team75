@@ -66,8 +66,8 @@ namespace Team75.Server {
                 newscore.GetComponent<RectTransform>().anchoredPosition -= new Vector2(0,0.05f * speed);
             }
             yield return null;
-            GetComponent<AudioSource>().panStereo = id * 2 - 1;
-            GetComponent<AudioSource>().Play();
+            //GetComponent<AudioSource>().panStereo = id * 2 - 1;
+            //GetComponent<AudioSource>().Play();
             scores_delayed[id] += score;
             scoreDisplays[id].text = "$ "+scores_delayed[id];
             Destroy(newscore);

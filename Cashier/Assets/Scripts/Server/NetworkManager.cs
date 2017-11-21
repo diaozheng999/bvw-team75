@@ -27,6 +27,7 @@ namespace Team75.Server {
         IPAddress[] remoteAddress;
 
         void Start() {
+            DontDestroyOnLoad(this);
             servers = new TcpServer[NUM_PLAYERS];
             servers[0] = new TcpServer(Connection.TCP_SERVER_PORT_1, OnConnect(0));
             servers[1] = new TcpServer(Connection.TCP_SERVER_PORT_2, OnConnect(1));
@@ -159,11 +160,8 @@ namespace Team75.Server {
 
         Action<byte[], ushort> AddLineItem(int playerId) => (byte[] buffer, ushort len) => {
             var scoreDelta = Connection.UnpackScore(buffer, 0);
-            Debug.LogError("Here!~");
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
-                Debug.LogError("Heya!");
                 GameStateManager.instance.PlayBeep(playerId);
-                Debug.LogError("Boo!!!!");
                 var n_score = ScoreManager.instance.AddValue(scoreDelta.Item1, scoreDelta.Item2);
                 servers[(playerId+1)%2].SendMessageInBackground(Connection.SCORE_SET, Connection.PackScore(scoreDelta.Item1, n_score));
             });
@@ -206,9 +204,13 @@ namespace Team75.Server {
 
         Action<byte[], ushort> OnStatUpdate(int playerId) => (byte[] buffer, ushort len) => {
             var stat = Connection.UnpackStats(buffer, 0);
+            Debug.LogError("Parsed Stat Updata for player"+playerId);
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                Debug.LogError("Player "+playerId+" before forwarding message to other player.");
                 servers[1-playerId].SendMessageInBackground(Connection.STAT_UPDATE, Connection.PackStats(stat));
+                Debug.LogError("Player "+playerId+" after forwarding message to other player.");
                 GameStateManager.instance.SetGameStat(playerId, stat);
+                Debug.LogError("OnStatUpdate handler done.");
             });
         };
         
