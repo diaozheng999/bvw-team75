@@ -269,7 +269,7 @@ var itemDictionary = [
         "price" : "100",
         "title" : "Ketchup",
         "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
+        "image" : "images/items/8.png"
     }
 
     
