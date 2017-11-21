@@ -45,7 +45,7 @@ namespace Team75.Client
 		// Use this for initialization
 		void Start()
 		{
-			enabled = false;
+			//enabled = false;
 			items = new Dictionary<int, Tuple<Scannable, Transform>>();
 		}
 

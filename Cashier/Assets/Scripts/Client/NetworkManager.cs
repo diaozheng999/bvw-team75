@@ -84,11 +84,16 @@ namespace Team75.Client {
         }
 
         void OnSetScore(byte[] buffer, ushort length) {
+            Debug.LogError("Remote Set Score 0!!!!");
             var score = Connection.UnpackScore(buffer, 0);
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                Debug.LogError("Remote Set Score 1!!!!!");
                 if(score.Item1 != (byte)GameStateManager.instance.GetPlayerId()){
+                    Debug.LogError("Remote Set Score 2!!!!!");
                     GameStateManager.instance.PlayBeep(score.Item1);
+                    Debug.LogError("Remote Set Score 3!!!!");
                     ScoreManager.instance.SetOpponentScore(score.Item2);
+                    Debug.LogError("Remote Set Score 4!!!");
                 }
             });
         }
