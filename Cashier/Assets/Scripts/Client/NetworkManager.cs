@@ -197,15 +197,15 @@ namespace Team75.Client {
             }
         }
 
-        void SendTrackingIdPurged(byte id){
-            client.SendMessageInBackground(Connection.TRACKING_ID_PURGED, new byte[1]{id});
+        void SendTrackingIdPurged(ushort id){
+            client.SendMessageInBackground(Connection.TRACKING_ID_PURGED, Connection.PackTrackingId(id));
         }
         public void SendCustomerLeave(int playerId) {
             client.SendMessageInBackground(Connection.CUSTOMER_LEAVE, new byte[1]{(byte)playerId});
         }
 
         void OnPurgeTrackingId(byte[] buffer, ushort length) {
-            var id = buffer[0];
+            var id = Connection.UnpackTrackingId(buffer, 0);
             TrackableItemPlacer.instance.RemoveTrackable(id, () => SendTrackingIdPurged(id));
         }
 
