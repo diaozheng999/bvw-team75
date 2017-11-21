@@ -5,12 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Server/Server.unity
     guid: 210f4b2c3c3abee489da094356b735a8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Client/Client_Merge.unity
     guid: fd70c03785533ec4298af19fce584844
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Server/Tally.unity
     guid: 214baf354cfe8bb4cb233c6d64d4e14c
