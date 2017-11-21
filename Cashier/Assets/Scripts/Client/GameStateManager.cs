@@ -167,6 +167,12 @@ namespace Team75.Client {
                 BackgroundMusic.instance.StopGame();
             });
         }
+
+
+        public void SetStats(GameStat stat) {
+            // pass
+        }
+
     }
     
     

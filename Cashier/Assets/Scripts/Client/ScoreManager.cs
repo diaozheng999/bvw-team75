@@ -78,6 +78,9 @@ namespace Team75.Client {
             return string.Format("{0}:{1}", mins.ToString("D2"), secs.ToString("D2"));
         }
 
+        public uint GetScore() {
+            return revenue;
+        }
 
     }
 

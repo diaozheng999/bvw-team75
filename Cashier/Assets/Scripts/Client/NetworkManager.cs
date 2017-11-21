@@ -69,6 +69,7 @@ namespace Team75.Client {
             client.AddParser(Connection.SYNC_BUTTON, OnSetButton, "SET_BUTTON");
             client.AddParser(Connection.FRENZY_START, OnFrenzyStart, "FRENZY_START");
             client.AddParser(Connection.CUSTOMER_QUEUE_EMPTY, OnCustQueueEmpty, "CUSTOMER_QUEUE_EMPTY");
+            client.AddParser(Connection.STAT_UPDATE, OnStatUpdate, "STAT_UPDATE");
             AddDisposable(client);
         }
 
@@ -246,6 +247,7 @@ namespace Team75.Client {
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
                 GameStateManager.instance.gameStarted = false;
                 GameStateManager.instance.StopFrenzy();
+                client.SendMessageInBackground(Connection.STAT_UPDATE, Statics.instance.PackBinary());
             });
         }
 
@@ -259,6 +261,13 @@ namespace Team75.Client {
         void OnFrenzyStart(byte[] buffer, ushort length) {
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
                 GameStateManager.instance.StartFrenzy();
+            });
+        }
+
+        void OnStatUpdate(byte[] buffer, ushort length) {
+            var statPackage = Connection.UnpackStats(buffer, 0);
+            UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                GameStateManager.instance.SetStats(statPackage);
             });
         }
 

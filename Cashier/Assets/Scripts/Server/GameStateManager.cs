@@ -1,7 +1,8 @@
-using UnityEngine;
 using PGT.Core;
 using Team75.Shared;
+using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 
@@ -27,6 +28,9 @@ namespace Team75.Server {
         bool started = false;
         bool frenzy = false;
         bool ended = false;
+
+        GameStat[] stats = new GameStat[2];
+        int statsSet = 0;
 
         public void StartTracking(int player) {
             avatars[player].StartTracking();
@@ -120,10 +124,20 @@ namespace Team75.Server {
         {
             if(playerID==0) ring0.SetAble(buttonstate!=0);
             else ring1.SetAble(buttonstate!=0);
-            
         }
+
         
         //--------END_--------------------
+
+        
+        public void SetGameStat(int playerId, GameStat stat) {
+            stats[playerId] = stat;
+            statsSet++;
+            if(statsSet == 2) {
+                Messenger.SendMessage<GameStat[]>("stats", stats);
+                SceneManager.LoadScene("Tally");
+            }
+        }
 
     }
 
