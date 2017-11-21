@@ -112,7 +112,7 @@ namespace Team75.Server {
         public void Dequeue(int toPlayer) {
             lock (visibleCustomerQueue) {
                 if (VisibleCustomerQueue.instance.IsEmpty()) {
-                    NetworkManager.instance.SendMessageToBoth(Connection.CUSTOMER_QUEUE_EMPTY, new byte[0]{});
+                    NetworkManager.instance.SendMessage(toPlayer, Connection.CUSTOMER_QUEUE_EMPTY, new byte[0]{});
                     Debug.LogWarning("Visible Queue Empty!!!");
                     return;
                 }

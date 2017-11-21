@@ -57,6 +57,10 @@ namespace Team75.Client {
             return avatar.GetItemPlacementTransform();
         }
 
+        protected virtual Vector3 Jitter() => Vector3.zero;
+
+        protected virtual Quaternion JitterRot() => Quaternion.identity;
+
         IEnumerator<object> PlaceObjects(){
             //yield return avatar.GetAwaiter();
             if(cleanedUp) yield break;
@@ -69,7 +73,7 @@ namespace Team75.Client {
             {
                 yield return wfs;
                 var _go = Instantiate(
-                    ItemDictionary.instance.GetItem(customer.Items[i]), itemPlacement.position, itemPlacement.rotation
+                    ItemDictionary.instance.GetItem(customer.Items[i]), itemPlacement.position + Jitter(), itemPlacement.rotation * JitterRot()
                 );
                 Statics.instance.GenerateItem(customer.Items[i]);
                 var _it = _go.AddComponent<Item>();

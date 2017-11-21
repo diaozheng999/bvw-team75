@@ -24,6 +24,7 @@ namespace Team75.Client {
         ConcurrentQueue<System.Action<ushort>> trackingIdRequests;
 
         void Start() {
+            DontDestroyOnLoad(this);
             connectP1.onClick.AddListener(() => {
                 DisableInteractions();
                 Connect(server_address, Connection.TCP_SERVER_PORT_1);
@@ -68,6 +69,8 @@ namespace Team75.Client {
             client.AddParser(Connection.TIMER_SYNC, OnTimerSync, "TIMER_SYNC");
             client.AddParser(Connection.SYNC_BUTTON, OnSetButton, "SET_BUTTON");
             client.AddParser(Connection.FRENZY_START, OnFrenzyStart, "FRENZY_START");
+            client.AddParser(Connection.CUSTOMER_QUEUE_EMPTY, OnCustQueueEmpty, "CUSTOMER_QUEUE_EMPTY");
+            client.AddParser(Connection.STAT_UPDATE, OnStatUpdate, "STAT_UPDATE");
             AddDisposable(client);
         }
 
@@ -81,11 +84,16 @@ namespace Team75.Client {
         }
 
         void OnSetScore(byte[] buffer, ushort length) {
+            Debug.LogError("Remote Set Score 0!!!!");
             var score = Connection.UnpackScore(buffer, 0);
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                Debug.LogError("Remote Set Score 1!!!!!");
                 if(score.Item1 != (byte)GameStateManager.instance.GetPlayerId()){
+                    Debug.LogError("Remote Set Score 2!!!!!");
                     GameStateManager.instance.PlayBeep(score.Item1);
+                    Debug.LogError("Remote Set Score 3!!!!");
                     ScoreManager.instance.SetOpponentScore(score.Item2);
+                    Debug.LogError("Remote Set Score 4!!!");
                 }
             });
         }
@@ -189,15 +197,15 @@ namespace Team75.Client {
             }
         }
 
-        void SendTrackingIdPurged(byte id){
-            client.SendMessageInBackground(Connection.TRACKING_ID_PURGED, new byte[1]{id});
+        void SendTrackingIdPurged(ushort id){
+            client.SendMessageInBackground(Connection.TRACKING_ID_PURGED, Connection.PackTrackingId(id));
         }
         public void SendCustomerLeave(int playerId) {
             client.SendMessageInBackground(Connection.CUSTOMER_LEAVE, new byte[1]{(byte)playerId});
         }
 
         void OnPurgeTrackingId(byte[] buffer, ushort length) {
-            var id = buffer[0];
+            var id = Connection.UnpackTrackingId(buffer, 0);
             TrackableItemPlacer.instance.RemoveTrackable(id, () => SendTrackingIdPurged(id));
         }
 
@@ -228,6 +236,12 @@ namespace Team75.Client {
             });
         }
 
+        void OnCustQueueEmpty(byte[] buffer, ushort length) {
+            UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                GameStateManager.instance.SetCallable();
+            });
+        }
+
         void OnStartGame(byte[] buffer, ushort length) {
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
                 GameStateManager.instance.gameStarted = true;
@@ -239,6 +253,7 @@ namespace Team75.Client {
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
                 GameStateManager.instance.gameStarted = false;
                 GameStateManager.instance.StopFrenzy();
+                client.SendMessageInBackground(Connection.STAT_UPDATE, Statics.instance.PackBinary());
             });
         }
 
@@ -252,6 +267,13 @@ namespace Team75.Client {
         void OnFrenzyStart(byte[] buffer, ushort length) {
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
                 GameStateManager.instance.StartFrenzy();
+            });
+        }
+
+        void OnStatUpdate(byte[] buffer, ushort length) {
+            var statPackage = Connection.UnpackStats(buffer, 0);
+            UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                GameStateManager.instance.SetStats(statPackage);
             });
         }
 

@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using PGT.Core;
+using PGT.Core.DataStructures;
 using UnityEngine;
+using System;
+using Team75.Shared;
 
 namespace Team75.Client
 {
@@ -35,8 +38,14 @@ namespace Team75.Client
 		private bool gamestarted=false;
 		private float time_triggerdown;
 		private bool triggerdown;
+
+		bool packaged = false;
+		private GameStat _package;
 		
 		
+		void Start() {
+			DontDestroyOnLoad(this);
+		}
 
 		// Use this for initialization
 		public void StartGame(int playerID)
@@ -47,17 +56,10 @@ namespace Team75.Client
 			Distribution_Merchandise_Scanned = new int[kinds_merchandise];
 		}
 
-		// Update is called once per frame
-		void Update()
-		{
-			
-		}
-
 		public void GenerateItem(int index) 
 		{
 			Item_Exist++;
 			Distribution_Merchandise_Exist[index]++;
-
 		}
 
 		public void GenerateCustomer(int index)  
@@ -100,6 +102,45 @@ namespace Team75.Client
 			Percentage_Complete_Customer = (float) Customer_Completed / Customer_Exist * 100;
 		}
 
+		public Sequence<Tuple<ushort, int>> SortItems() {
+			ushort len = (ushort)Distribution_Merchandise_Scanned.Length;
+
+			var _seq = Sequence.Array(Distribution_Merchandise_Scanned).MapIndex((int i, int v) => new Tuple<ushort, int>((ushort) i, v)).ToArray();
+
+			Array.Sort(_seq, (Tuple<ushort, int> a, Tuple<ushort, int> b) => b.Item2.CompareTo(a.Item2));
+
+			return Sequence.Array(_seq);
+		}
+
+
+		
+        public GameStat Pack() {
+			if(packaged) return _package;
+            _package = new GameStat();
+			_package.customerServed = (uint)Customer_Exist;
+			_package.customerCompleted = (uint)Customer_Completed;
+			_package.itemGiven = (uint)Item_Exist;
+			_package.itemScanned = (uint)Item_Scanned;
+			_package.revenue = ScoreManager.instance.GetScore();
+
+			var _Sorted = SortItems();
+			if (Distribution_Merchandise_Scanned.Length > 5) {
+				_Sorted = _Sorted.Take(5);
+			}
+
+			var _Sorted_Memoized = _Sorted.Memoize();
+
+			_package.itemIds = _Sorted_Memoized.Map((Tuple<ushort, int> v) => v.Item1).ToArray();
+			_package.itemCounts = _Sorted_Memoized.Map((Tuple<ushort, int> v) => (uint)v.Item2).ToArray();
+
+			packaged = true;
+
+			return _package;
+        }
+
+		public byte[] PackBinary(){
+			return Connection.PackStats(Pack());
+		}
 
 	}
 }

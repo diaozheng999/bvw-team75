@@ -19,7 +19,7 @@ namespace Team75.Client
 		private const float width_max=1500f;
 		private bool started = false;
 
-		float maxTime = 120f;
+		float maxTime = 150f;
 		
 
 		public void StartGame(int playerID)
@@ -39,6 +39,10 @@ namespace Team75.Client
 
 		public void SetMaxTime(float _maxTime) {
 			maxTime = _maxTime;
+		}
+
+		public void ResetMaxTime() {
+			maxTime = ScoreManager.instance.GetTime();
 		}
 
 		// Update is called once per frame

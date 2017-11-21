@@ -134,3 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 8300000, guid: 274d080ed8756a84bbcddab626188143, type: 3}
   inGame: {fileID: 8300000, guid: 6da3670b59708a147855433b9ee79850, type: 3}
+  frenzy: {fileID: 8300000, guid: 030ebdca3b2f1514a942ca678e171277, type: 3}
+  bossStart: {fileID: 8300000, guid: a559d0910293dc144ad506c659e2b728, type: 3}
+  bossEnd: {fileID: 8300000, guid: 4e782f118c4704d4e991fdeea268a64b, type: 3}
+  bossHint: {fileID: 8300000, guid: 2b028f742555df342b66add7697f9e5f, type: 3}

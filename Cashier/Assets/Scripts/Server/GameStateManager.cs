@@ -1,7 +1,8 @@
-using UnityEngine;
 using PGT.Core;
 using Team75.Shared;
+using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 
@@ -28,6 +29,9 @@ namespace Team75.Server {
         bool frenzy = false;
         bool ended = false;
 
+        GameStat[] stats = new GameStat[2];
+        int statsSet = 0;
+
         public void StartTracking(int player) {
             avatars[player].StartTracking();
             scanners[player].StartTracking();
@@ -37,7 +41,7 @@ namespace Team75.Server {
             NetworkManager.instance.SendStartGameMessage();
             CustomerQueue.instance.StartAccepting();
             started = true;
-            BackgroundMusic.instance.StartGame();
+            BackgroundMusic.instance.StartGame(() => countDown.gameObject.SetActive(true));
             StartCoroutine(SendSyncMessages());
             NetworkManager.instance.StartGame();
         }
@@ -95,6 +99,7 @@ namespace Team75.Server {
                     VisibleCustomerQueue.instance.CustomerLeaveIfActive(1);
                     VisibleCustomerQueue.instance.SpawnSanta();
                     frenzy = true;
+                    BackgroundMusic.instance.StartFrenzy();
                     
                 } else {
                     totalTime = 0;
@@ -119,10 +124,31 @@ namespace Team75.Server {
         {
             if(playerID==0) ring0.SetAble(buttonstate!=0);
             else ring1.SetAble(buttonstate!=0);
-            
         }
+
         
         //--------END_--------------------
+
+        
+        public void SetGameStat(int playerId, GameStat stat) {
+            stats[playerId] = stat;
+            statsSet++;
+            Debug.LogError(statsSet);
+
+            if(statsSet == 2) {
+                StartCoroutine(NextSceneCoroutine());
+            }
+        }
+
+
+        IEnumerator NextSceneCoroutine() {
+            yield return new WaitForSeconds(0.5f);
+            Debug.LogError("HELLO!!!");
+            Messenger.SendMessage<GameStat[]>("stats", stats);
+            Debug.LogError("MovingScene!!!!!!!");
+            SceneManager.LoadScene("Tally");
+        }
+        
 
     }
 

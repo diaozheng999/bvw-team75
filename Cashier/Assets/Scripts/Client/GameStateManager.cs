@@ -38,7 +38,7 @@ namespace Team75.Client {
 
         public bool gameStarted = false;
 
-        bool callable = true;
+        [SerializeField] bool callable = true;
 
         FrenzyItemPlacer fip;
 
@@ -153,10 +153,12 @@ namespace Team75.Client {
             fip = santa.gameObject.AddComponent<FrenzyItemPlacer>();
             fip.SetAvatar(santa, myPlayerId);
 
+            BackgroundMusic.instance.StartFrenzy();
+
             Scanner.instance.FrenzyTolerance(FrenzyFaceTolerance, FrenzySkewTolerance);
             // TODO: stop hardcoding frenzy times, but frankly I don't care :)
-            ScoreManager.instance.SetTime(20f);
-            TimeBar.instance.SetMaxTime(20f); 
+            ScoreManager.instance.SetTime(30f);
+            TimeBar.instance.SetMaxTime(30f); 
         }
 
         public void StopFrenzy() {
@@ -165,6 +167,12 @@ namespace Team75.Client {
                 BackgroundMusic.instance.StopGame();
             });
         }
+
+
+        public void SetStats(GameStat stat) {
+            // pass
+        }
+
     }
     
     

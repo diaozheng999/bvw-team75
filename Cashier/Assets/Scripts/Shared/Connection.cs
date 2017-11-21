@@ -46,6 +46,7 @@ namespace Team75.Shared {
         public const byte END_GAME = 0xFE;
         public const byte TIMER_SYNC = 0xFD;
         public const byte FRENZY_START = 0xFC;
+        public const byte STAT_UPDATE = 0xFB;
 
         public const byte SCORE_ADD_ITEM = 0x30;
         public const byte SCORE_SET = 0x31;
@@ -202,6 +203,66 @@ namespace Team75.Shared {
         }
         //-----------END---------------
 
+
+        public static byte[] PackStats(GameStat stats) {
+            var buffer = new byte[52];
+            // Packing in this order
+            /*
+             *  0x00 - REVENUE uint (4)
+             *  0x04 - CUST_DNE uint (4)
+             *  0x08 - CUST_GVN uint (4)
+             *  0x0C - ITEM_DNE uint (4)
+             *  0x10 - ITEM_GVN uint (4)
+             *  0x14 - ITEM_LIST_LEN ushort (2)
+             *  0x16 - ITEM_ID_0 ushort (2)
+             *  0x18 - ITEM_ID_1 ushort (2)
+             *  0x1A - ITEM_ID_2 ushort (2)
+             *  0x1C - ITEM_ID_3 ushort (2)
+             *  0x1E - ITEM_ID_4 ushort (2)
+             *  0x20 - ITEM_CNT_0 uint (4)
+             *  0x24 - ITEM_CNT_1 uint (4)
+             *  0x28 - ITEM_CNT_2 uint (4)
+             *  0x2C - ITEM_CNT_3 uint (4)
+             *  0x30 - ITEM_CNT_4 uint (4)
+             */
+
+             Array.Copy(BitConverter.GetBytes(stats.revenue), 0, buffer, 0x00, 4);
+             Array.Copy(BitConverter.GetBytes(stats.customerServed), 0, buffer, 0x04, 4);
+             Array.Copy(BitConverter.GetBytes(stats.customerCompleted), 0, buffer, 0x08, 4);
+             Array.Copy(BitConverter.GetBytes(stats.itemScanned), 0, buffer, 0x0c, 4);
+             Array.Copy(BitConverter.GetBytes(stats.itemGiven), 0, buffer, 0x10, 4);
+
+             ushort len = (ushort)(uint)stats.itemIds.Length;
+             Array.Copy(BitConverter.GetBytes(len), 0, buffer, 0x14, 2);
+             for(int i=0; i<len; ++i) {
+                 Array.Copy(BitConverter.GetBytes(stats.itemIds[i]), 0, buffer, 0x14+2*i, 2);
+                 Array.Copy(BitConverter.GetBytes(stats.itemCounts[i]), 0, buffer, 0x20+4*i, 4);
+             }
+
+             return buffer;
+        }
+
+        public static GameStat UnpackStats(byte[] buffer, int offset) {
+            var stats = new GameStat();
+
+            stats.revenue = BitConverter.ToUInt32(buffer, offset);
+            stats.customerServed = BitConverter.ToUInt32(buffer, offset+0x04);
+            stats.customerCompleted = BitConverter.ToUInt32(buffer, offset+0x08);
+            stats.itemScanned = BitConverter.ToUInt32(buffer, offset+0x0c);
+            stats.itemGiven = BitConverter.ToUInt32(buffer, offset+0x10);
+
+            var len = BitConverter.ToUInt16(buffer, offset+0x14);
+
+            stats.itemIds = new ushort[len];
+            stats.itemCounts = new uint[len];
+
+            for(int i=0; i<len; ++i) {
+                stats.itemIds[i] = BitConverter.ToUInt16(buffer, offset+0x14+2*i);
+                stats.itemCounts[i] = BitConverter.ToUInt32(buffer, offset+0x20+4*i);
+            }
+
+            return stats;
+        }
 
     }
 }
