@@ -30,6 +30,10 @@ namespace Team75.Client {
             return new Vector3(r * Mathf.Cos(theta), 0, r * Mathf.Sin(theta));
         }
 
+        protected override Quaternion JitterRot() {
+            return Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
+        }
+
         protected override Transform GetItemPlacementTransform() {
             return VisibleCustomerQueue.instance.GetFrenzySpawnPosition(playerId);
         }

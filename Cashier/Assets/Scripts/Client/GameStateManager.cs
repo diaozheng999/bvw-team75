@@ -157,8 +157,8 @@ namespace Team75.Client {
 
             Scanner.instance.FrenzyTolerance(FrenzyFaceTolerance, FrenzySkewTolerance);
             // TODO: stop hardcoding frenzy times, but frankly I don't care :)
-            ScoreManager.instance.SetTime(20f);
-            TimeBar.instance.SetMaxTime(20f); 
+            ScoreManager.instance.SetTime(30f);
+            TimeBar.instance.SetMaxTime(30f); 
         }
 
         public void StopFrenzy() {
