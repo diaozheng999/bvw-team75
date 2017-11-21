@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64536973292217662}
   - component: {fileID: 54158179187589546}
   - component: {fileID: 114419066157128992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 3_CROISSANT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23411018690405368}
   - component: {fileID: 102572493973898262}
   - component: {fileID: 114271825978208242}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

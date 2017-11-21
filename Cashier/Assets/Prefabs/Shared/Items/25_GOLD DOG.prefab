@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23551993399320208}
   - component: {fileID: 102298226611881226}
   - component: {fileID: 114100395808283114}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114545150810492106}
   - component: {fileID: 54979399726110860}
   - component: {fileID: 65348434721036468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 25_GOLD DOG
   m_TagString: Untagged
   m_Icon: {fileID: 0}

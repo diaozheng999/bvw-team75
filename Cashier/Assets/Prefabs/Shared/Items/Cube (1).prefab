@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23089390569359196}
   - component: {fileID: 102337201291209582}
   - component: {fileID: 114123760348241986}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23727896374130942}
   - component: {fileID: 54722656811282002}
   - component: {fileID: 114679936375477160}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,3 +218,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barcode: {fileID: 102337201291209582}
+  exp: 1
+  ItemID: 0

@@ -4038,7 +4038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eac0fb8820a11347b5cbc22fd112dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OVRHeight: 1.4
+  OVRHeight: 1.2
   Players:
   - {fileID: 74731590}
   - {fileID: 1883540952}
@@ -4053,6 +4053,7 @@ MonoBehaviour:
   FrenzySkewTolerance: 90
   FrenzyFaceTolerance: 60
   gameStarted: 0
+  callable: 1
 --- !u!4 &1187160126
 Transform:
   m_ObjectHideFlags: 0

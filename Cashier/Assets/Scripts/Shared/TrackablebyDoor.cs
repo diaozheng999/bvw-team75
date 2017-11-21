@@ -13,7 +13,7 @@ namespace Team75.Shared
 
 		public Door door;
 
-		private float distance_approach=4;
+		private float distance_approach=6;
 
 		//private float distance_leave=2;
 

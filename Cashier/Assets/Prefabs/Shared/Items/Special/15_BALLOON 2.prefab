@@ -27,7 +27,8 @@ GameObject:
   - component: {fileID: 65255803650863196}
   - component: {fileID: 75425903451836274}
   - component: {fileID: 114470158688569140}
-  m_Layer: 0
+  - component: {fileID: 82376662691870922}
+  m_Layer: 8
   m_Name: 15_BALLOON 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +46,7 @@ GameObject:
   - component: {fileID: 23990809709925764}
   - component: {fileID: 102415282286000552}
   - component: {fileID: 114149757628747778}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +63,7 @@ GameObject:
   - component: {fileID: 4486710478285770}
   - component: {fileID: 33758792080139786}
   - component: {fileID: 23866103837616428}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,6 +259,86 @@ ConstantForce:
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
+--- !u!82 &82376662691870922
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571499882493646}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95190477553097418
 Animator:
   serializedVersion: 3

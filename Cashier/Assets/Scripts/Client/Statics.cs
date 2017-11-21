@@ -104,14 +104,12 @@ namespace Team75.Client
 
 		public Sequence<Tuple<ushort, int>> SortItems() {
 			ushort len = (ushort)Distribution_Merchandise_Scanned.Length;
-			var heap = new Heap<int, ushort>(len);
 
-			for(ushort i=0; i<len; ++i) {
-				heap.Insert(i, -Distribution_Merchandise_Scanned[i]);
-			}
+			var _seq = Sequence.Array(Distribution_Merchandise_Scanned).MapIndex((int i, int v) => new Tuple<ushort, int>((ushort) i, v)).ToArray();
 
-			return Sequence.Unroll(heap).Map((KeyValuePair<int, ushort> v) => 
-				new Tuple<ushort, int>(v.Value, -v.Key));
+			Array.Sort(_seq, (Tuple<ushort, int> a, Tuple<ushort, int> b) => b.Item2.CompareTo(a.Item2));
+
+			return Sequence.Array(_seq);
 		}
 
 

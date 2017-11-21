@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54603165619520068}
   - component: {fileID: 64320014374153576}
   - component: {fileID: 114934246264153234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 4_BREAD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23284249343901450}
   - component: {fileID: 102230050992752326}
   - component: {fileID: 114428058794195408}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

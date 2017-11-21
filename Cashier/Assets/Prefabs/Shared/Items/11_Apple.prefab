@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4865712016288834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 23859708433628288}
   - component: {fileID: 102222416914053396}
   - component: {fileID: 114216487517307492}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 54064143257390878}
   - component: {fileID: 135347021542217462}
   - component: {fileID: 114322386553367962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 11_Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4023303988767228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4049420289401944}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4383951255906642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4338544465423724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pPlatonic6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4770978728269012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4473260269055764}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4178568822772800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4472161375383638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: polySurface2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4577754367798202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 4814626315455846}
   - component: {fileID: 33188985434723408}
   - component: {fileID: 23388121377280014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

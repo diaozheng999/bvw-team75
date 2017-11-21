@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23334572115686700}
   - component: {fileID: 54183169605238598}
   - component: {fileID: 135898674725758852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23852576087039652}
   - component: {fileID: 54987424920223894}
   - component: {fileID: 135776187680739010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 23057672015780342}
   - component: {fileID: 54440201875292486}
   - component: {fileID: 135023584690768974}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 23273338601647760}
   - component: {fileID: 54588858051162418}
   - component: {fileID: 135598356740380850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 23790753424913770}
   - component: {fileID: 54046130723040650}
   - component: {fileID: 135348479964741114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 23735267573246898}
   - component: {fileID: 102723256427796982}
   - component: {fileID: 114965788403256756}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 23794479250979028}
   - component: {fileID: 54683706920584542}
   - component: {fileID: 135168765452253234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 23576123227535682}
   - component: {fileID: 54313332376124956}
   - component: {fileID: 135143094760017706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 23317033281808890}
   - component: {fileID: 54924900747869350}
   - component: {fileID: 135794025605018674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 23015383124171514}
   - component: {fileID: 54007217602876400}
   - component: {fileID: 135585841551832768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 23608574321403734}
   - component: {fileID: 54469211339840464}
   - component: {fileID: 135532755921454392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 23884006040599312}
   - component: {fileID: 54606332409082656}
   - component: {fileID: 135068201379207696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 23496672510349560}
   - component: {fileID: 54312486983872286}
   - component: {fileID: 135356630994091462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 23674680948130054}
   - component: {fileID: 54828673650811500}
   - component: {fileID: 135618730464288442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 23080958664609822}
   - component: {fileID: 54602601520421396}
   - component: {fileID: 135477477931446310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 23110946699772392}
   - component: {fileID: 54603761079180670}
   - component: {fileID: 135737112143786816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 23029007996511894}
   - component: {fileID: 54528359888950504}
   - component: {fileID: 135120412154950470}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 23085656204877536}
   - component: {fileID: 54269146592131374}
   - component: {fileID: 135658878478260832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 23540662722129534}
   - component: {fileID: 54370164887137182}
   - component: {fileID: 135507170637756192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 23896858630903436}
   - component: {fileID: 54215079910060216}
   - component: {fileID: 135133120660301226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,8 @@ GameObject:
   - component: {fileID: 65125353516204950}
   - component: {fileID: 65779631045071432}
   - component: {fileID: 114705656259963734}
-  m_Layer: 0
+  - component: {fileID: 82076954503982616}
+  m_Layer: 8
   m_Name: 10_POPCORN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +432,7 @@ GameObject:
   - component: {fileID: 23275102613645976}
   - component: {fileID: 54332813239162078}
   - component: {fileID: 135365391948384400}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +451,7 @@ GameObject:
   - component: {fileID: 23318317172271958}
   - component: {fileID: 54077376263966556}
   - component: {fileID: 135304383123509212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +470,7 @@ GameObject:
   - component: {fileID: 23482243893251320}
   - component: {fileID: 54544103950192016}
   - component: {fileID: 135040999730287862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +489,7 @@ GameObject:
   - component: {fileID: 23735255574286994}
   - component: {fileID: 54913232699711572}
   - component: {fileID: 135807652588953346}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +508,7 @@ GameObject:
   - component: {fileID: 23380124787151760}
   - component: {fileID: 54324613253513038}
   - component: {fileID: 135172436879574642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +527,7 @@ GameObject:
   - component: {fileID: 23114933979146318}
   - component: {fileID: 54032138935649478}
   - component: {fileID: 135227397081819550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +546,7 @@ GameObject:
   - component: {fileID: 23574566019153028}
   - component: {fileID: 54665865495187336}
   - component: {fileID: 135496398764975620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +565,7 @@ GameObject:
   - component: {fileID: 23377526543412620}
   - component: {fileID: 54922351229271572}
   - component: {fileID: 135441357972064838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SKausar_Bush22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2628,6 +2629,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.018002741, y: 0.010673577, z: 0.002159179}
   m_Center: {x: 0, y: 0.005240944, z: -0.009308559}
+--- !u!82 &82076954503982616
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1730984717130432}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95205003809687636
 Animator:
   serializedVersion: 3

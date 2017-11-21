@@ -658,7 +658,7 @@ MonoBehaviour:
   itemPlacementPosition: {fileID: 4924337017427386}
   nameTag: {fileID: 102949559721116738}
   avatarMame: 
-  itemPlacementDelay: 2
+  itemPlacementDelay: 1.5
   walkSpeed: 5
   turnSpeed: 7
   smoothTime: 0.5

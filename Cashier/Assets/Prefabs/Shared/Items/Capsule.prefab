@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23637541845345408}
   - component: {fileID: 102304844895288818}
   - component: {fileID: 114902746078231742}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23199627712334566}
   - component: {fileID: 54069771699165862}
   - component: {fileID: 114129935919878606}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,6 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barcode: {fileID: 102304844895288818}
+  exp: 1
+  ItemID: 0
 --- !u!114 &114902746078231742
 MonoBehaviour:
   m_ObjectHideFlags: 1

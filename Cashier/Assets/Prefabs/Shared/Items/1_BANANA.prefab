@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23166295144845896}
   - component: {fileID: 102102724741977606}
   - component: {fileID: 114618713425321080}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 54186691973129180}
   - component: {fileID: 64304345075528730}
   - component: {fileID: 114657461328323244}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1_BANANA
   m_TagString: Untagged
   m_Icon: {fileID: 0}

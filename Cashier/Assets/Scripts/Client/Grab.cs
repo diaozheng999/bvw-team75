@@ -111,7 +111,11 @@ namespace Team75.Client{
 				heldItem = intersectedItem;
 				heldInstanceId = intersectedInstanceId;
 				Debug.Log("Held object "+heldItem.gameObject.name);
-				
+
+				GetComponent<AudioSource>().Play();
+				var itemsound = heldItem.gameObject.GetComponent<ItemSound>();
+				if (itemsound != null) itemsound.PlaySound(1);
+					
 
 				heldJoint = heldItem.gameObject.AddComponent<FixedJoint>();
 				heldJoint.breakForce = Mathf.Infinity;

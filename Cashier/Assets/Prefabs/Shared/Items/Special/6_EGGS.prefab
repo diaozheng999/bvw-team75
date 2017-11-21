@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 23104806057944802}
   - component: {fileID: 102067521783404040}
   - component: {fileID: 114114096641169832}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 23963699444713596}
   - component: {fileID: 54806587328821288}
   - component: {fileID: 135155597701495100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: egg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 23701679400794070}
   - component: {fileID: 54798472235363716}
   - component: {fileID: 135959260841187156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: egg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 23184686261070738}
   - component: {fileID: 54077845344733570}
   - component: {fileID: 135834787856056934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: egg4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 23692551542749018}
   - component: {fileID: 54313329190624578}
   - component: {fileID: 135021548836144960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: egg3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 4028076984231330}
   - component: {fileID: 95234843382534514}
   - component: {fileID: 114061664125403336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 6_EGGS
   m_TagString: Egg
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 65311321119751432}
   - component: {fileID: 65604755158769676}
   - component: {fileID: 59172756532091848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 23845620659591988}
   - component: {fileID: 54310225058333754}
   - component: {fileID: 135257140457241138}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: egg6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 23489843166590990}
   - component: {fileID: 54310881083072450}
   - component: {fileID: 135372168994660280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: egg5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 65943919725101824}
   - component: {fileID: 65834736009768170}
   - component: {fileID: 65153776346598310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCube7
   m_TagString: Untagged
   m_Icon: {fileID: 0}

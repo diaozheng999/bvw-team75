@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64501894616996970}
   - component: {fileID: 114161915509112286}
   - component: {fileID: 54240960250610498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 9_TOMATO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23139272177933712}
   - component: {fileID: 102510443540401984}
   - component: {fileID: 114028982762972102}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Barcode (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
