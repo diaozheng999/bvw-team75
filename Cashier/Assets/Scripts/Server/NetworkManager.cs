@@ -54,6 +54,7 @@ namespace Team75.Server {
                 servers[i].AddParser(Connection.CUSTOMER_FINISH_ITEMS, OnCustomerFinishItems(i), "CUSTOMER_FINISH_ITEMS");
                 servers[i].AddParser(Connection.SCORE_ADD_ITEM, AddLineItem(i), "SCORE_ADD_ITEM");
                 servers[i].AddParser(Connection.UPDATE_BUTTON, UpdateButton(i), "UPDATE_BUTTON");
+                servers[i].AddParser(Connection.STAT_UPDATE, OnStatUpdate(i), "STAT_UPDATE");
                 AddDisposable(servers[i]);
             }
 
@@ -202,6 +203,14 @@ namespace Team75.Server {
             TrackingIdManager.instance.FreeId(id);
         }
         
+
+        Action<byte[], ushort> OnStatUpdate(int playerId) => (byte[] buffer, ushort len) => {
+            var stat = Connection.UnpackStats(buffer, 0);
+            UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                servers[1-playerId].SendMessageInBackground(Connection.STAT_UPDATE, Connection.PackStats(stat));
+                GameStateManager.instance.SetGameStat(playerId, stat);
+            });
+        };
         
 
 
