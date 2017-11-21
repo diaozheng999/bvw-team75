@@ -1394,17 +1394,17 @@ Prefab:
     - target: {fileID: 114974240147604256, guid: b0c0501b4dd7ab040946b53a7b85478b,
         type: 2}
       propertyPath: m_Color.r
-      value: 0.9411765
+      value: 0.97794116
       objectReference: {fileID: 0}
     - target: {fileID: 114974240147604256, guid: b0c0501b4dd7ab040946b53a7b85478b,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.11072664
+      value: 0.15819634
       objectReference: {fileID: 0}
     - target: {fileID: 114974240147604256, guid: b0c0501b4dd7ab040946b53a7b85478b,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.11072664
+      value: 0.15819634
       objectReference: {fileID: 0}
     - target: {fileID: 114903842753457974, guid: b0c0501b4dd7ab040946b53a7b85478b,
         type: 2}
@@ -1526,7 +1526,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1538,7 +1538,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1550,7 +1550,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1 &1509656381
 GameObject:
   m_ObjectHideFlags: 0
