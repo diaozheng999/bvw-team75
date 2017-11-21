@@ -44,6 +44,7 @@ namespace Team75.Shared {
         public void StopGame() {
             asrc.clip = menu;
             asrc.Play();
+            PlayBossEnd();
         }
 
         public void PlayBossEnd() {
