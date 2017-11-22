@@ -24,10 +24,13 @@ namespace Team75.Client {
         }
 
         protected override Vector3 Jitter() {
+            return Vector3.zero;
+            /*
             var r = Random.Range(0, RADIUS);
             var theta = Random.Range(-Mathf.PI, Mathf.PI); 
 
             return new Vector3(r * Mathf.Cos(theta), 0, r * Mathf.Sin(theta));
+            */
         }
 
         protected override Quaternion JitterRot() {
