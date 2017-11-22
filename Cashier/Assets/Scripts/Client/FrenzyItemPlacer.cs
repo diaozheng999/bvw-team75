@@ -9,7 +9,7 @@ namespace Team75.Client {
 
         public const int MAX_FRENZY_ITEMS = 300;
 
-        public const float RADIUS = 1.5f;
+        public const float RADIUS = 0.1f;
 
 
         int playerId;

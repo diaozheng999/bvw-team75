@@ -1236,22 +1236,22 @@ Prefab:
     - target: {fileID: 224597716791330490, guid: ca9ad8e64da081f4a8c4b6f3eda887c8,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000030518
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224597716791330490, guid: ca9ad8e64da081f4a8c4b6f3eda887c8,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 7
+      value: -280
       objectReference: {fileID: 0}
     - target: {fileID: 224597716791330490, guid: ca9ad8e64da081f4a8c4b6f3eda887c8,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 1410
+      value: 922.7
       objectReference: {fileID: 0}
     - target: {fileID: 224597716791330490, guid: ca9ad8e64da081f4a8c4b6f3eda887c8,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 295
+      value: 193.05
       objectReference: {fileID: 0}
     - target: {fileID: 224597716791330490, guid: ca9ad8e64da081f4a8c4b6f3eda887c8,
         type: 2}
@@ -1290,6 +1290,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca9ad8e64da081f4a8c4b6f3eda887c8, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1268454053 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1447473877034106, guid: ca9ad8e64da081f4a8c4b6f3eda887c8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1268454052}
 --- !u!1001 &1404625823
 Prefab:
   m_ObjectHideFlags: 0
@@ -1709,6 +1714,16 @@ Prefab:
       propertyPath: ring1
       value: 
       objectReference: {fileID: 473498353}
+    - target: {fileID: 114323550473193240, guid: 3633ae40eac395b4ab7508c9126c56c5,
+        type: 2}
+      propertyPath: frenzyIndicator
+      value: 
+      objectReference: {fileID: 1268454053}
+    - target: {fileID: 114323550473193240, guid: 3633ae40eac395b4ab7508c9126c56c5,
+        type: 2}
+      propertyPath: frenzyTime
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3633ae40eac395b4ab7508c9126c56c5, type: 2}
   m_IsPrefabParent: 0

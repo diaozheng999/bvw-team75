@@ -25,6 +25,8 @@ namespace Team75.Server {
 
         [SerializeField] private Ring ring1;
 
+        [SerializeField] GameObject frenzyIndicator;
+
         bool started = false;
         bool frenzy = false;
         bool ended = false;
@@ -100,11 +102,13 @@ namespace Team75.Server {
                     VisibleCustomerQueue.instance.SpawnSanta();
                     frenzy = true;
                     BackgroundMusic.instance.StartFrenzy();
+                    frenzyIndicator.SetActive(true);
                     
                 } else {
                     totalTime = 0;
                     ended = true;
                     NetworkManager.instance.SendMessageToBoth(Connection.END_GAME, new byte[0]{});
+                    frenzyIndicator.SetActive(false);
                     VisibleCustomerQueue.instance.SantaLeave(() => {
                         BackgroundMusic.instance.StopGame();
                     });

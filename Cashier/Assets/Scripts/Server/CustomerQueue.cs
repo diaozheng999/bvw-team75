@@ -104,7 +104,8 @@ namespace Team75.Server {
         }
 
         IEnumerator<object> GenerateAfter(Customer cust){
-            yield return new WaitForSeconds(EnqueueFrequency / 5);
+            //yield return new WaitForSeconds(EnqueueFrequency / 5);
+            yield return null;
             Enqueue(cust);
         }
         

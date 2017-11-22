@@ -27,6 +27,9 @@ namespace Team75.Client {
 
         [SerializeField] float FrenzySkewTolerance;
         [SerializeField] float FrenzyFaceTolerance;
+
+        [SerializeField] GameObject[] frenzyIndicators;
+        [SerializeField] GameObject announcement;
         
 
         private Ring ring;
@@ -157,8 +160,12 @@ namespace Team75.Client {
 
             Scanner.instance.FrenzyTolerance(FrenzyFaceTolerance, FrenzySkewTolerance);
             // TODO: stop hardcoding frenzy times, but frankly I don't care :)
-            ScoreManager.instance.SetTime(30f);
-            TimeBar.instance.SetMaxTime(30f); 
+            ScoreManager.instance.SetTime(23f);
+            TimeBar.instance.SetMaxTime(23f); 
+
+            foreach(var frenzyInd in frenzyIndicators) {
+                frenzyInd.SetActive(true);
+            }
         }
 
         public void StopFrenzy() {
@@ -166,6 +173,9 @@ namespace Team75.Client {
             VisibleCustomerQueue.instance.SantaLeave(() => {
                 BackgroundMusic.instance.StopGame();
             });
+            foreach(var frenzyInd in frenzyIndicators) {
+                frenzyInd.SetActive(false);
+            }
         }
 
 
