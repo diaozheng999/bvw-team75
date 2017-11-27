@@ -100,10 +100,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   totalTime: 150
-  frenzyTime: 30
+  frenzyTime: 23
   countDown: {fileID: 0}
   ring0: {fileID: 0}
   ring1: {fileID: 0}
+  frenzyIndicator: {fileID: 0}
 --- !u!114 &114539632304995710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d3823c851446e46b0b6a907ef2482d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnqueueFrequency: 7
+  EnqueueFrequency: 5
 --- !u!114 &114708359067230570
 MonoBehaviour:
   m_ObjectHideFlags: 1

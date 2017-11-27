@@ -30,6 +30,8 @@ namespace Team75.Client {
 
         [SerializeField] GameObject[] frenzyIndicators;
         [SerializeField] GameObject announcement;
+
+        [SerializeField] FadeOut[] tutorials;
         
 
         private Ring ring;
@@ -81,6 +83,16 @@ namespace Team75.Client {
             ring.SetAble(callable);
         }
 
+        public void FadeOutTutorial() {
+            announcement.SetActive(false);
+            foreach (var item in tutorials) {
+                item.Execute();
+            }
+        }
+
+        public void SetAnnouncement() {
+            announcement.SetActive(true);
+        }
         
         public void PlayBeep(int player) {
             scanners[player].StartCoroutine1(scanners[player].scan_success());

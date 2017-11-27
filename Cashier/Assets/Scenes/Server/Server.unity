@@ -1231,7 +1231,7 @@ Prefab:
     - target: {fileID: 224597716791330490, guid: ca9ad8e64da081f4a8c4b6f3eda887c8,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224597716791330490, guid: ca9ad8e64da081f4a8c4b6f3eda887c8,
         type: 2}
@@ -1467,6 +1467,16 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_FontStyle
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224467750675723818, guid: b0c0501b4dd7ab040946b53a7b85478b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224229255723739398, guid: b0c0501b4dd7ab040946b53a7b85478b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0c0501b4dd7ab040946b53a7b85478b, type: 2}
@@ -1719,11 +1729,6 @@ Prefab:
       propertyPath: frenzyIndicator
       value: 
       objectReference: {fileID: 1268454053}
-    - target: {fileID: 114323550473193240, guid: 3633ae40eac395b4ab7508c9126c56c5,
-        type: 2}
-      propertyPath: frenzyTime
-      value: 23
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3633ae40eac395b4ab7508c9126c56c5, type: 2}
   m_IsPrefabParent: 0

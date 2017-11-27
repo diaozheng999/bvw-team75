@@ -244,8 +244,9 @@ namespace Team75.Client {
 
         void OnStartGame(byte[] buffer, ushort length) {
             UnityExecutionThread.instance.ExecuteInMainThread(() => {
+                GameStateManager.instance.SetAnnouncement();
                 GameStateManager.instance.gameStarted = true;
-                BackgroundMusic.instance.StartGame();
+                BackgroundMusic.instance.StartGame(GameStateManager.instance.FadeOutTutorial);
             });
         }
 
