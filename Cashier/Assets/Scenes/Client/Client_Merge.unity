@@ -1737,6 +1737,73 @@ Skybox:
   m_GameObject: {fileID: 406878326}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 0}
+--- !u!1001 &419769135
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4751697353799024, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.041095
+      objectReference: {fileID: 0}
+    - target: {fileID: 4751697353799024, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4751697353799024, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.9036
+      objectReference: {fileID: 0}
+    - target: {fileID: 4751697353799024, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4751697353799024, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4751697353799024, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4751697353799024, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4751697353799024, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098356036107662, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -31.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098356036107662, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098356036107662, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098356036107662, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098356036107662, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -48.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 102144078772892516, guid: 2e2b04e9344d4fd46a11e6d9745bf51d,
+        type: 2}
+      propertyPath: m_FontSize
+      value: 79
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2e2b04e9344d4fd46a11e6d9745bf51d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &421226915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2949,6 +3016,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -5126,7 +5207,7 @@ BoxCollider:
   m_GameObject: {fileID: 1255084190}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.041291714, z: 0.5}
   m_Center: {x: 6.983527e-10, y: 0.3433605, z: -4.6566084e-11}
