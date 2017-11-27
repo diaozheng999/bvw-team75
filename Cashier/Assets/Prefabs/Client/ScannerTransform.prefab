@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 114650403117265984}
   - component: {fileID: 82341925693605256}
   - component: {fileID: 65820917795581926}
+  - component: {fileID: 65287189018983612}
   m_Layer: 0
   m_Name: Scanner (1)
   m_TagString: Untagged
@@ -2009,6 +2010,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 0cd5d3b884431ed40a95b9fd8e1fadad, type: 3}
+--- !u!65 &65287189018983612
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064570585370012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08521995, y: 0.17665438, z: 0.09864574}
+  m_Center: {x: -0.00004347928, y: 0.08856775, z: 0.012633124}
 --- !u!65 &65820917795581926
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2150,6 +2163,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -2186,6 +2213,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -2424,8 +2465,8 @@ MonoBehaviour:
   startBroadcasting: 0
   minClip: 0.01
   maxClip: 0.5
-  faceTolerance: 20
-  skewTolerance: 35
+  faceTolerance: 40
+  skewTolerance: 60
   laser_origin: {fileID: 4916221603241896}
   trigger: {fileID: 4364002468008304}
   triggerMinRotationX: 0
