@@ -33,49 +33,10 @@ var itemDictionary = [
     ,
 
     {
-        "itemId" : "15",
+        "itemId" : ["15", "16", "17", "18", "19"],
+        "itemIdPlaceholder" : "_balloon",
         "price" : "180",
-        "title" : "Yellow Balloon",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
-    }
-
-    ,
-
-    {
-        "itemId" : "16",
-        "price" : "180",
-        "title" : "Blue Balloon",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
-    }
-
-    ,
-
-    {
-        "itemId" : "17",
-        "price" : "180",
-        "title" : "Green Balloon",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
-    }
-
-    ,
-
-    {
-        "itemId" : "18",
-        "price" : "180",
-        "title" : "Brown Balloon",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
-    }
-
-    ,
-
-    {
-        "itemId" : "19",
-        "price" : "180",
-        "title" : "Purple Balloon",
+        "title" : "Balloon (colour varies)",
         "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
         "image" : "images/items/3.png"
     }
@@ -129,35 +90,15 @@ var itemDictionary = [
         "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
         "image" : "images/items/3.png"
     }
-
     ,
 
     {
-        "itemId" : "25",
+        "itemId" : ["25", "26", "27"],
+        "itemIdPlaceholder" : "_balloondog",
         "price" : "220",
-        "title" : "Blue Dog",
+        "title" : "Balloon Dog (colour varies)",
         "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
-    }
-
-    ,
-
-    {
-        "itemId" : "26",
-        "price" : "220",
-        "title" : "Goal Dog",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
-    }
-
-    ,
-
-    {
-        "itemId" : "27",
-        "price" : "220",
-        "title" : "Red Dog",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
+        "image" : "images/items/balloon_dogs.png"
     }
 
     ,
