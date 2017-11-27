@@ -69,7 +69,7 @@ namespace Team75.Server {
             }
 
             if(Input.GetKeyUp(KeyCode.J)) {
-                CustomerQueue.instance.Enqueue(CustomerQueue.GetSpecific(7)); //joker
+                CustomerQueue.instance.Enqueue(CustomerQueue.GetSpecific(13)); //joker
             }
 
             if(Input.GetKeyUp(KeyCode.H)) {
