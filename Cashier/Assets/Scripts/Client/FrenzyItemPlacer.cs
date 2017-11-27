@@ -22,7 +22,7 @@ namespace Team75.Client {
 
             SetAvatar(_avatar, cust);
         }
-
+        /*
         protected override Vector3 Jitter() {
             return Vector3.zero;
             /*
@@ -30,12 +30,12 @@ namespace Team75.Client {
             var theta = Random.Range(-Mathf.PI, Mathf.PI); 
 
             return new Vector3(r * Mathf.Cos(theta), 0, r * Mathf.Sin(theta));
-            */
+            
         }
 
         protected override Quaternion JitterRot() {
             return Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
-        }
+        }*/
 
         protected override Transform GetItemPlacementTransform() {
             return VisibleCustomerQueue.instance.GetFrenzySpawnPosition(playerId);

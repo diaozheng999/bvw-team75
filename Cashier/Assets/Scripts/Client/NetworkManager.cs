@@ -28,11 +28,13 @@ namespace Team75.Client {
             connectP1.onClick.AddListener(() => {
                 DisableInteractions();
                 Connect(server_address, Connection.TCP_SERVER_PORT_1);
+                TimeBar.instance.StartGame(0);
             });
             
             connectP2.onClick.AddListener(() => {
                 DisableInteractions();
                 Connect(server_address, Connection.TCP_SERVER_PORT_2);
+                TimeBar.instance.StartGame(1);
             });
             StartCoroutine(StartGame());
             trackingIdRequests = new ConcurrentQueue<System.Action<ushort>>();
