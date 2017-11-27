@@ -6,7 +6,7 @@ var itemDictionary = [
         "itemId" : "29",
         "price" : "399",
         "title" : "Burger King",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
+        "description" : "King of all burgers!",
         "image" : "images/items/29.jpg"
     }
 
@@ -38,47 +38,18 @@ var itemDictionary = [
         "price" : "180",
         "title" : "Balloon (colour varies)",
         "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
+        "image" : "images/items/BALLOONS.png"
     }
 
     ,
 
     {
-        "itemId" : "20",
+        "itemId" : ["20", "21", "22", "23"],
+        "itemIdPlaceholder" : "_soap",
         "price" : "180",
-        "title" : "Pink Soap",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
-    }
-
-    ,
-
-    {
-        "itemId" : "21",
-        "price" : "180",
-        "title" : "Gold Soap",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
-    }
-
-    ,
-
-    {
-        "itemId" : "22",
-        "price" : "180",
-        "title" : "Light-Blue Soap",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
-    }
-
-    ,
-
-    {
-        "itemId" : "23",
-        "price" : "180",
-        "title" : "Deep-Blue Soap",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/3.png"
+        "title" : "Soap (colour varies)",
+        "description" : ":/",
+        "image" : "images/items/SOAPS.png"
     }
 
     ,
@@ -108,7 +79,7 @@ var itemDictionary = [
         "itemId" : "30",
         "price" : "150",
         "title" : "Switch",
-        "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
+        "description" : "The unique TV-or-mobile gaming proposition of the Switch is now matched by a stellar library of games, including instant-classics like new Welda and Pario titles.",
         "image" : "images/items/30.jpg"
     }
 

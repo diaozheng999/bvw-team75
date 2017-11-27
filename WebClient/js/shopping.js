@@ -1,11 +1,44 @@
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+
+function shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+}
+
+function getShuffleMap(len) {
+    let arr = []
+    for (let i=0; i<len; i++){
+        arr.push(i)
+    }
+    return shuffle(arr)
+}
 
 $(document).ready(() => {
     let cart = {};
-    let budget = 1000;
+    let budget = 400;
     
     let renderCart = () => {
         if($.isEmptyObject(cart)) {
-            console.log("Cart is empty/");
+            console.log("Cart is empty.");
             $('#cart-body').html("<p>Cart is empty.</p>");
         } else {
             $('#cart-tbody').empty()
@@ -97,7 +130,13 @@ $(document).ready(() => {
 
         $.each(cart, (i, v) => {
             for(let j=0; j<v; j++) {
-                toSubmit['items'].push(i);
+                let val = -1;
+                if (itemDictionary[i].hasOwnProperty("itemIdPlaceholder")) {
+                    val = itemDictionary[i].itemId[getRandomInt(0, itemDictionary[i].itemId.length)]
+                } else {
+                    val = itemDictionary[i].itemId
+                }
+                toSubmit['items'].push(val);
             }
         })
 
@@ -106,7 +145,7 @@ $(document).ready(() => {
         $.post(remoteServer, toSubmit).done(() => {
             $('#cart-modal').modal('hide')
             $('#submitCart button').prop('disabled', false);
-            budget = 1000;
+            budget = 400;
             let _p = $(`<div class="alert alert-success alert-dismissible fade show" role="alert">
             Order submitted. You may issue another order.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -154,17 +193,31 @@ $(document).ready(() => {
         $('#custGreeting').text('Welcome, '+sessionStorage.custName+'.');
     }
 
-    for(let i=0; i<itemDictionary.length; ++i) {
+
+    // Shuffle item listing
+    let shuffleMap = []
+    if (sessionStorage.shuffleMap === undefined) {
+        shuffleMap = getShuffleMap(itemDictionary.length)
+        sessionStorage.setItem("shuffleMap", JSON.stringify(shuffleMap))
+    } else {
+        shuffleMap = JSON.parse(sessionStorage.shuffleMap)
+    }
+
+    console.log(shuffleMap)
+
+    for(let j=0; j<itemDictionary.length; ++j) {
+        let i = shuffleMap[j]
+        let iid = itemDictionary[i].itemIdPlaceholder || itemDictionary[i].itemId;
         $('#itemlist').append(`
         <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
             <img src="${itemDictionary[i].image}" class="rounded float-left" style="margin-right:20px;width:80px;height:80px;" />
             <h5 class="mb-1">${itemDictionary[i].title} ($${itemDictionary[i].price})</h5>
             <p class="mb-1">${itemDictionary[i].description}</p>
-            <button id="btn-add-${itemDictionary[i].itemId}" class="btn btn-outline-success">Add to cart</button>
+            <button id="btn-add-${iid}" class="btn btn-outline-success">Add to cart</button>
         </a>
         `);
 
-        $('#btn-add-'+itemDictionary[i].itemId).on('click', () => {
+        $('#btn-add-'+iid).on('click', () => {
             if(budget >= itemDictionary[i].price) {
                 budget -= itemDictionary[i].price;
                 if (i in cart) {
