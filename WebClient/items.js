@@ -17,7 +17,7 @@ var itemDictionary = [
         "price" : "220",
         "title" : "Popcorn",
         "description" : "Tomato sauce for the uninitiated. Definitely not from Pittsburgh.",
-        "image" : "images/items/14.png"
+        "image" : "images/items/14.PNG"
     }
 
     ,
