@@ -55,7 +55,7 @@ namespace Team75.Client {
 
         public void SetOpponentScore(uint value) {
             opponentRevenueDisplay.text = "$"+value;
-            opponentrevenue += value;
+            opponentrevenue = value;
         }
 
         public void SetTime(float _time) {
