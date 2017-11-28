@@ -188,6 +188,7 @@ namespace Team75.Client {
             foreach(var frenzyInd in frenzyIndicators) {
                 frenzyInd.SetActive(false);
             }
+            TimeBar.instance.ShowCredits();
             
         }
 

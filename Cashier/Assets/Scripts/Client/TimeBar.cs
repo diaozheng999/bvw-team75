@@ -19,6 +19,7 @@ namespace Team75.Client
 		private Image _image;
 		private Image _frame;
 		private Image _credits;
+		[SerializeField] private ShowResult showResult;
 		
 		private const float width_max=1500f;
 		private bool started = false;
@@ -34,6 +35,7 @@ namespace Team75.Client
 			_image = tmp[0];
 			_frame = tmp[1];
 			_credits = tmp[2];
+			_credits.gameObject.active = false;
 			_text.color = Color.green;
 			_image.color = Color.green;
 			if (playerID != 0)
@@ -79,8 +81,12 @@ namespace Team75.Client
 				started = true;
 				StartGame(GameStateManager.instance.GetPlayerId());
 			}
-			
-			
+
+			if (Input.GetKeyDown(KeyCode.S))
+			{
+				StartGame(1);
+				ShowCredits();
+			}
 			
 		}
 
@@ -90,6 +96,7 @@ namespace Team75.Client
 			_frame.gameObject.active = false;
 			_text.gameObject.active = false;
 			_credits.gameObject.active = true;
+			showResult.StartShow(ScoreManager.instance.GetScore()>=ScoreManager.instance.GetOpponentScore());
 		}
 	}
 }

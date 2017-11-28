@@ -18,6 +18,7 @@ namespace Team75.Client {
         LinkedList<string> lineItems;
 
         uint revenue;
+        private uint opponentrevenue;
         uint subtotal;
 
         float time;
@@ -54,6 +55,7 @@ namespace Team75.Client {
 
         public void SetOpponentScore(uint value) {
             opponentRevenueDisplay.text = "$"+value;
+            opponentrevenue += value;
         }
 
         public void SetTime(float _time) {
@@ -80,6 +82,11 @@ namespace Team75.Client {
 
         public uint GetScore() {
             return revenue;
+        }
+        
+        public uint GetOpponentScore()
+        {
+            return opponentrevenue;
         }
 
     }
