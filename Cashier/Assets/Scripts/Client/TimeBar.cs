@@ -7,14 +7,18 @@ using PGT.Core;
 namespace Team75.Client
 {
 
-
+	
 
 
 	public class TimeBar : Singleton<TimeBar>
 
 	{
+		
+		
 		private Text _text;
 		private Image _image;
+		private Image _frame;
+		private Image _credits;
 		
 		private const float width_max=1500f;
 		private bool started = false;
@@ -26,7 +30,10 @@ namespace Team75.Client
 		{
 			started = true;
 			_text = GetComponentInChildren<Text>();
-			_image = GetComponentInChildren<Image>();
+			Image[] tmp = GetComponentsInChildren<Image>();
+			_image = tmp[0];
+			_frame = tmp[1];
+			_credits = tmp[2];
 			_text.color = Color.green;
 			_image.color = Color.green;
 			if (playerID != 0)
@@ -75,6 +82,14 @@ namespace Team75.Client
 			
 			
 			
+		}
+
+		public void ShowCredits()
+		{
+			_image.gameObject.active = false;
+			_frame.gameObject.active = false;
+			_text.gameObject.active = false;
+			_credits.gameObject.active = true;
 		}
 	}
 }
