@@ -45,6 +45,7 @@ public class Ring : MonoBehaviour
 	public void GetHit()
 	{
 		transform.parent.GetComponent<Animator>().SetTrigger("PLAY");
+		transform.parent.GetComponent<AudioSource>().Play();
 		GameStateManager.instance.RequestCustomer();
 	}
 }
